@@ -3,15 +3,14 @@
     <div class="text-right">
       <button class="btn btn-info" @click="goHome">Inicio</button>
     </div>
-    <p class="text-left">
-      <b>1.</b> Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( ✓ ) the food you like.
-    </p>
-    <div class="text-left">
+    <p class="instrucciones">
+      <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 40 </span> Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.</p>    </p>
+    <div class="multimedia">
       <button class="btn" @click="playTrack">
-        <img id="btnTrack" src="../assets/img/play.png" alt="Play" />
+         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/> 
       </button>
       <button class="btn" @click="pauseTrack">
-        <img id="btnTrack" src="../assets/img/pausa.png" alt="Pause" />
+        <font-awesome-icon icon="stop-circle" class="fafaicono-multimedia"/> 
       </button>
     </div>
     <div class="row">
@@ -152,39 +151,6 @@ export default {
 </script>
 
 <style scoped>
-  b {
-    color: red;
-    font-size: 20px;
-  }
-  img {
-    width: 80px;
-    height: 80px;
-  }
-  .drop {
-    border-style: solid;
-    border-width: 2px;
-    width: 40px;
-    height: 40px;
-  }
-  #numberElem{
-    /* border-style: solid;
-    border-width: 2px; */
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-  }
-  #elements {
-    padding: 30px 30px;
-  }
-  #select {
-    opacity: 0.5;
-  }
-  #numberDisa {
-    color: grey;
-  }
-  #btnTrack {
-    width: 30px;
-    height: 30px;
-  }
+
+
 </style>

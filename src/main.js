@@ -10,9 +10,18 @@ import Exercise37One from './components/Exercise37One'
 import VueRouter from 'vue-router'
 import { Drag, Drop } from 'vue-drag-drop'
 import VueSweetalert2 from 'vue-sweetalert2'
+import('./assets/css/style.css')
 
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMusic,faPlayCircle,faStopCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+library.add(faMusic,faPlayCircle, faStopCircle)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('drag', Drag)
 Vue.component('drop', Drop)
