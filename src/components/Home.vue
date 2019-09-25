@@ -1,16 +1,20 @@
 <template>
-  <div class="container" v-if="viewHome">
+  <div class="container">
     <button class="btn btn-primary" @click="home">Iniciar</button>
-    <div class="row">
+    <div class="row" v-if="viewImgs">
       <div class="col-md-6" id="divCanvas1">
         <canvas id="img1"></canvas>
-        <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
+        <button id="btnImg1" @click="viewImg1">img1</button>
+        <!-- <router-link id="e1" to="/lesson371">botton botton botton botton</router-link> -->
       </div>
       <div class="col-md-6" id="divCanvas2">
         <canvas id="img2"></canvas>
-        <router-link id="e1" to="/lesson461">botton botton botton botton</router-link>
-        <router-link id="e2" to="/lesson462">botton botton botton botton</router-link>
+        <!-- <router-link id="e1" to="/lesson461">botton botton botton botton</router-link>
+        <router-link id="e2" to="/lesson462">botton botton botton botton</router-link> -->
       </div>
+    </div>
+    <div v-else>
+
     </div>
   </div>
 </template>
@@ -21,10 +25,13 @@ export default {
   name: 'Home',
   data () {
     return {
-      // viewHome: true
+      viewImgs: true
     }
   },
   methods: {
+    viewImg1 () {
+      this.viewImgs = false
+    },
     goHome () {
       this.$router.push({name: 'home'})
     },
@@ -88,6 +95,15 @@ export default {
   }
   #img2 {
     background-image: url('../assets/pdf/lesson46_pequena.jpg');
+  }
+  #btnImg1 {
+    z-index:2;
+    position: absolute;
+    left:10px;
+    width: 290px;
+    height: 100%;
+    background-color: transparent;
+    color: transparent;
   }
   #e1 {
     z-index:2;
