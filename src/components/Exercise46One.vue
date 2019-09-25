@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="text-right">
+      <button class="btn btn-info" @click="goHome">Inicio</button>
+    </div>
     <p class="text-left"><b>1.</b> What do you know about Mexico’s economy? Complete the first two columns in this table.</p>
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
     <hr>
@@ -7,7 +10,7 @@
       <button class="btn btn-primary" @click="generatePDF">Descargar ejercicio</button>
     </div>
     <hr>
-    <div>
+    <div id="tableExercise">
       <table class="table">
         <thead ref="head">
           <tr>
@@ -30,8 +33,9 @@
 
 <script>
 import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
 export default {
-  name: 'ExerciseOne',
+  name: 'Exercise46One',
   data () {
     return {
       fields: [
@@ -47,33 +51,38 @@ export default {
     }
   },
   methods: {
+    goHome () {
+      this.$router.push({name: 'home'})
+    },
     generatePDF () {
       // Default export is a4 paper, portrait, using milimeters for units
       var doc = new jsPDF()
-      const contentHtml = `
-      <table>` + this.$refs.head.innerHTML + `
-        <tbody>
-          <tr>
-            <td>` + this.items[0].column1 + `</td>
-            <td>` + this.items[0].column2 + `</td>
-            <td>` + this.items[0].column3 + `</td>
-          </tr>
-          <tr>
-            <td>` + this.items[1].column1 + `</td>
-            <td>` + this.items[1].column2 + `</td>
-            <td>` + this.items[1].column3 + `</td>
-          </tr>
-          <tr>
-            <td>` + this.items[2].column1 + `</td>
-            <td>` + this.items[2].column2 + `</td>
-            <td>` + this.items[2].column3 + `</td>
-          </tr>
-        </tbody>
-      </table>`
-      doc.fromHTML(contentHtml, 10, 10, {
-        width: 300
+      html2canvas(document.querySelector('#tableExercise')).then(function (canvas) {
+        var img = canvas.toDataURL('image/png')
+        // doc.fromHTML(document.getElementById('capture'), 10, 10)
+        doc.addImage(img, 'PNG', 15, 40, 180, 160)
+        doc.save('exercise.pdf')
       })
-      doc.save('exercise.pdf')
+      // const contentHtml = `
+      // <table>` + this.$refs.head.innerHTML + `
+      //   <tbody>
+      //     <tr>
+      //       <td>` + this.items[0].column1 + `</td>
+      //       <td>` + this.items[0].column2 + `</td>
+      //       <td>` + this.items[0].column3 + `</td>
+      //     </tr>
+      //     <tr>
+      //       <td>` + this.items[1].column1 + `</td>
+      //       <td>` + this.items[1].column2 + `</td>
+      //       <td>` + this.items[1].column3 + `</td>
+      //     </tr>
+      //     <tr>
+      //       <td>` + this.items[2].column1 + `</td>
+      //       <td>` + this.items[2].column2 + `</td>
+      //       <td>` + this.items[2].column3 + `</td>
+      //     </tr>
+      //   </tbody>
+      // </table>`
     }
   }
 }
@@ -104,6 +113,9 @@ export default {
     font-size: 16px;
     resize: none;
   }
+  /* #capture {
+    height: 1000px;
+  } */
   iframe{
     width: 100%;
     height: 400px;

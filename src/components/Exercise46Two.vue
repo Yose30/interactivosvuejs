@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="text-right">
+      <button class="btn btn-info" @click="goHome">Inicio</button>
+    </div>
     <p class="text-left">
       <b>2.</b>Complete the report with your own ideas. Then, listen and check.
     </p>
@@ -26,7 +29,7 @@
 
 <script>
 export default {
-  name: 'ExerciseTwo',
+  name: 'Exercise46Two',
   data () {
     return {
       play: false,
@@ -34,6 +37,9 @@ export default {
     }
   },
   methods: {
+    goHome () {
+      this.$router.push({name: 'home'})
+    },
     playTrack () {
       var track = new Audio(require('../assets/audios/47Pista.mp3'))
       track.play()
@@ -54,7 +60,7 @@ export default {
 .btn {
     /* width: 30px;
     height: 30px; */
-    color: aqua;
+    /* color: aqua; */
 }
 img {
   width: 30px;

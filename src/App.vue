@@ -1,28 +1,12 @@
 <template>
   <div id="app">
-    <!-- <ExerciseOne/> -->
-    <!-- <ExerciseTwo/> -->
-    <Exercise37One/>
-    <Home/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import Home from './components/Home'
-import ExerciseOne from './components/ExerciseOne'
-import ExerciseTwo from './components/ExerciseTwo'
-import Exercise37One from './components/Exercise37One'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-    Home,
-    ExerciseOne,
-    ExerciseTwo,
-    Exercise37One
-  }
+  name: 'App'
 }
 </script>
 

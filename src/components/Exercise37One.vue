@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="text-right">
+      <button class="btn btn-info" @click="goHome">Inicio</button>
+    </div>
     <p class="text-left">
       <b>1.</b> Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( ✓ ) the food you like.
     </p>
@@ -103,6 +106,9 @@ export default {
     }
   },
   methods: {
+    goHome () {
+      this.$router.push({name: 'home'})
+    },
     handleDrop (data) {
       if (data.answer === this.selection.answer) {
         this.options.forEach(option => {

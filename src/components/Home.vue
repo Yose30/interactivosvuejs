@@ -1,15 +1,17 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="viewHome">
+    <button class="btn btn-primary" @click="home">Iniciar</button>
     <div class="row">
-      <div class="col-md-6">
-        <img src="@/assets/pdf/lesson37.jpg" alt="">
+      <div class="col-md-6" id="divCanvas1">
+        <canvas id="img1"></canvas>
+        <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
       </div>
-      <div class="col-md-6">
-        <img src="@/assets/pdf/lesson46.jpg" alt="">
+      <div class="col-md-6" id="divCanvas2">
+        <canvas id="img2"></canvas>
+        <router-link id="e1" to="/lesson461">botton botton botton botton</router-link>
+        <router-link id="e2" to="/lesson462">botton botton botton botton</router-link>
       </div>
     </div>
-    <!-- <pdf src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf" :page="1"></pdf> -->
-    <!-- https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf -->
   </div>
 </template>
 
@@ -19,7 +21,50 @@ export default {
   name: 'Home',
   data () {
     return {
-      // src: require('@/assets/pdf/lesson46.pdf')
+      // viewHome: true
+    }
+  },
+  methods: {
+    goHome () {
+      this.$router.push({name: 'home'})
+    },
+    home () {
+      var canvas1 = document.getElementById('img1')
+      var c1 = canvas1.getContext('2d')
+      var canvas2 = document.getElementById('img2')
+      var c2 = canvas2.getContext('2d')
+      c1.lineWidth = 1
+      c1.beginPath()
+      c1.moveTo(20, 30)
+      c1.bezierCurveTo(20, 40, 280, 40, 280, 30)
+      c1.strokeStyle = 'red'
+      c1.stroke()
+      c1.beginPath()
+      c1.moveTo(20, 30)
+      c1.bezierCurveTo(20, 20, 280, 20, 280, 30)
+      c1.strokeStyle = 'red'
+      c1.stroke()
+      c2.lineWidth = 1
+      c2.beginPath()
+      c2.moveTo(20, 30)
+      c2.bezierCurveTo(20, 40, 280, 40, 280, 30)
+      c2.strokeStyle = 'red'
+      c2.stroke()
+      c2.beginPath()
+      c2.moveTo(20, 30)
+      c2.bezierCurveTo(20, 20, 280, 20, 280, 30)
+      c2.strokeStyle = 'red'
+      c2.stroke()
+      c2.beginPath()
+      c2.moveTo(20, 70)
+      c2.bezierCurveTo(20, 80, 280, 80, 280, 70)
+      c2.strokeStyle = 'red'
+      c2.stroke()
+      c2.beginPath()
+      c2.moveTo(20, 70)
+      c2.bezierCurveTo(20, 60, 280, 60, 280, 70)
+      c2.strokeStyle = 'red'
+      c2.stroke()
     }
   },
   components: {
@@ -29,8 +74,35 @@ export default {
 </script>
 
 <style scoped>
-  img {
-    width: 350px;
+  #divCanvas1, #divCanvas2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  canvas {
+    width: 290px;
     height: 370px;
+  }
+  #img1 {
+    background-image: url('../assets/pdf/lesson37_pequena.jpg');
+  }
+  #img2 {
+    background-image: url('../assets/pdf/lesson46_pequena.jpg');
+  }
+  #e1 {
+    z-index:2;
+    position: absolute;
+    top:60px;
+    left:10px;
+    width: 290px;
+    color: transparent;
+  }
+  #e2 {
+    z-index:2;
+    position: absolute;
+    top:165px;
+    left:10px;
+    width: 290px;
+    color: transparent;
   }
 </style>
