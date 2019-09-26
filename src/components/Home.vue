@@ -1,10 +1,11 @@
 <template>
   <div class="container">
-    <button class="btn btn-primary" @click="home">Iniciar</button>
+    <!-- <button class="btn btn-primary" @click="home">Iniciar</button> -->
     <div class="row" v-if="viewImgs">
       <div class="col-md-6" id="divCanvas1">
         <canvas id="img1"></canvas>
-        <!-- <button id="btnImg1" @click="viewImg1">img1</button> -->
+        <!-- <img src="../assets/pdf/lesson37_pequena.jpg" alt="">
+        <button id="btnImg1" @click="viewImg1">img1</button> -->
         <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
       </div>
       <div class="col-md-6" id="divCanvas2">
@@ -14,7 +15,7 @@
       </div>
     </div>
     <div v-else>
-
+      <canvas id="img1"></canvas>
     </div>
   </div>
 </template>
@@ -28,9 +29,25 @@ export default {
       viewImgs: true
     }
   },
+  mounted: function () {
+    this.home()
+  },
   methods: {
     viewImg1 () {
-      this.viewImgs = false
+      // this.viewImgs = false
+      var canvas1 = document.getElementById('img1')
+      var c1 = canvas1.getContext('2d')
+      c1.lineWidth = 1
+      c1.beginPath()
+      c1.moveTo(20, 30)
+      c1.bezierCurveTo(20, 40, 280, 40, 280, 30)
+      c1.strokeStyle = 'red'
+      c1.stroke()
+      c1.beginPath()
+      c1.moveTo(20, 30)
+      c1.bezierCurveTo(20, 20, 280, 20, 280, 30)
+      c1.strokeStyle = 'red'
+      c1.stroke()
     },
     goHome () {
       this.$router.push({name: 'home'})
@@ -103,6 +120,7 @@ export default {
     width: 290px;
     height: 100%;
     background-color: transparent;
+    border: none;
     color: transparent;
   }
   #e1 {
