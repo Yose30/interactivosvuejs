@@ -1,13 +1,16 @@
 <template>
   <div class="container">
     <div class="text-right">
-      <button class="btn btn-info" @click="goHome">Inicio</button>
+      <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
     </div>
-    <p class="text-left"><b>1.</b> What do you know about Mexico’s economy? Complete the first two columns in this table.</p>
+    <p class="instrucciones">
+    <b class="numero-vineta">1. </b> What do you know about Mexico’s economy? Complete the first two columns in this table.
+    </p>
+    
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
     <hr>
     <div class="text-right">
-      <button class="btn btn-primary" @click="generatePDF">Descargar ejercicio</button>
+      <button class="btn home" @click="generatePDF">Descargar ejercicio</button>
     </div>
     <hr>
     <div id="tableExercise">
@@ -89,35 +92,5 @@ export default {
 </script>
 
 <style scoped>
-  b{
-    color: red;
-    font-size: 20px;
-  }
-  p{
-    color: black;
-  }
-  thead{
-    background-color: aquamarine;
-    color: black;
-  }
-  td{
-    height: 100px;
-  }
-  textarea {
-    width: 100%;
-    height: 140px;
-    padding: 10px 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    resize: none;
-  }
-  /* #capture {
-    height: 1000px;
-  } */
-  iframe{
-    width: 100%;
-    height: 400px;
-  }
+  
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-right">
-      <button class="btn btn-info" @click="goHome">Inicio</button>
+      <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
     </div>
     <p class="instrucciones">
       <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 47 </span>Complete the report with your own ideas. Then, listen and check.

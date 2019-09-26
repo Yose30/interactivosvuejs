@@ -14,12 +14,12 @@ import('./assets/css/style.css')
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faMusic,faPlayCircle,faStopCircle } from '@fortawesome/free-solid-svg-icons'
+import { faMusic,faPlayCircle,faStopCircle,faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-library.add(faMusic,faPlayCircle, faStopCircle)
+library.add(faMusic,faPlayCircle, faStopCircle,faHome )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

@@ -82,6 +82,8 @@ input{
 input:hover{
     background-color: var(--grisClaro);
 }
+
+
 .container{
     width: 80%;
 }
@@ -113,6 +115,31 @@ input:hover{
     width: 100%;
     border: 2px solid var(--grisobscuro);
     margin-bottom: 2rem;
+}
+
+
+/** Botones*/
+
+.home{
+    color:var(--naranja);
+    font-size: 1.2rem;
+    font-weight: 900;
+    border: 2px solid var(--naranja);
+    
+}
+
+.home:hover{
+    color:var(--amarilloF);
+    border: 2px solid var(--amarilloF);
+
+}
+.home:active{
+    color:var(--botonNaranja);
+    border: 2px solid var(--botonNaranja);
+    outline: none;
+}
+.home:visited{
+    border: none;
 }
 .fafaicono-multimedia{
     color:var(--naranja);

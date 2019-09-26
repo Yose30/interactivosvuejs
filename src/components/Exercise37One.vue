@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-right">
-      <button class="btn btn-info" @click="goHome">Inicio</button>
+      <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
     </div>
     <p class="instrucciones">
       <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 40 </span> Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.</p>    </p>
