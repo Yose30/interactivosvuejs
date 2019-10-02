@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-    <div class="text-right">
-      <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
+    <div class="row">
+      <div class="col-md-6 text-left">
+        <button class="btn home" @click="download">Download exercise</button>
+      </div>
+      <div class="col-md-6 text-right">
+        <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
+      </div>
     </div>
     <p class="instrucciones">
-    <b class="numero-vineta">1. </b> What do you know about Mexico’s economy? Complete the first two columns in this table.
+      <b class="numero-vineta">1. </b> What do you know about Mexico’s economy? Complete the first two columns in this table.
     </p>
-    
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-    <hr>
-    <div class="text-right">
-      <button class="btn home" @click="generatePDF">Descargar ejercicio</button>
-    </div>
     <hr>
     <div id="tableExercise">
       <table class="table">
@@ -31,12 +31,25 @@
         </tbody>
       </table>
     </div>
+    <!-- MODALS -->
+    <b-modal ref="my-modal" centered hide-footer title="">
+      <b-row>
+        <b-col>
+          <b-form-input v-model="nameStudent" :state="state" placeholder="Enter your name"></b-form-input>
+        </b-col>
+        <b-col>
+          <b-button variant="primary" @click="generatePDF">Continuar</b-button>
+        </b-col>
+      </b-row>
+    </b-modal>
   </div>
 </template>
 
 <script>
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
+var doc = new jsPDF()
+var img = new Image()
 export default {
   name: 'Exercise46One',
   data () {
@@ -50,51 +63,44 @@ export default {
         {id: 1, column1: '', column2: '', column3: ''},
         {id: 2, column1: '', column2: '', column3: ''},
         {id: 3, column1: '', column2: '', column3: ''}
-      ]
+      ],
+      nameStudent: '',
+      state: null
     }
   },
   methods: {
     goHome () {
       this.$router.push({name: 'home'})
     },
-    generatePDF () {
-      // Default export is a4 paper, portrait, using milimeters for units
-      var doc = new jsPDF()
+    download () {
+      this.$refs['my-modal'].show()
       html2canvas(document.querySelector('#tableExercise')).then(function (canvas) {
-        var img = canvas.toDataURL('image/png')
-        // doc.fromHTML(document.getElementById('capture'), 10, 10)
-        doc.addImage(img, 'PNG', 15, 40, 180, 160)
-        doc.save('exercise.pdf')
+        img.src = canvas.toDataURL('image/jpeg', 2)
+        img.width = 190
+        img.height = 140
+        doc.addImage(img.src, 'JPEG', 10, 20, img.width, img.height)
       })
-      // const contentHtml = `
-      // <table>` + this.$refs.head.innerHTML + `
-      //   <tbody>
-      //     <tr>
-      //       <td>` + this.items[0].column1 + `</td>
-      //       <td>` + this.items[0].column2 + `</td>
-      //       <td>` + this.items[0].column3 + `</td>
-      //     </tr>
-      //     <tr>
-      //       <td>` + this.items[1].column1 + `</td>
-      //       <td>` + this.items[1].column2 + `</td>
-      //       <td>` + this.items[1].column3 + `</td>
-      //     </tr>
-      //     <tr>
-      //       <td>` + this.items[2].column1 + `</td>
-      //       <td>` + this.items[2].column2 + `</td>
-      //       <td>` + this.items[2].column3 + `</td>
-      //     </tr>
-      //   </tbody>
-      // </table>`
+    },
+    generatePDF () {
+    // if (this.nameStudent.length > 5) {
+      this.$refs['my-modal'].hide()
+      // Default export is a4 paper, portrait, using milimeters for units
+      doc.setFontSize(18)
+      doc.setFont('helvetica')
+      doc.setFontType('bold')
+      doc.text(10, 10, 'Lesson 46 - Exercise 1')
+      doc.setFontSize(10)
+      doc.text(10, 15, 'Student name: ' + this.nameStudent)
+      doc.save('exercise.pdf')
+    // } else {
+    //   this.state = false
+    // }
     }
   }
 }
 </script>
 
 <style scoped>
- 
-  
-  
   iframe{
     width: 100%;
     height: 400px;

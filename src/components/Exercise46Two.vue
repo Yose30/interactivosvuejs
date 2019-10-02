@@ -7,12 +7,15 @@
       <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 47 </span>Complete the report with your own ideas. Then, listen and check.
     </p>
     <div class="multimedia">
-      <button class="btn" @click="playTrack">
-         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/> 
+      <audio controls>
+        <source src="../assets/audios/47Pista.mp3">
+      </audio>
+      <!-- <button class="btn" @click="playTrack">
+         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/>
       </button>
       <button class="btn" @click="pauseTrack">
-        <font-awesome-icon icon="stop-circle" class="fafaicono-multimedia"/> 
-      </button>
+        <font-awesome-icon icon="pause-circle" class="fafaicono-multimedia"/>
+      </button> -->
     </div>
     <div class="parrafo">
         <p>
@@ -28,30 +31,29 @@
 </template>
 
 <script>
+// var track = new Audio(require('../assets/audios/47Pista.mp3'))
 export default {
   name: 'Exercise46Two',
   data () {
     return {
-      play: false,
-      pause: true
+      // play: false,
+      // pause: true
     }
   },
   methods: {
     goHome () {
       this.$router.push({name: 'home'})
-    },
-    playTrack () {
-      var track = new Audio(require('../assets/audios/47Pista.mp3'))
-      track.play()
-      this.play = true
-      this.pause = false
-    },
-    pauseTrack () {
-      var track = new Audio(require('../assets/audios/47Pista.mp3'))
-      track.pause()
-      this.pause = true
-      this.play = false
     }
+    // playTrack () {
+    //   track.play()
+    //   this.play = true
+    //   this.pause = false
+    // },
+    // pauseTrack () {
+    //   track.pause()
+    //   this.pause = true
+    //   this.play = false
+    // }
   }
 }
 </script>

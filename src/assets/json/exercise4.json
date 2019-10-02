@@ -1,0 +1,30 @@
+{
+    "0": {
+        "id": 1,
+        "sentence": "Peter loves Nancy's house.",
+        "value": "false",
+        "selected": "",
+        "state": null
+    },
+    "1": {
+        "id": 2,
+        "sentence": "Nancy's family love sports in general",
+        "value": "false",
+        "selected": "",
+        "state": null
+    },
+    "2": {
+        "id": 3,
+        "sentence": "Peter's mother loves tennis",
+        "value": "false",
+        "selected": "",
+        "state": null
+    },
+    "3": {
+        "id": 4,
+        "sentence": "Michael is single",
+        "value": "true",
+        "selected": "",
+        "state": null
+    }
+}

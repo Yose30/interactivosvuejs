@@ -4,14 +4,18 @@
       <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
     </div>
     <p class="instrucciones">
-      <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 40 </span> Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.</p>    </p>
+      <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 40 </span> Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.
+    </p>
     <div class="multimedia">
-      <button class="btn" @click="playTrack">
-         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/> 
+      <audio controls>
+        <source src="../assets/audios/40Pista.mp3">
+      </audio>
+      <!-- <button class="btn" @click="playTrack">
+         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/>
       </button>
       <button class="btn" @click="pauseTrack">
-        <font-awesome-icon icon="stop-circle" class="fafaicono-multimedia"/> 
-      </button>
+        <font-awesome-icon icon="pause-circle" class="fafaicono-multimedia"/>
+      </button> -->
     </div>
     <div class="row">
       <div class="col-md-9">
@@ -50,7 +54,7 @@
 
 <script>
 import { Drag, Drop } from 'vue-drag-drop'
-
+// var track = new Audio(require('../assets/audios/40Pista.mp3'))
 export default {
   components: { Drag, Drop },
   name: 'Exercise37One',
@@ -99,9 +103,9 @@ export default {
         {number: 19, answer: 'milk', status: false},
         {number: 4, answer: 'ice cream', status: false},
         {number: 18, answer: 'candy', status: false}
-      ],
-      play: false,
-      pause: true
+      ]
+      // play: false,
+      // pause: true
     }
   },
   methods: {
@@ -133,24 +137,17 @@ export default {
         status: false,
         i: item
       }
-    },
-    playTrack () {
-      var track = new Audio(require('../assets/audios/40Pista.mp3'))
-      track.play()
-      this.play = true
-      this.pause = false
-    },
-    pauseTrack () {
-      var track = new Audio(require('../assets/audios/40Pista.mp3'))
-      track.pause()
-      this.pause = true
-      this.play = false
     }
+    // playTrack () {
+    //   track.play()
+    //   this.play = true
+    //   this.pause = false
+    // },
+    // pauseTrack () {
+    //   track.pause()
+    //   this.pause = true
+    //   this.play = false
+    // }
   }
 }
 </script>
-
-<style scoped>
-
-
-</style>
