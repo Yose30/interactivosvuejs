@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="text-right">
+      
       <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
     </div>
     <p class="instrucciones">

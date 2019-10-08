@@ -8,7 +8,6 @@ import Home from './components/Home'
 import Exercise46One from './components/Exercise46One'
 import Exercise46Two from './components/Exercise46Two'
 import Exercise37One from './components/Exercise37One'
-
 import Exercise4 from './components/Exercise4'
 import Exercise5 from './components/Exercise5'
 import Exercise6 from './components/Exercise6'
@@ -53,6 +52,7 @@ const router = new VueRouter({
     { path: '/exercise6', name: 'exercise6', component: Exercise6 },
     { path: '/exercise7', name: 'exercise7', component: Exercise7 },
     { path: '/draw', name: 'draw', component: Draw }
+
   ]
 })
 

@@ -108,10 +108,12 @@ export default {
     height: 370px;
   }
   #img1 {
-    background-image: url('../assets/pdf/lesson37_pequena.jpg');
+    background-image: url('../assets/pdf/lesson37_pequena.png');
+    background-size: 100%;
   }
   #img2 {
-    background-image: url('../assets/pdf/lesson46_pequena.jpg');
+    background-image: url('../assets/pdf/lesson46_pequena.png');
+    background-size: 100%;
   }
   #btnImg1 {
     z-index:2;
