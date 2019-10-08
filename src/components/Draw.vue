@@ -1,92 +1,147 @@
 <template>
   <div class="container">
-    <button class="btn btn-primary" @click="pencil = true">Dibujar</button>
-    <button class="btn btn-warning" @click="cleanAll">Borrar todo</button>
-    <hr>
-    <canvas id="pizarra" @mousedown="empezarDibujo" @mousemove="dibujarLinea" @mouseup="pararDibujar"></canvas>
+    <!-- <div id="divContent">
+        <b-jumbotron>
+            <template v-slot:header>BootstrapVue</template>
+            <template v-slot:lead>
+                This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+                featured content or information.
+            </template>
+            <hr class="my-4">
+            <p>
+                It uses utility classes for typography and spacing to space content out within the larger
+                container.
+            </p>
+            <b-button variant="primary" href="#">Do Something</b-button>
+            <b-button variant="success" href="#">Do Something Else</b-button>
+        </b-jumbotron>
+    </div> -->
+    <canvas id="pizarra" @mousedown="empezarDibujo" @mousemove="drawOnCanvas" @mouseup="stopDraw"></canvas>
+    <b-row>
+        <b-col sm="2"><button class="btn btn-primary" @click="backMouse" :disabled="mouse">Mouse</button></b-col>
+        <b-col sm="2"><button class="btn btn-primary" @click="beginDraw" :disabled="pencil">Draw</button></b-col>
+        <b-col sm="2"><button class="btn btn-primary" @click="deleteEnd" :disabled="mouse">Delete</button></b-col>
+        <b-col>Color <input type="color" v-model="color" :disabled="mouse"></b-col>
+        <b-col>
+            <b-row>
+                <b-col>Line width</b-col>
+                <b-col><b-form-select v-model="selected" :options="options" :disabled="mouse"></b-form-select></b-col>
+            </b-row>
+        </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 let miCanvas
-let m
-let lineas
-let correccionX
-let correccionY
-let pintarLinea
+let contenido
+let ctx
+let lineas = []
+let correccionX = 0
+let correccionY = 0
+let pintarLinea = false
 let posicion
 export default {
   name: 'Draw',
   data () {
     return {
-        pencil: false
+        pencil: false,
+        mouse: true,
+        color: '#000000',
+        selected: 5,
+        options: [
+            { value: 5, text: '5' },
+            { value: 10, text: '10' },
+            { value: 15, text: '15' },
+        ],
+        count: 0
     }
   },
-  mounted: function () {
-    this.dibujar()
-  },
   methods: {
-    cleanAll () {
-        m.clearRect(0, 0, miCanvas.width, miCanvas.height)
-    },
-    dibujar () {
+    backMouse () {
+        contenido = document.getElementById('divContent')
         miCanvas = document.getElementById('pizarra')
-        m = miCanvas.getContext('2d')
-        lineas = []
-        correccionX = 0
-        correccionY = 0
-        pintarLinea = false
+        this.pencil = false
+        this.mouse = true
+        this.sizeCanvas (0, 0)
+        miCanvas.style.zIndex = 1
+        contenido.style.zIndex = 2
+    },
+    deleteEnd () {
+        ctx.clearRect(0, 0, miCanvas.width, miCanvas.height)
+    },
+    beginDraw () {
+        this.count += 1
+        contenido = document.getElementById('divContent')
+        miCanvas = document.getElementById('pizarra')
         posicion = miCanvas.getBoundingClientRect()
         correccionX = posicion.x
         correccionY = posicion.y
-        miCanvas.width = 500
-        miCanvas.height = 500
+        // if (this.count === 1) {
+            this.sizeCanvas (contenido.clientWidth, contenido.clientHeight)
+        // }
+        contenido.style.zIndex = 1
+        miCanvas.style.zIndex = 2
+
+        this.mouse = false
+        this.pencil = true
+    },
+    sizeCanvas (clientWidth, clientHeight) {
+        miCanvas.width = clientWidth
+        miCanvas.height = clientHeight
+        miCanvas.style.width = clientWidth + 'px'
+        miCanvas.style.height = clientHeight + 'px'
     },
     empezarDibujo () {
         if (this.pencil == true) {
             pintarLinea = true;
+            lineas = []
             lineas.push([])
         }
     },
-    dibujarLinea (event) {
+    drawOnCanvas (event) {
         event.preventDefault()
         if (pintarLinea) {
-            let ctx = miCanvas.getContext('2d')
+            ctx = miCanvas.getContext('2d')
             // Estilos de linea
-            ctx.lineJoin = ctx.lineCap = 'round';
-            ctx.lineWidth = 10;
-            // Color de la linea
-            ctx.strokeStyle = '#1111b8';
+            ctx.lineJoin = ctx.lineCap = 'round'
             // Marca el nuevo punto
-            let nuevaPosicionX = 0;
-            let nuevaPosicionY = 0;
-            if (event.changedTouches == undefined) {
+            let nuevaPosicionX = 0
+            let nuevaPosicionY = 0
+            if (event.changedTouches === undefined) {
                 // Versión ratón
-                nuevaPosicionX = event.layerX;
-                nuevaPosicionY = event.layerY;
+                nuevaPosicionX = event.layerX
+                nuevaPosicionY = event.layerY
             } else {
                 // Versión touch, pantalla tactil
-                nuevaPosicionX = event.changedTouches[0].pageX - correccionX;
-                nuevaPosicionY = event.changedTouches[0].pageY - correccionY;
+                nuevaPosicionX = event.changedTouches[0].pageX - correccionX
+                nuevaPosicionY = event.changedTouches[0].pageY - correccionY
             }
             // Guarda la linea
             lineas[lineas.length - 1].push({
                 x: nuevaPosicionX,
-                y: nuevaPosicionY
+                y: nuevaPosicionY,
+                color: this.color,
+                size: this.selected
+                // transparency: 0.1
             });
             // Redibuja todas las lineas guardadas
-            ctx.beginPath();
+            ctx.beginPath()
             lineas.forEach(function (segmento) {
                 ctx.moveTo(segmento[0].x, segmento[0].y)
                 segmento.forEach(function (punto, index) {
-                    ctx.lineTo(punto.x, punto.y);
+                    ctx.lineWidth = punto.size
+                    ctx.strokeStyle = punto.color
+                    // ctx.globalAlpha = punto.transparency;
+                    ctx.lineTo(punto.x, punto.y)
+                    
                 });
             });
-            ctx.stroke();
+            ctx.stroke()
         }
     },
-    pararDibujar () {
-        pintarLinea = false;
+    stopDraw () {
+        pintarLinea = false
     }
   }
 }
@@ -94,8 +149,11 @@ export default {
 
 <style scoped>
     #pizarra {
-        width: 500px;
-        height: 500px;
-        background-color: transparent;
+        /* background-color:yellow; */
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 140px;
+        left: 150px;
     }
 </style>

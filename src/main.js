@@ -13,6 +13,8 @@ import Exercise4 from './components/Exercise4'
 import Exercise5 from './components/Exercise5'
 import Exercise6 from './components/Exercise6'
 import Exercise7 from './components/Exercise7'
+import Exercise8 from './components/Exercise8'
+import Exercise9 from './components/Exercise9'
 import Draw from './components/Draw'
 
 import VueRouter from 'vue-router'
@@ -20,14 +22,14 @@ import VueSweetalert2 from 'vue-sweetalert2'
 
 import { Drag, Drop } from 'vue-drag-drop'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle } from '@fortawesome/free-solid-svg-icons'
+import { faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import('./assets/css/style.css')
-library.add(faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle)
+library.add(faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle, faMinus)
 
 window.$ = window.jQuery = require('jquery')
 
@@ -52,6 +54,8 @@ const router = new VueRouter({
     { path: '/exercise5', name: 'exercise5', component: Exercise5 },
     { path: '/exercise6', name: 'exercise6', component: Exercise6 },
     { path: '/exercise7', name: 'exercise7', component: Exercise7 },
+    { path: '/exercise8', name: 'exercise8', component: Exercise8 },
+    { path: '/exercise9', name: 'exercise9', component: Exercise9 },
     { path: '/draw', name: 'draw', component: Draw }
   ]
 })
@@ -59,6 +63,19 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  components: { App, Home, Exercise37One, Exercise46One, Exercise46Two, Exercise4, Exercise5, Exercise6, Exercise7, Draw },
+  components: {
+    App,
+    Home,
+    Exercise37One,
+    Exercise46One,
+    Exercise46Two,
+    Exercise4,
+    Exercise5,
+    Exercise6,
+    Exercise7,
+    Exercise8,
+    Exercise9,
+    Draw
+  },
   template: '<App/>'
 })

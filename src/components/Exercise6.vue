@@ -65,9 +65,40 @@ export default {
         var aletWord = Math.floor(Math.random() * (max - 0) + 0)
         var word = this.words[aletWord].word
         var maxLetters = word.length
+        var letters = []
+        var dates = {}
         for (var i = 0; i < maxLetters; i ++) {
-            $('#inputLetters').append('<input style="width:40px;" type="text" pattern="a"/>')
+            $('#inputLetters').append(`<input style="width:40px;" id="inp-` + i + `" type="text" pattern="` + word.charAt(i) + `"/>`)
         }
+        console.log(word)
+        // for (var i = 0; i < maxLetters; i ++) {
+        //     // document.getElementById('inp-'+i)
+        //     // document.getElementById('inp-'+i).addEventListener("change", function(event){
+        //         // if (inpN.validity.patternMismatch) {
+        //         //     console.log("Incorrecto")
+        //         // }
+        //         // else {
+        //         //     console.log("Correcto")
+        //         // }
+        //         // console.log(document.getElementById('inp-'+i).validity.patternMismatch)
+        //     // })
+        //     // console.log(document.getElementById('inp-'+i).style.color="red")
+        // }
+        for (var i = 0; i < maxLetters; i ++) {
+            dates = {
+                // letter: ,
+
+            }
+            letters.push(word.charAt(i))
+        }
+        // letters.forEach(letter => {
+            
+        // });
+        console.log(letters)
+        
+    },
+    letter () {
+        console.log("Function letter")
     },
     drawHangman () {
         var canvas = document.getElementById('hangman')

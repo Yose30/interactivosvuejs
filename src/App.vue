@@ -1,12 +1,18 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <!-- <hr>
+    <draw></draw> -->
   </div>
 </template>
 
 <script>
+import Draw from './components/Draw'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Draw
+  }
 }
 </script>
 

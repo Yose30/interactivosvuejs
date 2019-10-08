@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="divContent" class="container">
     <table class="table">
       <thead ref="head">
         <tr>
@@ -44,8 +44,14 @@ export default {
   name: 'Exercise4',
   data () {
     return {
-      sentences: exercise4
+      sentences: [],
+      options: exercise4,
+      positions: [],
+      dates: {}
     }
+  },
+  created: function () {
+    this.show()
   },
   methods: {
     onEvaluate () {
@@ -56,6 +62,40 @@ export default {
           this.sentences[i].state = true
         }
       }
+    },
+    show () {
+      var max = Object.keys(this.options).length
+      for (var i = 0; i < max; i ++) {
+          var num_alet = this.randomSent(max)
+          this.dates = {
+              id: this.options[num_alet].id,
+              sentence: this.options[num_alet].sentence,
+              value: this.options[num_alet].value,
+              selected: this.options[num_alet].selected,
+              state: this.options[num_alet].state
+          }
+          this.sentences.push(this.dates)
+      }
+      this.positions = []
+    },
+    randomSent (max) {
+        if(this.positions.length != max) {
+            while (repe != false) {
+                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+                var repe = this.repeated(aleatorio, max)
+            }
+            this.positions.push(aleatorio)
+            return aleatorio
+        }
+    },
+    repeated (num, max) {
+      var repet = false
+      for (var i = 0; i < max; i ++) {
+          if(num == this.positions[i]) {
+              repet = true
+          }
+      }
+      return repet
     }
   }
 }
