@@ -204,6 +204,7 @@ input:hover{
     border: none;
 }
 .descarga-pdf{
+    margin-top:1rem;
     color:var(--naranja);
     font-size: 1.2rem;
     font-weight: 900;
@@ -217,6 +218,7 @@ input:hover{
 
 }
 .descarga-pdf:active{
+
     color:var(--morado);
     border: 2px solid var(--botonMorado);
     outline: none;
@@ -307,4 +309,53 @@ img {
 }
 
 /** Ejercicio 46 One*/
-  
+.modal-content{
+    border: 3px solid var(--botonNaranja);
+   
+}
+.modal-header{
+    margin: 0px;
+    height: 3rem;
+    background-color:var(--botonNaranja);
+}
+
+.btn-primary{
+    margin-top: 1%;
+    height: 100%;
+    width: 70%;
+    margin-left: 15%;
+    background-color: var(--blanco);
+    color:var(--naranja);
+    font-size: 1.2rem;
+    font-weight: 900;
+    border: 2px solid var(--botonNaranja);
+}
+
+.btn-primary:hover{
+    background-color: var(--blanco);
+    color:var(--amarilloF);
+    border: 2px solid var(--amarilloF);
+
+}
+.btn-primary:active{
+    background-color: var(--blanco);
+    color:var(--morado);
+    border: 2px solid var(--botonMorado);
+    outline: none;
+}
+.btn-primary:visited{
+    border: none;
+}
+.form-control{
+    position: absolute;
+    display: block;
+    height: 100%;
+    border: 2px solid var(--grisobscuro);
+    font-family: var(--fuenteLato);
+    font-size: 18px;
+    color:var(--grisTexto);
+    outline: none; 
+}
+.form-control:focus{
+    outline: none;
+}
