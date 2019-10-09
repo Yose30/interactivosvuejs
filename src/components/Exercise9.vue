@@ -2,33 +2,68 @@
     <div class="container">
       <p class="instrucciones">
           <b class="numero-vineta">1.  </b> 
-          <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 5 </span>
+          <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>
           Look at the picture. Listen. Where are they?
           <input id="inpExe9" pattern="In the classroom"/>
       </p>
-      <p><b>John:</b>    Look! <input pattern="He's|He is"/> our teacher.</p>
-      <p><b>Sue:    </b> He is very cute!</p>
-      <p><b>Teacher:</b> Good morning, class. <input pattern="I'm|I am"> your English teacher. Please, call me Paul.</p>
-      <p><b>John:   </b> Oh, <input pattern="he's|he is"> friendly!</p>
-      <p><b>Sue:    </b> <input pattern="We're|We are"> friendly, too.</p>
-      <p><b>Teacher:</b> Excuse me young lady, <input pattern="what's|what is"> your name?</p>
-      <p><b>Sue:    </b> Er... my name is Sue, Paul</p>
-      <p><b>Teacher:</b> OK, Sue. Silence, please</p>
-      <p><b>Sue:    </b> Ops! He is not friendly</p>
+      <div class="multimedia">
+        <audio controls>
+          <source src="../assets/audios/exercise9.mp3">
+        </audio>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <table>
+            <tbody align="left">
+              <tr>
+                <td><b>John:</b></td>
+                <td>Look! <input pattern="He's|He is"/> our teacher.</td>
+              </tr>
+              <tr>
+                <td><b>Sue:</b></td>
+                <td>He is very cute!</td>
+              </tr>
+              <tr>
+                <td><b>Teacher:</b></td>
+                <td>Good morning, class. <input pattern="I'm|I am"> your English teacher. Please, call me Paul.</td>
+              </tr>
+              <tr>
+                <td><b>John:</b></td>
+                <td>Oh, <input pattern="he's|he is"> friendly!</td>
+              </tr>
+              <tr>
+                <td><b>Sue:</b></td>
+                <td><input pattern="We're|We are"> friendly, too.</td>
+              </tr>
+              <tr>
+                <td><b>Teacher:</b></td>
+                <td>Excuse me young lady, <input pattern="what's|what is"> your name?</td>
+              </tr>
+              <tr>
+                <td><b>Sue:</b></td>
+                <td>Er... my name is Sue, Paul</td>
+              </tr>
+              <tr>
+                <td><b>Teacher:</b></td>
+                <td>OK, Sue. Silence, please</td>
+              </tr>
+              <tr>
+                <td><b>Sue:</b></td>
+                <td>Ops! He is not friendly</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-3">
+          <!-- <img src="" alt=""> -->
+        </div>
+      </div>
     </div>
-</template>
+</template> 
 
 <script>
 export default {
-  name: 'Exercise9',
-  data () {
-    return {
-        
-    }
-  },
-  methods: {
-    
-  }
+  name: 'Exercise9'
 }
 </script>
 

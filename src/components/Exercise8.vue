@@ -1,8 +1,13 @@
 <template>
     <div class="container">
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 4 </span>Listen to the dialogue. Write the greeting and farewell expressions.
+            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen to the dialogue. Write the greeting and farewell expressions.
         </p>
+        <div class="multimedia">
+            <audio controls>
+                <source src="../assets/audios/exercise8.mp3">
+            </audio>
+        </div>
         <b-card>
             <b-row>
                 <b-col v-for="(option, i) in options" v-bind:key="i">
@@ -37,7 +42,7 @@
                         </drop>
                     </td>
                     <td>
-                        <b-button id="btnDel8" variant="secondary" @click="deleteGreet(i)"><font-awesome-icon icon="minus"/></b-button>
+                        <b-button id="btnDel8" :disabled="name.ansgreeting == ''" variant="secondary" @click="deleteGreet(i)"><font-awesome-icon icon="minus"/></b-button>
                     </td>
                     <td>
                         <drop class="drop classDrop8" @dragover="assign(name, i)" @dragleave="selection = {}" @drop="handleDrop2">
@@ -45,7 +50,7 @@
                         </drop>
                     </td>
                     <td>
-                        <b-button id="btnDel8" variant="secondary" @click="deleteFare(i)"><font-awesome-icon icon="minus"/></b-button>
+                        <b-button id="btnDel8" :disabled="name.ansfarewell == ''" variant="secondary" @click="deleteFare(i)"><font-awesome-icon icon="minus"/></b-button>
                     </td>
                 </tr>
                 </tbody>
