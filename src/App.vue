@@ -1,21 +1,26 @@
 <template>
   <div id="app">
     <MyHeader></MyHeader>
-    <router-view class="cuerpo"></router-view>
+    <router-view></router-view>
+    <!-- <hr>
+    <draw></draw> -->
     <MyFooter></MyFooter>
   </div>
   
 </template>
 
 <script>
+import Draw from './components/Draw'
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+
 export default {
   name: 'App',
-
   components: {
-        'MyHeader': Header,
-        'MyFooter': Footer
+    Draw,
+    'MyHeader': Header,
+    'MyFooter': Footer
+
   }
 }
 
