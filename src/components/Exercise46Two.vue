@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <div class="text-right">
-      <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
+    <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
     </div>
+    
     <p class="instrucciones">
       <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 47 </span>Complete the report with your own ideas. Then, listen and check.
     </p>
@@ -10,12 +11,6 @@
       <audio controls>
         <source src="../assets/audios/47Pista.mp3">
       </audio>
-      <!-- <button class="btn" @click="playTrack">
-         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/>
-      </button>
-      <button class="btn" @click="pauseTrack">
-        <font-awesome-icon icon="pause-circle" class="fafaicono-multimedia"/>
-      </button> -->
     </div>
     <div class="parrafo">
         <p>
@@ -55,9 +50,13 @@ export default {
     //   this.play = false
     // }
   }
+  
 }
 </script>
 
 <style scoped>
+
+
+
 
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="container">
+     <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
+    </div>
     <div class="row">
       <div class="col-md-6 text-left">
-        <button class="btn descarga-pdf" @click="download">Download exercise</button>
-      </div>
-      <div class="col-md-6 text-right">
-        <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
+        <button class="btn descarga-pdf" @click="download"><font-awesome-icon icon="download" />  Download exercise</button>
       </div>
     </div>
     <p class="instrucciones">

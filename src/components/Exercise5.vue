@@ -1,8 +1,16 @@
 <template>
   <div class="container">
+     <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+    </div>
     <p class="instrucciones">
       <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 20 </span>Listen to the conversation. Circle the celebration they are talking about.
     </p>
+    <div class="multimedia">
+      <audio controls>
+        <source src="../assets/audios/47Pista.mp3">
+      </audio>
+    </div>
     <div class="row">
       <div class="col-md-4">
         <img id="imgExc5" :src="require(`@/assets/imgs/exercise5/calavera.jpg`)" alt="">
@@ -19,11 +27,11 @@
       <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track 20 </span>Listen again. Match the pictures to the words.
     </p>
     <div align="right">
-      <button class="btn btn-primary" @click="onEvaluate()">Finish</button>
+      <button class="btn btn-finish" @click="onEvaluate()">Check</button>
     </div>
     <div class="row">
         <div class="col-md-6" align="center">
-            <div v-for="(sentence, i) in sentences" v-bind:key="i">
+            <div class="palabrase5" v-for="(sentence, i) in sentences" v-bind:key="i">
                 <drag class="drag" :transfer-data="{ option: sentence.answer }">
                   {{ sentence.answer }}
                 </drag>
@@ -46,6 +54,7 @@
             </div>
         </div>
     </div>
+    
   </div>
 </template>
 
@@ -109,14 +118,4 @@ export default {
 </script>
 
 <style scoped>
-  .classDrop5 {
-    width: 200px;
-  }
-  #imgExc5 {
-    width: 180px;
-    height: 150px;
-  }
-  /* #colorText {
-    color: goldenrod;
-  } */
 </style>

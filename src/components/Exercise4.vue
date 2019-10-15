@@ -1,39 +1,45 @@
 <template>
   <div id="divContent" class="container">
+    <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+    </div>
+    <p class="instrucciones">
+      <b class="numero-vineta">1.  </b>  Choose True, False or Not Mentioned.
+    </p>
     <table class="table">
-      <thead ref="head">
+      <thead class="th-tf" ref="head">
         <tr>
           <th scope="col"></th>
           <th scope="col">True</th>
           <th scope="col">False</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="tbody-tf">
         <tr v-for="(sentence, i) in sentences" v-bind:key="i">
-          <td align="left">{{ sentence.sentence }}</td>
-          <td align="center">
-            <b-form-radio
+          <td class="reactivos-tf" align="left">{{ sentence.sentence }}</td>
+          <td class="radio-tf" align="center">
+            <b-form-checkbox size="lg"
               v-model="sentence.selected"
               :id="`idt-${sentence.id}`"
               :name="`sent-${sentence.id}`"
               value="true"
               :state="sentence.state"
-            ></b-form-radio>
+            ></b-form-checkbox>
           </td>
-          <td align="center">
-            <b-form-radio
+          <td class="radio-tf" align="center">
+            <b-form-checkbox size="lg"
               v-model="sentence.selected"
               :id="`idf-${sentence.id}`"
               :name="`sent-${sentence.id}`"
               value="false"
               :state="sentence.state"
-            ></b-form-radio>
+            ></b-form-checkbox>
           </td>
         </tr>
       </tbody>
     </table>
     <div align="right">
-      <button class="btn btn-primary" @click="onEvaluate">Evaluate</button>
+      <button class="btn btn-evaluar-tf" @click="onEvaluate">Check</button>
     </div>
   </div>
 </template>
