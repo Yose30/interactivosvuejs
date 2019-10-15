@@ -2,8 +2,8 @@
   <div id="app">
     <MyHeader></MyHeader>
     <router-view></router-view>
-    <!-- <hr>
-    <draw></draw> -->
+    <hr>
+    <draw></draw>
     <MyFooter></MyFooter>
   </div>
   

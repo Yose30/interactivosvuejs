@@ -1,11 +1,8 @@
 <template>
-  <div class="container">
-    <!-- <button class="btn btn-primary" @click="home">Iniciar</button> -->
+  <div id="divContent" class="container">
     <div class="row" v-if="viewImgs">
       <div class="col-md-6" id="divCanvas1">
         <canvas id="img1"></canvas>
-        <!-- <img src="../assets/pdf/lesson37_pequena.jpg" alt="">
-        <button id="btnImg1" @click="viewImg1">img1</button> -->
         <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
       </div>
       <div class="col-md-6" id="divCanvas2">
@@ -57,38 +54,41 @@ export default {
       var c1 = canvas1.getContext('2d')
       var canvas2 = document.getElementById('img2')
       var c2 = canvas2.getContext('2d')
-      c1.lineWidth = 1
-      c1.beginPath()
-      c1.moveTo(20, 30)
-      c1.bezierCurveTo(20, 40, 280, 40, 280, 30)
+      
+      canvas1.width = 300
+      canvas1.height = 400
+      c1.lineWidth = 3
       c1.strokeStyle = 'red'
+      c1.beginPath()
+      c1.moveTo(20, 65)
+      c1.bezierCurveTo(20, 90, 280, 90, 280, 65)
       c1.stroke()
       c1.beginPath()
-      c1.moveTo(20, 30)
-      c1.bezierCurveTo(20, 20, 280, 20, 280, 30)
-      c1.strokeStyle = 'red'
+      c1.moveTo(20, 65)
+      c1.bezierCurveTo(20, 40, 280, 40, 280, 65)
       c1.stroke()
-      c2.lineWidth = 1
-      c2.beginPath()
-      c2.moveTo(20, 30)
-      c2.bezierCurveTo(20, 40, 280, 40, 280, 30)
-      c2.strokeStyle = 'red'
-      c2.stroke()
-      c2.beginPath()
-      c2.moveTo(20, 30)
-      c2.bezierCurveTo(20, 20, 280, 20, 280, 30)
-      c2.strokeStyle = 'red'
-      c2.stroke()
-      c2.beginPath()
-      c2.moveTo(20, 70)
-      c2.bezierCurveTo(20, 80, 280, 80, 280, 70)
-      c2.strokeStyle = 'red'
-      c2.stroke()
-      c2.beginPath()
-      c2.moveTo(20, 70)
-      c2.bezierCurveTo(20, 60, 280, 60, 280, 70)
-      c2.strokeStyle = 'red'
-      c2.stroke()
+
+      // c2.lineWidth = 1
+      // c2.beginPath()
+      // c2.moveTo(20, 30)
+      // c2.bezierCurveTo(20, 40, 280, 40, 280, 30)
+      // c2.strokeStyle = 'red'
+      // c2.stroke()
+      // c2.beginPath()
+      // c2.moveTo(20, 30)
+      // c2.bezierCurveTo(20, 20, 280, 20, 280, 30)
+      // c2.strokeStyle = 'red'
+      // c2.stroke()
+      // c2.beginPath()
+      // c2.moveTo(20, 70)
+      // c2.bezierCurveTo(20, 80, 280, 80, 280, 70)
+      // c2.strokeStyle = 'red'
+      // c2.stroke()
+      // c2.beginPath()
+      // c2.moveTo(20, 70)
+      // c2.bezierCurveTo(20, 60, 280, 60, 280, 70)
+      // c2.strokeStyle = 'red'
+      // c2.stroke()
     }
   },
   components: {
@@ -99,8 +99,6 @@ export default {
 
 <style scoped>
   #divCanvas1, #divCanvas2 {
-    width: 100%;
-    height: 100%;
     display: flex;
   }
   canvas {
@@ -108,7 +106,8 @@ export default {
     height: 370px;
   }
   #img1 {
-    background-image: url('../assets/pdf/lesson37_pequena.png');
+    background-image: url('../assets/pdf/page1.svg');
+    /* background-image: url('../assets/pdf/lesson37_pequena.png'); */
     background-size: 100%;
   }
   #img2 {
