@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="divContent" class="container">
     <div class="multimedia">
       <audio controls>
           <source src="../assets/audios/exercise5.mp3">

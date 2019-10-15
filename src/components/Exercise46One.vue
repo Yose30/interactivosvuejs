@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="divContent" class="container">
     <div class="row">
       <div class="col-md-6 text-left">
         <button class="btn descarga-pdf" @click="download">Download exercise</button>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="divContent" class="container">
     <div class="text-right">
       <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
     </div>
@@ -10,12 +10,6 @@
       <audio controls>
         <source src="../assets/audios/47Pista.mp3">
       </audio>
-      <!-- <button class="btn" @click="playTrack">
-         <font-awesome-icon icon="play-circle" class="fafaicono-multimedia"/>
-      </button>
-      <button class="btn" @click="pauseTrack">
-        <font-awesome-icon icon="pause-circle" class="fafaicono-multimedia"/>
-      </button> -->
     </div>
     <div class="parrafo">
         <p>

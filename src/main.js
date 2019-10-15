@@ -14,6 +14,15 @@ import Exercise6 from './components/Exercise6'
 import Exercise7 from './components/Exercise7'
 import Exercise8 from './components/Exercise8'
 import Exercise9 from './components/Exercise9'
+import Exercise10 from './components/Exercise10'
+import Exercise11 from './components/Exercise11'
+import Exercise12 from './components/Exercise12'
+import Exercise13 from './components/Exercise13'
+import Exercise14 from './components/Exercise14'
+import Exercise15 from './components/Exercise15' // Pendiente
+import Exercise16 from './components/Exercise16'
+import Exercise17 from './components/Exercise17'
+import Exercise18 from './components/Exercise18'
 import Draw from './components/Draw'
 
 import VueRouter from 'vue-router'
@@ -55,8 +64,16 @@ const router = new VueRouter({
     { path: '/exercise7', name: 'exercise7', component: Exercise7 },
     { path: '/exercise8', name: 'exercise8', component: Exercise8 },
     { path: '/exercise9', name: 'exercise9', component: Exercise9 },
+    { path: '/exercise10', name: 'exercise10', component: Exercise10 },
+    { path: '/exercise11', name: 'exercise11', component: Exercise11 },
+    { path: '/exercise12', name: 'exercise12', component: Exercise12 },
+    { path: '/exercise13', name: 'exercise13', component: Exercise13 },
+    { path: '/exercise14', name: 'exercise14', component: Exercise14 },
+    { path: '/exercise15', name: 'exercise15', component: Exercise15 },
+    { path: '/exercise16', name: 'exercise16', component: Exercise16 },
+    { path: '/exercise17', name: 'exercise17', component: Exercise17 },
+    { path: '/exercise18', name: 'exercise18', component: Exercise18 },
     { path: '/draw', name: 'draw', component: Draw }
-
   ]
 })
 
@@ -66,15 +83,15 @@ new Vue({
   components: {
     App,
     Home,
-    Exercise37One,
-    Exercise46One,
-    Exercise46Two,
+    Exercise37One, Exercise46One, Exercise46Two,
     Exercise4,
-    Exercise5,
-    Exercise6,
-    Exercise7,
-    Exercise8,
-    Exercise9,
+    Exercise5, Exercise6,
+    Exercise7, Exercise8,
+    Exercise9, Exercise10,
+    Exercise11, Exercise12,
+    Exercise13, Exercise14,
+    Exercise15, Exercise16,
+    Exercise17, Exercise18,
     Draw
   },
   template: '<App/>'

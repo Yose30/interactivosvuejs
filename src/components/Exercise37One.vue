@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="divContent" class="container">
     <div class="text-right">
       
       <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>

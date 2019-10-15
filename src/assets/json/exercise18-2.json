@@ -1,0 +1,29 @@
+{
+    "0": {
+        "sentence": "<p>We need milk. Do you have <input type='text'>? Yes, I have <input type='text'> milk.</p>"
+    },
+    "1": {
+        "sentence": "<p>I need eggs. I also have <input type='text'>.</p>"
+    },
+    "2": {
+        "sentence": "<p>I have <input type='text'> flour, too.</p>"
+    },
+    "3": {
+        "sentence": "<p>Do you have <input type='text'> apples?</p>"
+    },
+    "4": {
+        "sentence": "<p>No, but I have <input type='text'> peaches. How many do you want?</p>"
+    },
+    "5": {
+        "sentence": "<p>I need three peaches and <input type='text'>sugar.</p>"
+    },
+    "6": {
+        "sentence": "<p>I don’t have <input type='text'> sugar, but I have <input type='text'> honey.</p>"
+    },
+    "7": {
+        "sentence": "<p>No problem, <input type='text'> honey is OK. Do you have <input type='text'> cottage cheese?</p>"
+    },
+    "8": {
+        "sentence": "<p>Oops! I have a <input type='text'>.</p>"
+    }
+}

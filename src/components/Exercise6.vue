@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="divContent" class="container">
     <p class="instrucciones">
         <b class="numero-vineta">1.</b> Now use letters that are not in the grid to complete these words.
     </p>

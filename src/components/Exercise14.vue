@@ -1,0 +1,94 @@
+<template>
+    <div id="divContent" class="container">
+        <p class="instrucciones">
+            <b class="numero-vineta">1.  </b> Read and answer.
+        </p>
+        <div class="text-left">
+            <p>What do US and Canada citizens can use instead of a passport?</p>
+            <input id="inpExe14" type="text">
+        </div>
+        <hr>
+        <h4>Visiting Mexico?</h4>
+        <p>
+            US and Canadian tourists can enter Mexico without a passport if they have an offi cial photo ID, such
+            as a driver’s license, plus some proof of their citizenship, such as an original birth certifi cate. But to
+            return to or transit the US by air, a passport or other secure travel document such as a Nexus card is
+            required. To return to or transit the US by land or sea, Americans and Canadians must present either a
+            passport, or other documents proving identity and citizenship (offi cial photo ID and birth certifi cate),
+            or the recently introduced US passport card, or a Nexus or other ‘trusted traveler’ card. Canadians
+            fl ying back from Mexico to Canada are advised to carry a passport.
+            In any case, it’s much better to travel to Mexico with a passport because offi cials of all countries are
+            used to passports and may delay people who have other documents. In Mexico you often need your
+            passport to change money and to check into hotels.
+            All citizens of countries other than the US and Canada need to have a passport that’s valid for at least
+            six months after they arrive in Mexico.
+            Travelers under 18 who are not accompanied by both their parents may need special documentation.
+        </p>
+        <p>Adapted from: <a href="http://www.lonelyplanet.com/mexico/transport/getting-there-away" target="_blank">http://www.lonelyplanet.com/mexico/transport/getting-there-away</a></p>
+        <div class="text-left">
+            <ol>
+                <li v-for="(question, i) in questions" v-bind:key="i">
+                    <b>{{ question.question }}</b>
+                    <input id="inpExe14" v-model="question.answer" type="text">
+                </li>
+            </ol>
+        </div>
+    </div>
+</template>
+
+<script>
+import exercise14 from '@/assets/json/exercise14.json'
+export default {
+  name: 'Exercise14',
+  data () {
+    return {
+        positions: [],
+        preguntas: exercise14,
+        questions: [],
+        dates: {}
+    }
+  },
+  created: function () {
+    this.show()
+  },
+  methods: {
+    show () {
+        var max = Object.keys(this.preguntas).length
+        for (var i = 0; i < max; i ++) {
+            var num_alet = this.randomSent(max)
+            this.dates = {
+                question: this.preguntas[num_alet].question,
+                answer: this.preguntas[num_alet].answer
+            }
+            this.questions.push(this.dates)
+        }
+        this.positions = []
+    },
+    randomSent (max) {
+        if(this.positions.length != max) {
+            while (repe != false) {
+                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+                var repe = this.repeated(aleatorio, max)
+            }
+            this.positions.push(aleatorio)
+            return aleatorio
+        }
+    },
+    repeated (num, max) {
+        var repet = false
+        for (var i = 0; i < max; i ++) {
+            if(num == this.positions[i]) {
+                repet = true
+            }
+        }
+        return repet
+    }
+  }
+}
+</script>
+<style scoped>
+    #inpExe14 {
+        width: 600px;
+    }
+</style>
+
