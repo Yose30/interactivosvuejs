@@ -29,9 +29,8 @@ people with their possessions.
                 <td><b>Carlos:</b></td>
                 <td id="blocktd">
                     <p class="a">This is </p>
-                    <drop class="drop b" @dragover="assign(1)" @dragleave="selection = {}" @drop="handleDrop">
-                        <b v-if="answers[1].status" :style="`background-color: ${answers[1].text}`">{{ answers[1].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[1].status" class="drop b" @dragover="assign(1)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b :style="`background-color: ${answers[1].text}`">{{ answers[1].text }}</b></p>
                     <p class="a">pen.</p>
                 </td>
               </tr>
@@ -39,21 +38,17 @@ people with their possessions.
                 <td><b>Ana:</b></td>
                 <td id="blocktd">
                     <p class="a">No! It’s not </p>
-                    <drop class="drop b" @dragover="assign(2)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[2].status" :style="`background-color: ${answers[2].text}`">{{ answers[2].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[2].status" class="drop b" @dragover="assign(2)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[2].text}`">{{ answers[2].text }}</b></p>
                     <p class="a">pen. </p>
-                    <drop class="drop b" @dragover="assign(3)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[3].status" :style="`background-color: ${answers[3].text}`">{{ answers[3].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[3].status" class="drop b" @dragover="assign(3)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[3].text}`">{{ answers[3].text }}</b></p>
                     <p class="a">pen is </p>
-                    <drop class="drop b" @dragover="assign(4)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[4].status" :style="`background-color: ${answers[4].text}`">{{ answers[4].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[4].status" class="drop b" @dragover="assign(4)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[4].text}`">{{ answers[4].text }}</b></p>
                     <p class="a">and this is </p>
-                    <drop class="drop b" @dragover="assign(5)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[5].status" :style="`background-color: ${answers[5].text}`">{{ answers[5].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[5].status" class="drop b" @dragover="assign(5)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[5].text}`">{{ answers[5].text }}</b></p>
                     <p class="a">.</p>
                 </td>
               </tr>
@@ -61,37 +56,30 @@ people with their possessions.
                 <td><b>Carlos:</b></td>
                 <td id="blocktd">
                     <p class="a">Look, two notebooks, but which is </p>
-                    <drop class="drop b" @dragover="assign(6)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[6].status" :style="`background-color: ${answers[6].text}`">{{ answers[6].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[6].status" class="drop b" @dragover="assign(6)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[6].text}`">{{ answers[6].text }}</b></p>
                     <p class="a">notebook?</p>
                 </td>
               </tr>
               <tr>
                 <td><b>Ana:</b></td>
                 <td id="blocktd">
-                    <drop class="drop b" @dragover="assign(7)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[7].status" :style="`background-color: ${answers[7].text}`">{{ answers[7].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[7].status" class="drop b" @dragover="assign(7)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[7].text}`">{{ answers[7].text }}</b></p>
                     <p class="a">notebook is </p>
-                    <drop class="drop b" @dragover="assign(8)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[8].status" :style="`background-color: ${answers[8].text}`">{{ answers[8].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[8].status" class="drop b" @dragover="assign(8)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[8].text}`">{{ answers[8].text }}</b></p>
                     <p class="a">and </p>
-                    <drop class="drop b" @dragover="assign(9)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[9].status" :style="`background-color: ${answers[9].text}`">{{ answers[9].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[9].status" class="drop b" @dragover="assign(9)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[9].text}`">{{ answers[9].text }}</b></p>
                     <p class="a">notebook is </p>
-                    <drop class="drop b" @dragover="assign(10)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[10].status" :style="`background-color: ${answers[10].text}`">{{ answers[10].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[10].status" class="drop b" @dragover="assign(10)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[10].text}`">{{ answers[10].text }}</b></p>
                     <p class="a">. Ugh! And here’s </p>
-                    <drop class="drop b" @dragover="assign(11)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[11].status" :style="`background-color: ${answers[11].text}`">{{ answers[11].text }}</b>
-                    </drop>
-                    <drop class="drop b" @dragover="assign(12)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[12].status" :style="`background-color: ${answers[12].text}`">{{ answers[12].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[11].status" class="drop b" @dragover="assign(11)" @dragleave="selection = {}" @drop="handleDrop"></drop> 
+                    <p v-else class="b"><b  :style="`background-color: ${answers[11].text}`">{{ answers[11].text }}</b></p>
+                    <drop v-if="!answers[12].status" class="drop b" @dragover="assign(12)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[12].text}`">{{ answers[12].text }}</b></p>
                     <p class="a">dictionary.</p>
                 </td>
               </tr>
@@ -99,20 +87,16 @@ people with their possessions.
                 <td><b>Carlos:</b></td>
                 <td id="blocktd">
                     <p class="a">Great! Here’s </p>
-                    <drop class="drop b" @dragover="assign(13)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[13].status" :style="`background-color: ${answers[13].text}`">{{ answers[13].text }}</b>
-                    </drop>
-                    <drop class="drop b" @dragover="assign(14)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[14].status" :style="`background-color: ${answers[14].text}`">{{ answers[14].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[13].status" class="drop b" @dragover="assign(13)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[13].text}`">{{ answers[13].text }}</b></p>
+                    <drop v-if="!answers[14].status" class="drop b" @dragover="assign(14)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[14].text}`">{{ answers[14].text }}</b></p>
                     <p class="a">wallet; it’s </p>
-                    <drop class="drop b" @dragover="assign(15)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[15].status" :style="`background-color: ${answers[15].text}`">{{ answers[15].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[15].status" class="drop b" @dragover="assign(15)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[15].text}`">{{ answers[15].text }}</b></p>
                     <p class="a">favorite! Oh, </p>
-                    <drop class="drop b" @dragover="assign(16)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[16].status" :style="`background-color: ${answers[16].text}`">{{ answers[16].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[16].status" class="drop b" @dragover="assign(16)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[16].text}`">{{ answers[16].text }}</b></p>
                     <p class="a">USB is in pieces!</p>
                 </td>
               </tr>
@@ -120,13 +104,11 @@ people with their possessions.
                 <td><b>Ana:</b></td>
                 <td id="blocktd">
                     <p class="a">Oops, I’m in trouble! This USB belongs to </p>
-                    <drop class="drop b" @dragover="assign(17)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[17].status" :style="`background-color: ${answers[17].text}`">{{ answers[17].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[17].status" class="drop b" @dragover="assign(17)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[17].text}`">{{ answers[17].text }}</b></p>
                     <p class="a">brother; it’s </p>
-                    <drop class="drop b" @dragover="assign(18)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[18].status" :style="`background-color: ${answers[18].text}`">{{ answers[18].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[18].status" class="drop b" @dragover="assign(18)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[18].text}`">{{ answers[18].text }}</b></p>
                     <p class="a">USB.</p>
                 </td>
               </tr>
@@ -134,9 +116,8 @@ people with their possessions.
                 <td><b>Carlos:</b></td>
                 <td id="blocktd">
                     <p class="a">I’m sorry about the USB, but look, </p>
-                    <drop class="drop b" @dragover="assign(19)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[19].status" :style="`background-color: ${answers[19].text}`">{{ answers[19].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[19].status" class="drop b" @dragover="assign(19)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[19].text}`">{{ answers[19].text }}</b></p>
                     <p class="a">cell phones are OK.</p>
                 </td>
               </tr>
@@ -144,9 +125,8 @@ people with their possessions.
                 <td><b>Ana:</b></td>
                 <td id="blocktd">
                     <p class="a">Oh, no! Here comes </p>
-                    <drop class="drop b" @dragover="assign(20)" @dragleave="selection = {}" @drop="handleDrop">
-                      <b v-if="answers[20].status" :style="`background-color: ${answers[20].text}`">{{ answers[20].text }}</b>
-                    </drop>
+                    <drop v-if="!answers[20].status" class="drop b" @dragover="assign(20)" @dragleave="selection = {}" @drop="handleDrop"></drop>
+                    <p v-else class="b"><b  :style="`background-color: ${answers[20].text}`">{{ answers[20].text }}</b></p>
                     <p class="a">brother!</p>
                 </td>
               </tr>
@@ -192,14 +172,15 @@ export default {
         var num_alet = this.randomSent(max)
         this.dates = {
             text: this.opciones[num_alet].text,
-            color: this.opciones[num_alet].color
+            color: this.opciones[num_alet].color,
+            answer: this.opciones[num_alet].answer,
         }
         this.options.push(this.dates)
       }
       this.positions = []
     },
     handleDrop (data) {
-        if (data.value.text === this.selection.text) {
+        if (data.value.answer === this.selection.text) {
           this.answers[this.selection.i].status = true
         }
     },

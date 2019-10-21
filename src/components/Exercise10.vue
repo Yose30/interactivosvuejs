@@ -1,12 +1,9 @@
 <template>
     <div id="divContent" class="container">
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Read the text about Andrew and what he does to keep his body healthy.
+            <b class="numero-vineta">1. </b>Read the text about Andrew and what he does to keep his body healthy.
         </p>
         <hr>
-        <div class="text-right">
-            <button @click="onEvaluate()" class="btn btn-primary">Evaluate</button>
-        </div>
         <b-row>
             <b-col sm="9">
                 <p>
@@ -26,7 +23,7 @@
                 </p>
             </b-col>
             <b-col>
-
+                <!-- AGREGAR IMAGEN -->
             </b-col>
         </b-row>
         <hr>
@@ -38,6 +35,10 @@
                 </b-col>
             </b-row>
         </b-card>
+        <hr>
+        <div class="text-right">
+            <button @click="onEvaluate()" class="btn btn-primary">Evaluate</button>
+        </div>
     </div>
 </template>
 

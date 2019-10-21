@@ -1,10 +1,9 @@
 <template>
     <div id="divContent" class="container">
       <p class="instrucciones">
-          <b class="numero-vineta">1.  </b> 
-          <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>
+          <b class="numero-vineta">1. </b>
           Look at the picture. Listen. Where are they?
-          <input id="inpExe9" pattern="In the classroom"/>
+          <input id="inpExe9" pattern="(I|i)n the classroom"/>
       </p>
       <div class="multimedia">
         <audio controls>
@@ -55,6 +54,7 @@
           </table>
         </div>
         <div class="col-md-3">
+          <!-- IMAGEN -->
           <!-- <img src="" alt=""> -->
         </div>
       </div>
