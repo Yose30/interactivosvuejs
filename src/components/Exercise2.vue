@@ -1,17 +1,16 @@
 <template>
   <div id="divContent" class="container">
+    <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
+    </div>
     <div class="row">
       <div class="col-md-6 text-left">
         <button class="btn descarga-pdf" @click="download">Download exercise</button>
-      </div>
-      <div class="col-md-6 text-right">
-        <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
       </div>
     </div>
     <p class="instrucciones">
       <b class="numero-vineta">1. </b>Look at the pictures. Write the occupation and where the people work. Then, write what they do in their jobs.
     </p>
-    <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe> -->
     <hr>
     <div id="tableExercise">
       <b-table :items="options" :fields="fields">

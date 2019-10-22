@@ -1,7 +1,7 @@
 <template>
   <div id="divContent" class="container">
-    <div class="text-right">
-      <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
+    <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
     </div>
     <p class="instrucciones">
       <b class="numero-vineta">2. </b>Complete the conversation with the verb to be or the corresponding pronoun.
