@@ -1,48 +1,40 @@
 {
     "0": {
-        "image": "img1",
         "text": "apples",
         "answer1": "4",
         "answer2": "C|c"
     },
     "1": {
-        "image": "img1",
         "text": "cottage cheese",
         "answer1": "8",
         "answer2": "U|u"
     },
     "2": {
-        "image": "img1",
         "text": "eggs",
         "answer1": "2",
         "answer2": "C|c"
     },
     "3": {
-        "image": "img1",
         "text": "milk",
         "answer1": "1",
         "answer2": "U|u"
     },
     "4": {
-        "image": "img1",
         "text": "peaches",
         "answer1": "5",
         "answer2": "C|c"
     },
     "5": {
-        "image": "img1",
         "text": "flour",
         "answer1": "3",
         "answer2": "U|u"
     },
     "6": {
-        "image": "img1",
         "text": "honey",
         "answer1": "7",
         "answer2": "U|u"
     },
     "7": {
-        "image": "img1",
         "text": "sugar",
         "answer1": "6",
         "answer2": "U|u"

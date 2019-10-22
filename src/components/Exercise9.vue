@@ -55,7 +55,7 @@
         </div>
         <div class="col-md-3">
           <!-- IMAGEN -->
-          <!-- <img src="" alt=""> -->
+          <img id="imgExe9" src="@/assets/imgs/exercise9/teacher.jpg" alt="">
         </div>
       </div>
     </div>
@@ -73,5 +73,9 @@ export default {
   }
   input:valid {
     color: #00BC00;
+  }
+  #imgExe9 {
+    width: 100%;
+    height: 150px;
   }
 </style>

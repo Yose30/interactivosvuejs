@@ -7,14 +7,21 @@
           <source src="../assets/audios/exercise13.mp3">
         </audio>
         <hr>
-        <table>
-            <tbody align="left">
-              <tr v-for="(sentence, i) in sentences" v-bind:key="i">
-                <td><b>{{ sentence.person }}:</b></td>
-                <td>{{ sentence.sentence }}</td>
-              </tr>
-            </tbody>
-        </table>
+        <b-row>
+          <b-col sm="9" align="left">
+            <table>
+              <tbody >
+                <tr v-for="(sentence, i) in sentences" v-bind:key="i">
+                  <td><b>{{ sentence.person }}:</b></td>
+                  <td>{{ sentence.sentence }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </b-col>
+          <b-col sm="3">
+            <img id="imgExe13" src="@/assets/imgs/exercise13/telephone.jpg" alt="">
+          </b-col>
+        </b-row>
         <hr>
         <b-row>
             <b-col v-for="(answer, i) in answers" v-bind:key="i">
@@ -44,4 +51,10 @@ export default {
   }
 }
 </script>
+<style scoped>
+  #imgExe13 {
+    width: 100%;
+    height: 150px;
+  }
+</style>
 

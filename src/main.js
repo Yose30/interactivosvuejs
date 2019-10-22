@@ -24,6 +24,8 @@ import Exercise15 from './components/Exercise15'
 import Exercise16 from './components/Exercise16'
 import Exercise17 from './components/Exercise17'
 import Exercise18 from './components/Exercise18'
+import Exercise19 from './components/Exercise19'
+import Exercise20 from './components/Exercise20'
 import Draw from './components/Draw'
 
 import VueRouter from 'vue-router'
@@ -74,6 +76,8 @@ const router = new VueRouter({
     { path: '/exercise16', name: 'exercise16', component: Exercise16 },
     { path: '/exercise17', name: 'exercise17', component: Exercise17 },
     { path: '/exercise18', name: 'exercise18', component: Exercise18 },
+    { path: '/exercise19', name: 'exercise19', component: Exercise19 },
+    { path: '/exercise20', name: 'exercise20', component: Exercise20 },
     { path: '/draw', name: 'draw', component: Draw }
   ]
 })
@@ -93,6 +97,7 @@ new Vue({
     Exercise13, Exercise14,
     Exercise15, Exercise16,
     Exercise17, Exercise18,
+    Exercise19, Exercise20,
     Draw
   },
   template: '<App/>'

@@ -23,7 +23,7 @@
                 </p>
             </b-col>
             <b-col>
-                <!-- AGREGAR IMAGEN -->
+                <img id="imgExe10" src="@/assets/imgs/exercise10/boy.jpg" alt="">
             </b-col>
         </b-row>
         <hr>
@@ -149,5 +149,9 @@ export default {
     #selExc10 {
         width: 120px;
     }
+    #imgExe10 {
+    width: 100%;
+    height: 150px;
+  }
 </style>
 

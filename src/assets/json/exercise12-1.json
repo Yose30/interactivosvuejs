@@ -20,33 +20,43 @@
         "answer": "his"
     },
     "4": {
-        "text": "",
+        "text": "blue",
         "color": "blue",
         "answer": "blue"
     },
     "5": {
-        "text": "",
+        "text": "red",
         "color": "red",
         "answer": "red"
     },
     "6": {
-        "text": "",
+        "text": "pink",
         "color": "pink",
         "answer": "pink"
     },
     "7": {
-        "text": "",
+        "text": "green",
         "color": "green",
         "answer": "green"
     },
     "8": {
-        "text": "",
+        "text": "brown",
         "color": "brown",
         "answer": "brown"
     },
     "9": {
-        "text": "",
+        "text": "black",
         "color": "black",
         "answer": "black"
+    },
+    "10": {
+        "text": "My",
+        "color": "",
+        "answer": "My"
+    },
+    "11": {
+        "text": "Your",
+        "color": "",
+        "answer": "Your"
     }
 }

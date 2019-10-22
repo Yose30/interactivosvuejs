@@ -1,34 +1,17 @@
 {
     "0": {
-        "long": "<p>I am</p>",
-        "contracted": "<input type='text' pattern=I'm>"
+        "name": "Jimmy",
+        "likes": "",
+        "nolikes": ""
     },
     "1": {
-        "long": "<input type='text' pattern='You are'>",
-        "contracted": "<p>You’re</p>"
+        "name": "Deb",
+        "likes": "",
+        "nolikes": ""
     },
     "2": {
-        "long": "<p>He is</p>",
-        "contracted": "<input type='text' pattern=He's>"
-    },
-    "3": {
-        "long": "<input type='text' pattern='She is'>",
-        "contracted": "<p>She's</p>"
-    },
-    "4": {
-        "long": "<input type='text' pattern='It is'>",
-        "contracted": "<p>It's</p>"
-    },
-    "5": {
-        "long": "<p>We are</p>",
-        "contracted": "<input type='text' pattern=We're>"
-    },
-    "6": {
-        "long": "<p>You are</p>",
-        "contracted": "<input type='text' pattern=You're>"
-    },
-    "7": {
-        "long": "<input type='text' pattern='They are'>",
-        "contracted": "<p>They're</p>"
+        "name": "Lola",
+        "likes": "",
+        "nolikes": ""
     }
 }
