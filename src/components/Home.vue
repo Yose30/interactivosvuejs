@@ -121,6 +121,8 @@ export default {
   #exeButton {
     background-size: 100%;
     border: 2px solid red;
+    border-radius: 50%;
+    height: 70px;
   }
   #pageHome{
     border: none;
