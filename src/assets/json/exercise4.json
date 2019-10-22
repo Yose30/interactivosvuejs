@@ -1,29 +1,36 @@
 {
     "0": {
         "id": 1,
-        "sentence": "Peter loves Nancy's house.",
+        "sentence": "Carla and Rodrigo studied together at university.",
         "value": "false",
         "selected": "",
         "state": null
     },
     "1": {
         "id": 2,
-        "sentence": "Nancy's family love sports in general",
-        "value": "false",
+        "sentence": "They haven’t met for a long time.",
+        "value": "true",
         "selected": "",
         "state": null
     },
     "2": {
         "id": 3,
-        "sentence": "Peter's mother loves tennis",
-        "value": "false",
+        "sentence": "They are using Rodrigo’s laptop.",
+        "value": "true",
         "selected": "",
         "state": null
     },
     "3": {
         "id": 4,
-        "sentence": "Michael is single",
-        "value": "true",
+        "sentence": "Carla is married.",
+        "value": "false",
+        "selected": "",
+        "state": null
+    },
+    "4": {
+        "id": 5,
+        "sentence": "Carla’s friends do not want her to marry.",
+        "value": "false",
         "selected": "",
         "state": null
     }

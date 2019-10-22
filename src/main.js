@@ -5,9 +5,10 @@ import App from './App'
 import BootstrapVue from 'bootstrap-vue'
 
 import Home from './components/Home'
-import Exercise46One from './components/Exercise46One'
-import Exercise46Two from './components/Exercise46Two'
-import Exercise37One from './components/Exercise37One'
+
+import Exercise1 from './components/Exercise1'
+import Exercise2 from './components/Exercise2'
+import Exercise3 from './components/Exercise3'
 import Exercise4 from './components/Exercise4'
 import Exercise5 from './components/Exercise5'
 import Exercise6 from './components/Exercise6'
@@ -19,7 +20,7 @@ import Exercise11 from './components/Exercise11'
 import Exercise12 from './components/Exercise12'
 import Exercise13 from './components/Exercise13'
 import Exercise14 from './components/Exercise14'
-import Exercise15 from './components/Exercise15' // Pendiente
+import Exercise15 from './components/Exercise15'
 import Exercise16 from './components/Exercise16'
 import Exercise17 from './components/Exercise17'
 import Exercise18 from './components/Exercise18'
@@ -55,9 +56,9 @@ Vue.config.productionTip = false
 const router = new VueRouter({
   routes: [
     { path: '/', name: 'home', component: Home },
-    { path: '/lesson371', name: 'lesson371', component: Exercise37One },
-    { path: '/lesson461', name: 'lesson461', component: Exercise46One },
-    { path: '/lesson462', name: 'lesson462', component: Exercise46Two },
+    { path: '/exercise1', name: 'exercise1', component: Exercise1 },
+    { path: '/exercise2', name: 'exercise2', component: Exercise2 },
+    { path: '/exercise3', name: 'exercise3', component: Exercise3 },
     { path: '/exercise4', name: 'exercise4', component: Exercise4 },
     { path: '/exercise5', name: 'exercise5', component: Exercise5 },
     { path: '/exercise6', name: 'exercise6', component: Exercise6 },
@@ -83,8 +84,8 @@ new Vue({
   components: {
     App,
     Home,
-    Exercise37One, Exercise46One, Exercise46Two,
-    Exercise4,
+    Exercise1, Exercise2,
+    Exercise3, Exercise4,
     Exercise5, Exercise6,
     Exercise7, Exercise8,
     Exercise9, Exercise10,

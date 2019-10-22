@@ -1,5 +1,14 @@
 <template>
   <div id="divContent" class="container">
+    <p class="instrucciones">
+      <b class="numero-vineta">1. </b>Listen again and circle T or F.
+    </p>
+    <div class="multimedia">
+      <audio controls>
+        <source src="../assets/audios/exercise4.mp3">
+      </audio>
+    </div>
+    <hr>
     <table class="table">
       <thead ref="head">
         <tr>

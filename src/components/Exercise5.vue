@@ -6,7 +6,7 @@
       </audio>
     </div>
     <p class="instrucciones">
-      <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen to the conversation. Circle the celebration they are talking about.
+      <b class="numero-vineta">1. </b>Listen to the conversation. Circle the celebration they are talking about.
     </p>
     <div class="row">
       <div class="col-md-4"  v-for="(celebration, i) in celebrations" v-bind:key="i" >
@@ -15,11 +15,8 @@
     </div>
     <hr>
     <p class="instrucciones">
-      <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen again. Match the pictures to the words.
+      <b class="numero-vineta">2. </b>Listen again. Match the pictures to the words.
     </p>
-    <div align="right">
-      <button class="btn btn-primary" @click="onEvaluate()">Finish</button>
-    </div>
     <b-card>
       <b-row>
         <b-col v-for="(image, i) in images" v-bind:key="i" align="center">
@@ -44,6 +41,9 @@
           </b-col>
       </b-row>
     </b-card>
+    <div align="right">
+      <button class="btn btn-primary" @click="onEvaluate()">Finish</button>
+    </div>
   </div>
 </template>
 

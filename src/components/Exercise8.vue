@@ -1,7 +1,7 @@
 <template>
     <div id="divContent" class="container">
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen to the dialogue. Write the greeting and farewell expressions.
+            <b class="numero-vineta">1. </b>Listen to the dialogue. Write the greeting and farewell expressions.
         </p>
         <div class="multimedia">
             <audio controls>
@@ -17,11 +17,6 @@
                 </b-col>
             </b-row>
         </b-card>
-        <br>
-        <div class="text-right">
-            <b-button variant="primary" @click="onEvaluate">Evaluate</b-button>
-        </div>
-        <hr>
         <div class="table-responsive">
             <table class="table">
                 <thead ref="head">
@@ -55,6 +50,10 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <br>
+        <div class="text-right">
+            <b-button variant="primary" @click="onEvaluate">Evaluate</b-button>
         </div>
     </div>
 </template>
