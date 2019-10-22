@@ -114,9 +114,26 @@ export default {
 </script>
 
 <style scoped>
-#divContent{
-  margin-top:2rem;
-}
+  #page1{
+    background-size: 100%;
+    background-image: url('../assets/pdf/page1.svg');
+  }
+  #exeButton {
+    background-size: 100%;
+    border: 2px solid red;
+    border-radius: 50%;
+    height: 70px;
+  }
+  #pageHome{
+    border: none;
+    width: 100%;
+    height: 300px;
+  }
+  #pageOne{
+    border: none;
+    width: 100%;
+    height: 700px;
+  }
   #divCanvas1, #divCanvas2 {
     display: flex;
   }
