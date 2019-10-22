@@ -6,7 +6,7 @@
                  
             </div>
             <div class="contenedor-home">
-                    <button class="btn home" @click="goHome"><font-awesome-icon icon="home" /> Inicio</button>
+                    <button class="btn home" @click="goHome"><font-awesome-icon icon="home" />  Inicio</button>
             </div> 
         </div>
 

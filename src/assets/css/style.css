@@ -14,13 +14,14 @@
     --grisTexto:#17202A;
     --grisRespuestas:#2C3E50;
     --naranja:#ef4c44;
-    --botonNaranja:#d91c5c;
+    --botonNaranja:#d91c5c; 
     --verde:#84b34a;
     --botonMorado:#7d4f9d;
     --morado:#7d4f9d;
     --amarilloClaro:#f7ca39;
     --amarilloF:#f2991f;
     --botonMagenta:#e02e70;
+    --rojoma:#A93439;
     
     --contenedor:1200px;
 }
@@ -30,12 +31,13 @@ header{
     overflow: hidden;
     width: 100%;
     height: 120px;
-    background-color: var(--botonNaranja);
+    background-color: var(--naranja);
 }
 body{
     font-family: var(--fuenteMontserrat);
     font-size: 1.2rem;
     line-height: 2;
+    background-color: var(--grisClaro);
 }
 footer{
     height: 160px;
@@ -46,7 +48,7 @@ footer{
     color:var(--blanco);
     font-size: 1.2rem;
     font-weight: 300;
-    background-color: var(--botonNaranja);
+    background-color: var(--naranja);
     margin-top: 3rem;
 }
 .copirygt{
@@ -81,28 +83,31 @@ table{
     border:none;
 }
 thead{
-    
-    background-color:var(--amarilloF);
+    border: 5px solid var(--grisobscuro);
     color:var(--grisTexto);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 th{
-    font-family: var(--fuenteMontserrat);
-    font-weight: 500;
+    font-family: var(--fuenteOpensans);
+    text-transform: uppercase;
+    font-weight: 700;
     
 }
 
 textarea {
-    font-family: var(--fuenteMontserrat);
+    font-family: var(--fuenteOpensans);
     font-size: 1.2rem;
     text-align: justify;
     line-height: 1.5;
-    color: var(--grisRespuestas);
+    color:var(--grisTexto);
     margin:0;
     width: 100%;
     height: 140px;
     box-sizing: border-box;
-    border: 2px solid var(--amarilloF);
-    border-radius: 3px;
+    border: 5px solid var(--grisobscuro);
+    border-radius: 10px;
     resize: none;
   }
 
@@ -152,6 +157,20 @@ input:hover{
     color:var(--grisTexto);
     text-align: justify;
 }
+/** Titulo de ejercicios*/
+.contenedor-titulo{
+    margin-top:2rem;
+}
+.titulo-ejercicios{
+    margin-top:3rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    font-family: var(--fuenteOpensans);
+    font-weight: 700;
+    font-size:3.4rem;
+    color: var(--naranja);
+   
+}
 
 /** Multimedia*/
 .numeracion-multimedia{
@@ -165,63 +184,74 @@ input:hover{
 .multimedia{
     align-items: flex-end;
     width: 100%;
-    border: 2px solid var(--grisobscuro);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+audio{
+
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
 }
 
 
 /** Botones*/
 .contenedor-home{
-    margin-left:80%;
-    margin-top:3rem;
+    
 }
 @media (min-width: 768px) {
     .contenedor-home{
         float: left;
-        margin-left:80%;
+        margin-left:70%;
         margin-top:3rem;
     }
 }
 .home{
+    font-family: var(--fuenteOpensans);
+    background-color: var(--botonMorado);
+    width: 200px;
     color:var(--blanco);
     font-size: 1.2rem;
     font-weight: 900;
-    border: 2px solid var(--blanco);
+    border-radius:30px;
+    padding-left: 20px;
+    padding-right: 20px;
     
 }
 
 .home:hover{
-    color:var(--grisobscuro);
-    border: 2px solid var(--grisobscuro);
+    background-color: var(--amarilloF);
+    color:var(--blanco);
+    
 
 }
 .home:active{
+    background-color: var(--amarilloF);
     color:var(--blanco);
-    border: 2px solid var(--blanco);
-    outline: none;
+    
 }
-.home:visited{
-    border: none;
-}
+
 .descarga-pdf{
-    margin-top:1rem;
-    color:var(--naranja);
+    font-family: var(--fuenteOpensans);
+    background-color: var(--botonMorado);
+    color:var(--blanco);
     font-size: 1.2rem;
     font-weight: 900;
-    border: 2px solid var(--botonNaranja);
+    border-radius:30px;
+    padding-left: 20px;
+    padding-right: 20px;
     
 }
 
 .descarga-pdf:hover{
-    color:var(--amarilloF);
-    border: 2px solid var(--amarilloF);
+    background-color: var(--botonMagenta);
+    color:var(--blanco);
+  
 
 }
 .descarga-pdf:active{
 
-    color:var(--morado);
-    border: 2px solid var(--botonMorado);
-    outline: none;
+    background-color: var(--botonMagenta);
+    color:var(--blanco);
 }
 .descarga-pdf:visited{
     border: none;
@@ -261,12 +291,12 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     margin: 0 0 5px 10px;
-    border: 2px solid var(--grisobscuro);
+    border: 5px solid var(--grisobscuro);
     border-radius: 15px;
 
   }
   #numberElem{
-    font-family: var(--fuenteLato);
+    font-family: var(--fuenteOpensans);
     font-weight: 900;
     color:var(--grisTexto); 
     font-size: 20px;
@@ -281,7 +311,7 @@ img {
     margin-top:2px;
     width: 40px;
     height: 40px;
-    border: 2px solid var(--grisobscuro);
+    border: 3px solid var(--grisobscuro);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -358,4 +388,101 @@ img {
 }
 .form-control:focus{
     outline: none;
+}
+
+/** Ejercico VERDADERO - FALSO */
+.th-tf{
+    border:transparent;
+    font-family: var(--fuenteOpensans);
+    font-size: 1.8rem;
+    color:var(--botonMagenta);
+    font-weight: 700;
+    border:5px solid var(--grisClaro);
+}
+.tbody-tf{
+    font-family: var(--fuenteOpensans);
+    font-size: 1.2rem;
+    color:var(--grisTexto);
+}
+
+.btn-evaluar-tf{
+    font-family: var(--fuenteOpensans);
+    width: 200px;
+    background-color: var(--amarilloF);
+    color:var(--blanco);
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius:30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right:4rem;
+}
+
+.btn-evaluar-tf:hover{
+    font-family: var(--fuenteOpensans);
+    background-color: var(--verde);
+    color: var(--blanco);  
+}
+.btn-evaluar-tf:active{
+    font-family: var(--fuenteOpensans);
+    background-color: var(--verde); 
+    color: var(--blanco); 
+}
+
+.reactivos-tf{
+    background-color: var(--blanco);
+    border:15px solid var(--grisClaro);
+    align-content: left;
+}
+
+.radio-tf{
+    align-content: center;
+    border:15px solid var(--grisClaro);   
+}
+.custom-control-label{
+  color: var(--grisobscuro);
+}
+.custom-control-label:active{
+    color:var(--amarilloClaro);
+}
+
+/** Ejercicio 5*/
+
+.classDrop5 {
+    width: 250px;
+  }
+  #imgExc5 {
+    width: 200px;
+    height: 170px;
+  }
+  .btn-finish{
+    font-family: var(--fuenteOpensans);
+    background-color: var(--amarilloF);
+    width: 200px;
+    color:var(--blanco);
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius:30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 1rem;
+    margin-right:15%; 
+  }
+  .btn-finish:hover{
+    font-family: var(--fuenteOpensans);
+    background-color: var(--verde);
+    color: var(--blanco);  
+}
+.btn-finish:active{
+    font-family: var(--fuenteOpensans);
+    background-color: var(--verde); 
+    color: var(--blanco); 
+}
+
+.drag{
+    cursor: -webkit-grab; cursor: grab;
+}
+.palabrase5{
+    font-family: var(--fuenteLato);
+    font-size: 1.4rem;
 }

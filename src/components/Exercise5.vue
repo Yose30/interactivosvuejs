@@ -1,13 +1,16 @@
 <template>
-  <div id="divContent" class="container">
-    <div class="multimedia">
-      <audio controls>
-          <source src="../assets/audios/exercise5.mp3">
-      </audio>
+  <div class="container">
+     <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
     </div>
     <p class="instrucciones">
       <b class="numero-vineta">1. </b>Listen to the conversation. Circle the celebration they are talking about.
     </p>
+    <div class="multimedia">
+      <audio controls>
+        <source src="../assets/audios/47Pista.mp3">
+      </audio>
+    </div>
     <div class="row">
       <div class="col-md-4"  v-for="(celebration, i) in celebrations" v-bind:key="i" >
         <button class="btn" @click="selectImage(celebration, i)"><img id="imgExc5" :src="require(`@/assets/imgs/exercise5/${celebration.image}.jpg`)" :alt="celebration.answer"></button>
@@ -34,7 +37,7 @@
     </b-card>
     <b-card>
       <b-row>
-          <b-col v-for="(sentence, i) in sentences" v-bind:key="i">
+          <b-col class="palabrase5" v-for="(sentence, i) in sentences" v-bind:key="i">
             <drag class="drag" :transfer-data="{ option: sentence.answer }">
               {{ sentence.answer }}
             </drag>
@@ -190,11 +193,4 @@ export default {
 </script>
 
 <style scoped>
-  .classDrop5 {
-    width: 150px;
-  }
-  #imgExc5 {
-    width: 180px;
-    height: 150px;
-  }
 </style>
