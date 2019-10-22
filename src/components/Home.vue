@@ -1,6 +1,15 @@
 <template>
   <div id="divContent" class="container">
-    <div class="row" v-if="viewImgs">
+    <b-row v-if="viewHome">
+      <b-col sm="4" v-for="(page, i) in pages" v-bind:key="i">
+        <button class="btn" @click="openPage(page)"><img id="pageHome" :src="require(`@/assets/pages/${page.image}.svg`)" alt=""></button>
+      </b-col>
+    </b-row>
+    <div v-else>
+      <img id="pageOne" :src="require(`@/assets/pages/${namePage}.svg`)" alt="">
+      <button class="btn" id="exeButton">botton botton botton botton botton botton</button>
+    </div>
+    <!-- <div class="row" v-if="viewImgs">
       <div class="col-md-6" id="divCanvas1">
         <canvas id="img1"></canvas>
         <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
@@ -13,23 +22,33 @@
     </div>
     <div v-else>
       <canvas id="img1"></canvas>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import pdf from 'vue-pdf'
+import home from '@/assets/json/home.json'
 export default {
   name: 'Home',
   data () {
     return {
-      viewImgs: true
+      viewImgs: true,
+      pages: home,
+      viewHome: true,
+      numPage: null,
+      namePage: ''
     }
   },
-  mounted: function () {
-    this.home()
-  },
+  // mounted: function () {
+  //   this.home()
+  // },
   methods: {
+    openPage (page) {
+      this.numPage = page.number
+      this.namePage = page.image
+      this.viewHome = false
+      // document.getElementById('canvasImg').style.backgroundImage = require(`@/assets/pages/${page.image}.svg`)
+    },
     viewImg1 () {
       // this.viewImgs = false
       var canvas1 = document.getElementById('img1')
@@ -90,9 +109,6 @@ export default {
       // c2.strokeStyle = 'red'
       // c2.stroke()
     }
-  },
-  components: {
-    pdf
   }
 }
 </script>
@@ -109,8 +125,7 @@ export default {
     height: 370px;
   }
   #img1 {
-    background-image: url('../assets/pdf/page1.svg');
-    /* background-image: url('../assets/pdf/lesson37_pequena.png'); */
+    /* background-image: url('../assets/pdf/page1.svg'); */
     background-size: 100%;
   }
   #img2 {

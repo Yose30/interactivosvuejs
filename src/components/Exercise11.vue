@@ -1,37 +1,36 @@
 <template>
     <div id="divContent" class="container">
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen and circle the words you hear. What differences can you see in the words? Fill the
-chart and find the contracted forms of the verb to be in the dialogue in Activity 1.
+            <b class="numero-vineta">1. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen to the conversation. Circle what they decide to do. Then, number the activities in the order in which they are mentioned.
         </p>
-        <hr>
-        <div align="center">
-            <table>
-                <tbody>
-                    <tr v-for="(word, i) in words" v-bind:key="i">
-                        <td id="tdExe11" align="right">{{ word.id }}. </td>
-                        <td id="tdExe11" align="center">{{ word.option1 }}</td>
-                        <td id="tdExe11" align="center">{{ word.option2 }}</td>
-                        <td id="tdExe11" align="center">{{ word.option3 }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="multimedia">
+            <audio controls>
+                <source src="../assets/audios/exercise11.mp3">
+            </audio>
         </div>
         <hr>
-        <table>
-            <thead>
-                <tr>
-                    <th>Long form</th>
-                    <th>Contracted form</th>
-                </tr>
-            </thead>
-            <tbody id="tbodySent" align="center">
-                
-            </tbody>
-        </table>
-        <!-- <b-table :items="sentences" :fields="fields2">
-
-        </b-table> -->
+        <b-row>
+            <b-col v-for="(option, i) in options1" v-bind:key="i">
+                <b-row>
+                    <b-col sm="3"><input id="inpExe11" type="text" :pattern="option.number"></b-col>
+                    <b-col sm="9">
+                        <button class="btn" :id="`id-${i}`" @click="checkAns(option, i)"><img :src="require(`@/assets/imgs/exercise11/${option.img}.jpg`)" alt=""></button>
+                    </b-col>
+                </b-row>
+            </b-col>
+        </b-row>
+        <hr>
+        <p class="instrucciones">
+            <b class="numero-vineta">2. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen again and fi ll in the table about Jimmy, Deb and Lola. Check your answers by reading the text in the scripts section.
+        </p>
+        <b-table :items="options2" :fields="fields">
+            <template v-slot:cell(likes)="data">
+                <textarea v-model="data.item.likes"></textarea>
+            </template>
+            <template v-slot:cell(nolikes)="data">
+                <textarea v-model="data.item.nolikes"></textarea>
+            </template>
+        </b-table>
     </div>
 </template>
 
@@ -43,57 +42,60 @@ export default {
   name: 'Exercise11',
   data () {
     return {
-        options1: exercise111,
-        options2: exercise112,
-        words: exercise111,
-        sentences: [],
+        opciones1: exercise111,
+        opciones2: exercise112,
+        options1: [],
+        options2: [],
         positions: [],
         dates1: {},
         dates2: {},
-        fields1: [{key: 'option1', label: ''}, {key: 'option2', label: ''}, {key: 'option3', label: ''}],
-        fields2: [{key: 'long', label: 'Long form'}, {key: 'contracted', label: 'Contracted form'}]
+        fields: [{key: 'name', label: ''}, {key: 'likes', label: 'Likes'}, {key: 'nolikes', label: 'Doesn´t like'}]
     }
   },
-//   created: function () {
-//     this.show()
-//   },
-  mounted: function (){
+  created: function () {
     this.show()
   },
+//   mounted: function (){
+//     this.show()
+//   },
   methods: {
-    prueba () {
-        $('#tbodySent').append(this.sentences[0].long)
+    checkAns(option, i) {
+        if(option.status){
+            this.$swal('Well done!', '', 'success')
+            document.getElementById(`id-${i}`).style.borderColor = "green";
+        }
+        else {
+            this.$swal('Try again', '', 'error')
+        }
     },
     show () {
-        // var max1 = Object.keys(this.options1).length
-        var max2 = Object.keys(this.options2).length
-        // for (var i = 0; i < max1; i ++) {
-        //     var num_alet1 = this.randomSent(max1)
-        //     this.dates1 = {
-        //         id: this.options1[num_alet1].id,
-        //         option1: this.options1[num_alet1].option1,
-        //         option2: this.options1[num_alet1].option2,
-        //         option3: this.options1[num_alet1].option3
-        //     }
-        //     this.words.push(this.dates1)
-        // }
-        // this.positions = []
-
-        for (var i = 0; i < max2; i ++) {
-            var num_alet2 = this.randomSent(max2)
-            this.dates2 = {
-                long: this.options2[num_alet2].long,
-                contracted: this.options2[num_alet2].contracted,
-                select1: this.options2[num_alet2].select1,
-                select2: this.options2[num_alet2].select2
+        var max1 = Object.keys(this.opciones1).length
+        var max2 = Object.keys(this.opciones2).length
+        for (var i = 0; i < max1; i ++) {
+            var num_alet1 = this.randomSent(max1)
+            this.dates1 = {
+                img: this.opciones1[num_alet1].img,
+                number: this.opciones1[num_alet1].number,
+                status: this.opciones1[num_alet1].status
             }
-            this.sentences.push(this.dates2)
+            this.options1.push(this.dates1)
         }
         this.positions = []
 
         for (var i = 0; i < max2; i ++) {
-            $('#tbodySent').append(`<tr><td>${this.sentences[i].long}</td><td>${this.sentences[i].contracted}</td></tr>`)
+            var num_alet2 = this.randomSent(max2)
+            this.dates2 = {
+                name: this.opciones2[num_alet2].name,
+                likes: this.opciones2[num_alet2].likes,
+                nolikes: this.opciones2[num_alet2].nolikes
+            }
+            this.options2.push(this.dates2)
         }
+        this.positions = []
+
+        // for (var i = 0; i < max2; i ++) {
+        //     $('#tbodySent').append(`<tr><td>${this.options2[i].long}</td><td>${this.options2[i].contracted}</td></tr>`)
+        // }
     },
     randomSent (max) {
         if(this.positions.length != max) {
@@ -118,11 +120,16 @@ export default {
 }
 </script>
 <style scoped>
-    #tdExe11 {
-        width: 200px;
+    #inpExe11 {
+        width: 50px;
+        z-index:2;
+        position: absolute;
     }
-    /* header {
-        display: none !important;
-    } */
+    input:invalid {
+        border: 2px solid red;
+    }
+    input:valid {
+        color: #00BC00;
+    }
 </style>
 

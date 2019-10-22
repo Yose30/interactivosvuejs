@@ -4,7 +4,7 @@
       <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
     </div>
     <p class="instrucciones">
-      <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Number the sentences as you listen.
+      <b class="numero-vineta">1. </b>Number the sentences as you listen.
     </p>
     <div class="multimedia">
       <audio controls>

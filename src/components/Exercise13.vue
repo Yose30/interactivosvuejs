@@ -47,4 +47,10 @@ export default {
   }
 }
 </script>
+<style scoped>
+  #imgExe13 {
+    width: 100%;
+    height: 150px;
+  }
+</style>
 

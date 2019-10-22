@@ -1,62 +1,32 @@
 {
     "0": {
-        "id": 1,
-        "option1": "They are",
-        "option2": "They're",
-        "option3": "We're"
+        "img": "img1",
+        "number": 3,
+        "status": false
     },
     "1": {
-        "id": 2,
-        "option1": "I'm",
-        "option2": "I am",
-        "option3": "It's"
+        "img": "img2",
+        "number": 2,
+        "status": false
     },
     "2": {
-        "id": 3,
-        "option1": "She is",
-        "option2": "He is",
-        "option3": "He's"
+        "img": "img3",
+        "number": 5,
+        "status": true
     },
     "3": {
-        "id": 4,
-        "option1": "We're",
-        "option2": "They're",
-        "option3": "We are"
+        "img": "img4",
+        "number": 4,
+        "status": false
     },
     "4": {
-        "id": 5,
-        "option1": "She is",
-        "option2": "He is",
-        "option3": "She's"
+        "img": "img5",
+        "number": 6,
+        "status": false
     },
     "5": {
-        "id": 6,
-        "option1": "You are",
-        "option2": "You're",
-        "option3": "They're"
-    },
-    "6": {
-        "id": 7,
-        "option1": "He's",
-        "option2": "She's",
-        "option3": "You're"
-    },
-    "7": {
-        "id": 8,
-        "option1": "It is",
-        "option2": "It's",
-        "option3": "I'm"
-    },
-    "8": {
-        "id": 9,
-        "option1": "He's",
-        "option2": "She's",
-        "option3": "It's"
-    },
-    "9": {
-        "id": 10,
-        "option1": "It's",
-        "option2": "I'm",
-        "option3": "It's"
+        "img": "img6",
+        "number": 1,
+        "status": false
     }
 }

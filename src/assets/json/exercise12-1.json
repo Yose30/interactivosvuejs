@@ -1,42 +1,62 @@
 {
     "0": {
         "text": "our",
-        "color": ""
+        "color": "",
+        "answer": "our"
     },
     "1": {
         "text": "my",
-        "color": ""
+        "color": "",
+        "answer": "my"
     },
     "2": {
         "text": "your",
-        "color": ""
+        "color": "",
+        "answer": "your"
     },
     "3": {
         "text": "his",
-        "color": ""
+        "color": "",
+        "answer": "his"
     },
     "4": {
-        "text": "",
-        "color": "blue"
+        "text": "blue",
+        "color": "blue",
+        "answer": "blue"
     },
     "5": {
-        "text": "",
-        "color": "red"
+        "text": "red",
+        "color": "red",
+        "answer": "red"
     },
     "6": {
-        "text": "",
-        "color": "pink"
+        "text": "pink",
+        "color": "pink",
+        "answer": "pink"
     },
     "7": {
-        "text": "",
-        "color": "green"
+        "text": "green",
+        "color": "green",
+        "answer": "green"
     },
     "8": {
-        "text": "",
-        "color": "brown"
+        "text": "brown",
+        "color": "brown",
+        "answer": "brown"
     },
     "9": {
-        "text": "",
-        "color": "black"
+        "text": "black",
+        "color": "black",
+        "answer": "black"
+    },
+    "10": {
+        "text": "My",
+        "color": "",
+        "answer": "My"
+    },
+    "11": {
+        "text": "Your",
+        "color": "",
+        "answer": "Your"
     }
 }

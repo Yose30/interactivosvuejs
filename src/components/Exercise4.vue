@@ -1,11 +1,17 @@
 <template>
   <div id="divContent" class="container">
     <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+      <h1 class="titulo-ejercicios">TRUE - FALSE</h1>
     </div>
     <p class="instrucciones">
-      <b class="numero-vineta">1.  </b>  Choose True, False or Not Mentioned.
+      <b class="numero-vineta">1. </b>Listen again and circle T or F.
     </p>
+    <div class="multimedia">
+      <audio controls>
+        <source src="../assets/audios/exercise4.mp3">
+      </audio>
+    </div>
+    <hr>
     <table class="table">
       <thead class="th-tf" ref="head">
         <tr>

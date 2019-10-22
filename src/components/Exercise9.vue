@@ -4,10 +4,9 @@
         <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
       </div>
       <p class="instrucciones">
-          <b class="numero-vineta">1.  </b> 
-          <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>
+          <b class="numero-vineta">1. </b>
           Look at the picture. Listen. Where are they?
-          <input id="inpExe9" pattern="In the classroom"/>
+          <input id="inpExe9" pattern="(I|i)n the classroom"/>
       </p>
       <div class="multimedia">
         <audio controls>
@@ -58,7 +57,8 @@
           </table>
         </div>
         <div class="col-md-3">
-          <!-- <img src="" alt=""> -->
+          <!-- IMAGEN -->
+          <img id="imgExe9" src="@/assets/imgs/exercise9/teacher.jpg" alt="">
         </div>
       </div>
     </div>
@@ -76,5 +76,9 @@ export default {
   }
   input:valid {
     color: #00BC00;
+  }
+  #imgExe9 {
+    width: 100%;
+    height: 150px;
   }
 </style>

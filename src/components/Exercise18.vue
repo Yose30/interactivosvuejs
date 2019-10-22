@@ -10,7 +10,7 @@
         <hr>
         <b-row>
             <b-col sm="3" v-for="(option, i) in options" v-bind:key="i">
-                <img :src="require(`@/assets/imgs/exercise18/${option.image}.jpg`)" :alt="option.image">
+                <img :src="require(`@/assets/imgs/exercise18/${option.text}.jpg`)" :alt="option.image">
                 <br>
                 {{ option.text }}
                 <b-row align="left">
@@ -37,12 +37,10 @@
 
 <script>
 import exercise18 from '@/assets/json/exercise18.json'
-import exercise182 from '@/assets/json/exercise18-2.json'
 export default {
   name: 'Exercise18',
   data () {
     return {
-        oraciones: exercise182,
         sentences: [],
         opciones: exercise18,
         options: [],
@@ -59,7 +57,6 @@ export default {
         for (var i = 0; i < max; i ++) {
             var num_alet = this.randomSent(max)
             this.dates = {
-                image: this.opciones[num_alet].image,
                 text: this.opciones[num_alet].text,
                 answer1: this.opciones[num_alet].answer1,
                 answer2: this.opciones[num_alet].answer2

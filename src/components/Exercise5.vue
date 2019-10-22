@@ -4,11 +4,11 @@
       <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
     </div>
     <p class="instrucciones">
-      <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen to the conversation. Circle the celebration they are talking about.
+      <b class="numero-vineta">1. </b>Listen to the conversation. Circle the celebration they are talking about.
     </p>
     <div class="multimedia">
       <audio controls>
-        <source src="../assets/audios/47Pista.mp3">
+        <source src="../assets/audios/exercise5.mp3">
       </audio>
     </div>
     <div class="row">
@@ -18,37 +18,35 @@
     </div>
     <hr>
     <p class="instrucciones">
-      <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen again. Match the pictures to the words.
+      <b class="numero-vineta">2. </b>Listen again. Match the pictures to the words.
     </p>
+    <b-card>
+      <b-row>
+        <b-col v-for="(image, i) in images" v-bind:key="i" align="center">
+          <img :src="require(`@/assets/imgs/exercise5/${image.answer}.jpg`)" :alt="image.answer">
+          <drop 
+            :id="`boxDrop5-${i}`"
+            class="drop classDrop5"
+            @dragover="assign(image, i)"
+            @dragleave="selection = {}"
+            @drop="handleDrop">
+              <p>{{ image.selected }}</p>
+          </drop>
+        </b-col>
+      </b-row>
+    </b-card>
+    <b-card>
+      <b-row>
+          <b-col class="palabrase5" v-for="(sentence, i) in sentences" v-bind:key="i">
+            <drag class="drag" :transfer-data="{ option: sentence.answer }">
+              {{ sentence.answer }}
+            </drag>
+          </b-col>
+      </b-row>
+    </b-card>
     <div align="right">
       <button class="btn btn-finish" @click="onEvaluate()"><font-awesome-icon icon="check-circle"  />  Check</button>
     </div>
-    <div class="row">
-        <div class="col-md-6" align="center">
-            <div class="palabrase5" v-for="(sentence, i) in sentences" v-bind:key="i">
-                <drag class="drag" :transfer-data="{ option: sentence.answer }">
-                  {{ sentence.answer }}
-                </drag>
-                <!-- v-if="!sentence.state" -->
-                <!-- <div id="colorText" v-else>{{ sentence.answer }}</div> -->
-            </div>
-        </div>
-        <div class="col-md-6" align="center">
-            <div v-for="(image, i) in images" v-bind:key="i">
-                <img :src="require(`@/assets/imgs/exercise5/${image.answer}.jpg`)" alt="">
-                <drop 
-                  :id="`boxDrop5-${i}`"
-                  class="drop classDrop5"
-                  @dragover="assign(image, i)"
-                  @dragleave="selection = {}"
-                  @drop="handleDrop">
-                    <p>{{ image.selected }}</p>
-                </drop>
-                <br>
-            </div>
-        </div>
-    </div>
-    
   </div>
 </template>
 

@@ -4,7 +4,7 @@
             <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
         </div>
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen to the dialogue. Write the greeting and farewell expressions.
+            <b class="numero-vineta">1. </b>Listen to the dialogue. Write the greeting and farewell expressions.
         </p>
         <div class="multimedia">
             <audio controls>

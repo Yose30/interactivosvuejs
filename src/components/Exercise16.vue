@@ -12,50 +12,55 @@ safaris? Listen and complete the conversation using these words.
                 <b-col v-for="(option, i) in options" v-bind:key="i">{{ option.option }}</b-col>
             </b-row>
         </b-card>
-        <table>
-            <tbody align="left">
-                <tr>
-                    <td><b>Guide:</b></td>
-                    <td>Look, over there!</td>
-                </tr>
-                <tr>
-                    <td><b>Tourist 1:</b></td>
-                    <td>Where? What is that? It’s so far.</td>
-                </tr>
-                <tr>
-                    <td><b>Guide:</b></td>
-                    <td>That’s a <input type="text" pattern="lioness">!</td>
-                </tr>
-                <tr>
-                    <td><b>Tourist 2:</b></td>
-                    <td>And are those her <input type="text" pattern="cubs">?</td>
-                </tr>
-                <tr>
-                    <td><b>Tourist 1:</b></td>
-                    <td>Of course, they’re not my cubs!</td>
-                </tr>
-                <tr>
-                    <td><b>Guide:</b></td>
-                    <td>Shh! Don’t make noise. Those animals are dangerous.</td>
-                </tr>
-                <tr>
-                    <td><b>Tourist 2:</b></td>
-                    <td>What’s this? Take it off me!</td>
-                </tr>
-                <tr>
-                    <td><b>Tourist 1:</b></td>
-                    <td>This is just a <input type="text" pattern="caterpillar">! Keep quiet!</td>
-                </tr>
-                <tr>
-                    <td><b>Tourist 2:</b></td>
-                    <td>OK. Guide, what are those things on your feet?</td>
-                </tr>
-                <tr>
-                    <td><b>Guide:</b></td>
-                    <td>Oh, dear! These are African <input type="text" pattern="bees">! Run!</td>
-                </tr>
-            </tbody>
-        </table> 
+        <b-row>
+            <b-col sm="9" align="left">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><b>Guide:</b></td>
+                            <td>Look, over there!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tourist 1:</b></td>
+                            <td>Where? What is that? It’s so far.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Guide:</b></td>
+                            <td>That’s a <input type="text" pattern="lioness">!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tourist 2:</b></td>
+                            <td>And are those her <input type="text" pattern="cubs">?</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tourist 1:</b></td>
+                            <td>Of course, they’re not my cubs!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Guide:</b></td>
+                            <td>Shh! Don’t make noise. Those animals are dangerous.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tourist 2:</b></td>
+                            <td>What’s this? Take it off me!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tourist 1:</b></td>
+                            <td>This is just a <input type="text" pattern="caterpillar">! Keep quiet!</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tourist 2:</b></td>
+                            <td>OK. Guide, what are those things on your feet?</td>
+                        </tr>
+                        <tr>
+                            <td><b>Guide:</b></td>
+                            <td>Oh, dear! These are African <input type="text" pattern="bees">! Run!</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </b-col>
+            <b-col sm="3"><img id="imgExe16" src="@/assets/imgs/exercise16/animals.jpg" alt=""></b-col>
+        </b-row>
         <hr>
         <p>
             Which animals are near the people? <input type="text" id="inpExe16" pattern="(C|c)aterpillar and bees">
@@ -125,5 +130,9 @@ export default {
     input:valid {
         color: #00BC00;
     }
+    #imgExe16 {
+    width: 100%;
+    height: 150px;
+  }
 </style>
 

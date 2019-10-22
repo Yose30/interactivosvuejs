@@ -4,7 +4,7 @@
             <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
         </div>
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Read the text about Andrew and what he does to keep his body healthy.
+            <b class="numero-vineta">1. </b>Read the text about Andrew and what he does to keep his body healthy.
         </p>
         <hr>
         
@@ -27,7 +27,7 @@
                 </p>
             </b-col>
             <b-col>
-
+                <img id="imgExe10" src="@/assets/imgs/exercise10/boy.jpg" alt="">
             </b-col>
         </b-row>
         <div class="text-right">
@@ -42,6 +42,10 @@
                 </b-col>
             </b-row>
         </b-card>
+        <hr>
+        <div class="text-right">
+            <button @click="onEvaluate()" class="btn btn-primary">Evaluate</button>
+        </div>
     </div>
 </template>
 
@@ -149,6 +153,12 @@ export default {
 }
 </script>
 <style scoped>
-   
+    #selExc10 {
+        width: 120px;
+    }
+    #imgExe10 {
+    width: 100%;
+    height: 150px;
+  }
 </style>
 
