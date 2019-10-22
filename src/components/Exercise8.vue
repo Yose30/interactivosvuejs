@@ -1,5 +1,8 @@
 <template>
     <div id="divContent" class="container">
+        <div class="contenido-titulo">
+            <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+        </div>
         <p class="instrucciones">
             <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen to the dialogue. Write the greeting and farewell expressions.
         </p>
@@ -18,9 +21,7 @@
             </b-row>
         </b-card>
         <br>
-        <div class="text-right">
-            <b-button variant="primary" @click="onEvaluate">Evaluate</b-button>
-        </div>
+       
         <hr>
         <div class="table-responsive">
             <table class="table">
@@ -55,6 +56,9 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+         <div class="text-right">
+            <b-button class="btn btn-evaluar-tf" variant="primary" @click="onEvaluate">Evaluate</b-button>
         </div>
     </div>
 </template>

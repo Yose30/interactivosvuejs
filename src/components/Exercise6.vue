@@ -1,15 +1,18 @@
 <template>
   <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+        </div>
     <p class="instrucciones">
         <b class="numero-vineta">1.</b> Now use letters that are not in the grid to complete these words.
     </p>
-    <div>
+    <div class="img-e6">
         <img 
             v-for="(word, i) in words" v-bind:key="i" 
             :src="require(`@/assets/imgs/exercise6/${word.word}.jpg`)" 
             :alt="word.word">
     </div>
-    <div>
+    <div class="text-e6">
         <p>
             t<input id="inpExc6" type="text" pattern="e"/>le<input id="inpExc6" type="text" pattern="v"/>isio<input id="inpExc6" type="text" pattern="n"/>
         </p>
@@ -26,19 +29,20 @@
             p<input id="inpExc6" type="text" pattern="e"/><input id="inpExc6" type="text" pattern="n"/>cil
         </p>
     </div>
+    
     <hr>
     <p class="instrucciones">
         <b class="numero-vineta">2.</b> Choose a word from Activity 1 and play hangman with your partner.
     </p>
     <div align="right">
-        <button class="btn btn-primary" @click="onChoose()">Choose a word</button>
+        <button class="btn btn-evaluar-tf" @click="onChoose()" ><font-awesome-icon icon="mouse-pointer"/>  Choose a word</button>
     </div>
     <hr>
     <div class="row">
         <div class="col-md-4">
             <canvas id="hangman"></canvas>
         </div>
-        <div class="col-md-8" id="inputLetters"></div>
+        <div class="col-md-8" id="inputLetters" ></div>
     </div>
   </div>
 </template>

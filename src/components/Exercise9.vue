@@ -1,5 +1,8 @@
 <template>
     <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+      </div>
       <p class="instrucciones">
           <b class="numero-vineta">1.  </b> 
           <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>
@@ -12,44 +15,44 @@
         </audio>
       </div>
       <div class="row">
-        <div class="col-md-9">
-          <table>
-            <tbody align="left">
+        <div class="col-md-12">
+          <table class="tabla-e9">
+            <tbody align="left" >
               <tr>
-                <td><b>John:</b></td>
-                <td>Look! <input pattern="He's|He is"/> our teacher.</td>
+                <td valign="top" class="personaje-input"><b>John:</b></td>
+                <td valign="top" class="dialogo-input">Look! <input pattern="He's|He is"/> our teacher.</td>
               </tr>
               <tr>
-                <td><b>Sue:</b></td>
-                <td>He is very cute!</td>
+                <td valign="top" class="personaje"><b>Sue:</b></td>
+                <td class="dialogo">He is very cute!</td>
               </tr>
               <tr>
-                <td><b>Teacher:</b></td>
-                <td>Good morning, class. <input pattern="I'm|I am"> your English teacher. Please, call me Paul.</td>
+                <td valign="top" class="personaje-input"><b>Teacher:</b></td>
+                <td class="dialogo-input">Good morning, class. <input pattern="I'm|I am">your English teacher. Please, call me Paul.</td>
               </tr>
               <tr>
-                <td><b>John:</b></td>
-                <td>Oh, <input pattern="he's|he is"> friendly!</td>
+                <td valign="top" class="personaje-input"><b>John:</b></td>
+                <td class="dialogo-input">Oh, <input pattern="he's|he is"> friendly!</td>
               </tr>
               <tr>
-                <td><b>Sue:</b></td>
-                <td><input pattern="We're|We are"> friendly, too.</td>
+                <td valign="top" class="personaje-input"><b>Sue:</b></td>
+                <td class="dialogo-input"><input pattern="We're|We are"> friendly, too.</td>
               </tr>
               <tr>
-                <td><b>Teacher:</b></td>
-                <td>Excuse me young lady, <input pattern="what's|what is"> your name?</td>
+                <td valign="top" class="personaje-input"><b>Teacher:</b></td>
+                <td class="dialogo-input">Excuse me young lady, <input pattern="what's|what is">your name?</td>
               </tr>
               <tr>
-                <td><b>Sue:</b></td>
-                <td>Er... my name is Sue, Paul</td>
+                <td valign="top" class="personaje"><b>Sue:</b></td>
+                <td class="dialogo">Er... my name is Sue, Paul</td>
               </tr>
               <tr>
-                <td><b>Teacher:</b></td>
-                <td>OK, Sue. Silence, please</td>
+                <td  valign="top" class="personaje"><b>Teacher:</b></td>
+                <td class="dialogo">OK, Sue. Silence, please</td>
               </tr>
               <tr>
-                <td><b>Sue:</b></td>
-                <td>Ops! He is not friendly</td>
+                <td valign="top" class="personaje"><b>Sue:</b></td>
+                <td class="dialogo">Ops! He is not friendly</td>
               </tr>
             </tbody>
           </table>

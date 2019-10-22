@@ -1,18 +1,51 @@
 <template>
   <div class="container">
     <canvas id="pizarra" @mousedown="empezarDibujo" @mousemove="drawOnCanvas" @mouseup="stopDraw"></canvas>
-    <b-row>
-        <b-col sm="2"><button class="btn btn-primary" @click="backMouse" :disabled="mouse">Mouse</button></b-col>
-        <b-col sm="2"><button class="btn btn-primary" @click="beginDraw" :disabled="pencil">Draw</button></b-col>
-        <b-col sm="2"><button class="btn btn-primary" @click="deleteEnd" :disabled="mouse">Delete</button></b-col>
-        <b-col>Color <input type="color" v-model="color" :disabled="mouse"></b-col>
-        <b-col>
-            <b-row>
-                <b-col>Line width</b-col>
-                <b-col><b-form-select v-model="selected" :options="options" :disabled="mouse"></b-form-select></b-col>
-            </b-row>
-        </b-col>
-    </b-row>
+    <div class="text-center contenedor">
+        <b-button class="btn-pizzaron" id="tooltip-target-1" @click="backMouse" :disabled="mouse" >
+            <font-awesome-icon icon="mouse-pointer" class="elementos-pizzarron"/>
+        </b-button>
+        <b-tooltip target="tooltip-target-1" triggers="hover">
+           <b>Pointer</b>
+        </b-tooltip>
+
+        <b-button class="btn-pizzaron" id="tooltip-target-2" @click="beginDraw" :disabled="pencil">
+            <font-awesome-icon icon="marker" class="elementos-pizzarron"/>
+        </b-button>
+        <b-tooltip target="tooltip-target-2" triggers="hover" >
+           <b>Marker</b>
+        </b-tooltip>
+
+        <b-button class="btn-pizzaron" id="tooltip-target-3" @click="deleteEnd" :disabled="mouse">
+            <font-awesome-icon icon="eraser" class="elementos-pizzarron"/>
+        </b-button>
+        <b-tooltip target="tooltip-target-3" triggers="hover" >
+            <b>Eraser</b>
+        </b-tooltip>
+
+        <input class="colores" type="color" v-model="color" :disabled="mouse" id="tooltip-target-4" > 
+        <b-tooltip target="tooltip-target-4" triggers="hover" >
+            <b>Colors</b>
+        </b-tooltip>
+
+        <b-form-select class="grosor-linea" id="tooltip-target-5" v-model="selected" :options="options" :disabled="mouse"></b-form-select>
+        <b-tooltip target="tooltip-target-5" triggers="hover" >
+            Line <b>Width</b>
+        </b-tooltip>
+    </div>
+    
+        <!-- <b-row>
+            <b-col sm="2"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Hooray!" @click="backMouse" :disabled="mouse" >Mouse</button></b-col>
+            <b-col sm="2"><button class="btn btn-primary" @click="beginDraw" :disabled="pencil">Draw</button></b-col>
+            <b-col sm="2"><button class="btn btn-primary" @click="deleteEnd" :disabled="mouse">Delete</button></b-col>
+            <b-col>Color <input type="color" v-model="color" :disabled="mouse"></b-col>
+            <b-col>
+                <b-row>
+                    <b-col>Line width</b-col>
+                    <b-col><b-form-select v-model="selected" :options="options" :disabled="mouse"></b-form-select></b-col>
+                </b-row>
+            </b-col>
+        </b-row> -->
   </div>
 </template>
 
@@ -31,7 +64,7 @@ export default {
     return {
         pencil: false,
         mouse: true,
-        color: '#000000',
+        color: '#E60026',
         selected: 5,
         options: [
             { value: 5, text: '5' },

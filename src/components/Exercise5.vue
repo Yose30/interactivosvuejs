@@ -21,7 +21,7 @@
       <b class="numero-vineta">2.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span>Listen again. Match the pictures to the words.
     </p>
     <div align="right">
-      <button class="btn btn-finish" @click="onEvaluate()">Check</button>
+      <button class="btn btn-finish" @click="onEvaluate()"><font-awesome-icon icon="check-circle"  />  Check</button>
     </div>
     <div class="row">
         <div class="col-md-6" align="center">

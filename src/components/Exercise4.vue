@@ -39,7 +39,7 @@
       </tbody>
     </table>
     <div align="right">
-      <button class="btn btn-evaluar-tf" @click="onEvaluate">Check</button>
+      <button class="btn btn-evaluar-tf" @click="onEvaluate"><font-awesome-icon icon="check-circle"  /> Check</button>
     </div>
   </div>
 </template>

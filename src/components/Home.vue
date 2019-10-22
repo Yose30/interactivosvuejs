@@ -98,6 +98,9 @@ export default {
 </script>
 
 <style scoped>
+#divContent{
+  margin-top:2rem;
+}
   #divCanvas1, #divCanvas2 {
     display: flex;
   }
