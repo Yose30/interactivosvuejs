@@ -34,14 +34,16 @@ import VueSweetalert2 from 'vue-sweetalert2'
 
 import { Drag, Drop } from 'vue-drag-drop'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle, faMinus, faDownload, faCheckCircle  } from '@fortawesome/free-solid-svg-icons'
+import { faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle, faMinus, faDownload, faCheckCircle, faMarker,faMousePointer,faEraser, faPalette } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import('./assets/css/style.css')
-library.add(faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle, faMinus, faDownload, faCheckCircle)
+import('./assets/css/botones.css')
+import('./assets/css/forms.css')
+library.add(faMusic, faPlayCircle, faStopCircle, faHome, faPauseCircle, faMinus, faDownload, faCheckCircle, faMarker,faMousePointer,faEraser, faPalette )
 
 window.$ = window.jQuery = require('jquery')
 

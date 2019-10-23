@@ -1,5 +1,8 @@
 <template>
     <div id="divContent" class="container">
+        <div class="contenido-titulo">
+            <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+        </div>
         <p class="instrucciones">
             <b class="numero-vineta">1.  </b>What time is it? Match each clock with the corresponding way or ways to express time.
 Write the appropriate letter under each clock. Listen and check your answers.

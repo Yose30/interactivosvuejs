@@ -1,11 +1,16 @@
 <template>
     <div id="divContent" class="container">
+        <div class="contenido-titulo">
+            <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+        </div>
         <p class="instrucciones">
             <b class="numero-vineta">1.  </b> Read and answer.
         </p>
-        <div class="text-left">
-            <p>What do US and Canada citizens can use instead of a passport?</p>
-            <input id="inpExe14" type="text">
+        <div class="text-left preguntas">
+            <form class="form-inline">
+                <p>What do US and Canada citizens can use instead of a passport?</p>
+                <textarea id="inpExe14" class="imput-multimedia"></textarea>
+            </form>
         </div>
         <hr>
         <h4>Visiting Mexico?</h4>
@@ -25,13 +30,16 @@
             Travelers under 18 who are not accompanied by both their parents may need special documentation.
         </p>
         <p>Adapted from: <a href="http://www.lonelyplanet.com/mexico/transport/getting-there-away" target="_blank">http://www.lonelyplanet.com/mexico/transport/getting-there-away</a></p>
-        <div class="text-left">
+        <hr>
+        <div class="preguntas">
+            <form class="form-inline">
             <ol>
                 <li v-for="(question, i) in questions" v-bind:key="i">
-                    <b>{{ question.question }}</b>
-                    <input id="inpExe14" v-model="question.answer" type="text">
+                    {{ question.question }}
+                    <textarea id="inpExe14" v-model="question.answer" ></textarea>
                 </li>
             </ol>
+            </form>
         </div>
     </div>
 </template>
@@ -87,8 +95,5 @@ export default {
 }
 </script>
 <style scoped>
-    #inpExe14 {
-        width: 600px;
-    }
+    
 </style>
-

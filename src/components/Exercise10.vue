@@ -1,12 +1,16 @@
 <template>
     <div id="divContent" class="container">
+        <div class="contenido-titulo">
+            <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+        </div>
         <p class="instrucciones">
             <b class="numero-vineta">1. </b>Read the text about Andrew and what he does to keep his body healthy.
         </p>
         <hr>
+        
         <b-row>
-            <b-col sm="9">
-                <p>
+            <b-col sm="12" >
+                <p class="completar-texto">
                     Andrew is a 
                     <b-form-select id="selExc10" :state="selected[0].state" v-model="selected[0].select" :options="options"></b-form-select> 
                     man and has <b-form-select id="selExc10" :state="selected[1].state" v-model="selected[1].select" :options="options"></b-form-select> 
@@ -26,12 +30,15 @@
                 <img id="imgExe10" src="@/assets/imgs/exercise10/boy.jpg" alt="">
             </b-col>
         </b-row>
+        <div class="text-right">
+            <button @click="onEvaluate()" class="btn btn-finish"><font-awesome-icon icon="check-circle"  />  Evaluate</button>
+        </div>
         <hr>
         <p><b>What is Andrew’s profession?</b></p>
         <b-card class="text-left">
             <b-row>
                 <b-col v-for="(profession, i) in professions" v-bind:key="i">
-                    <button class="btn" @click="onProfession(profession, i)">{{ profession.text }}</button>
+                    <button class="btn btn-ejercicios" @click="onProfession(profession, i)">{{ profession.text }}</button>
                 </b-col>
             </b-row>
         </b-card>

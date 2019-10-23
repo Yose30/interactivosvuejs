@@ -45,7 +45,7 @@
       </b-row>
     </b-card>
     <div align="right">
-      <button class="btn btn-primary" @click="onEvaluate()">Finish</button>
+      <button class="btn btn-finish" @click="onEvaluate()"><font-awesome-icon icon="check-circle"  />  Check</button>
     </div>
   </div>
 </template>

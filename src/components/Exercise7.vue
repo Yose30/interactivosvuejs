@@ -1,5 +1,8 @@
 <template>
   <div id="divContent" class="container">
+    <div class="contenido-titulo">
+      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+    </div>
     <p class="instrucciones">
       <b class="numero-vineta">1. </b>Number the sentences as you listen.
     </p>
@@ -8,14 +11,18 @@
           <source src="../assets/audios/exercise7.mp3">
       </audio>
     </div>
-    <table class="table">
+    <div class="contenido-e7">
+      <table class="table">
         <tbody>
           <tr v-for="(sentence, i) in sentences" v-bind:key="i">
-            <td align="left">{{ sentence.sentence }}</td>
-            <td><input id="tdNExc7" type="text" :pattern="sentence.number"></td>
+            <td class="preguntas-e7" align="left">{{ sentence.sentence }}</td>
+            <td  class="numero-e7"><input id="tdNExc7" type="text" :pattern="sentence.number"></td>
           </tr>
         </tbody>
-    </table>
+      </table>  
+
+    </div>
+    
   </div>
 </template>
 
