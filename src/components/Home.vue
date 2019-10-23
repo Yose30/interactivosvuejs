@@ -1,14 +1,14 @@
 <template>
   <div id="divContent" class="container">
-    <b-row v-if="viewHome">
+    <b-row>
       <b-col sm="4" v-for="(page, i) in pages" v-bind:key="i">
         <button class="btn" @click="openPage(page)"><img id="pageHome" :src="require(`@/assets/pages/${page.image}.svg`)" alt=""></button>
       </b-col>
     </b-row>
-    <div v-else>
+    <!-- <div>
       <img id="pageOne" :src="require(`@/assets/pages/${namePage}.svg`)" alt="">
       <button class="btn" id="exeButton">botton botton botton botton botton botton</button>
-    </div>
+    </div> -->
     <!-- <div class="row" v-if="viewImgs">
       <div class="col-md-6" id="divCanvas1">
         <canvas id="img1"></canvas>
@@ -44,9 +44,10 @@ export default {
   // },
   methods: {
     openPage (page) {
-      this.numPage = page.number
-      this.namePage = page.image
-      this.viewHome = false
+      this.$router.push({name: 'page', params: { num: page.image } })
+      // this.numPage = page.number
+      // this.namePage = page.image
+      // this.viewHome = false
       // document.getElementById('canvasImg').style.backgroundImage = require(`@/assets/pages/${page.image}.svg`)
     },
     viewImg1 () {
