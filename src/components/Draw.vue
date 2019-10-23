@@ -172,5 +172,6 @@ export default {
         position: absolute;
         top: 140px;
         left: 150px;
+        /**Barra de dibujo */
     }
 </style>
