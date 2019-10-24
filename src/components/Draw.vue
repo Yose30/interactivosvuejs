@@ -6,7 +6,8 @@
         @mousemove="drawOnCanvas" 
         @mouseup="stopDraw"
         @touchstart="empezarDibujo"
-        @touchmove="drawOnCanvas">
+        @touchmove="drawOnCanvas"
+        @touchend="stopDraw">
     </canvas>
     <div class="text-center contenedor">
         <b-row>
