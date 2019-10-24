@@ -25,7 +25,7 @@
             <p class="instrucciones">
                 <b class="numero-vineta">2. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen again and fi ll in the table about Jimmy, Deb and Lola. Check your answers by reading the text in the scripts section.
             </p>
-            <b-table :items="options2" :fields="fields">
+            <b-table responsive :items="options2" :fields="fields">
                 <template v-slot:cell(likes)="data">
                     <textarea v-model="data.item.likes"></textarea>
                 </template>

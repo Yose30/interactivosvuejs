@@ -15,7 +15,7 @@
       </p>
       <hr>
       <div id="tableExercise">
-        <b-table :items="options" :fields="fields">
+        <b-table responsive :items="options" :fields="fields">
           <template v-slot:cell(image)="data">
             <img :src="require(`@/assets/imgs/exercise2/${data.item.image}.jpg`)" alt=""/>
           </template>

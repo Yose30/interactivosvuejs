@@ -19,7 +19,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><b>Guide:</b></td>
+                                <td id="tdPerson"><b>Guide:</b></td>
                                 <td>Look, over there!</td>
                             </tr>
                             <tr>
@@ -136,8 +136,11 @@ export default {
         color: #00BC00;
     }
     #imgExe16 {
-    width: 100%;
-    height: 150px;
-  }
+        width: 100%;
+        height: 150px;
+    }
+    #tdPerson {
+        width: 23%;
+    }
 </style>
 

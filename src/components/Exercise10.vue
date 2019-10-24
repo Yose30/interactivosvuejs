@@ -39,7 +39,7 @@
             <p><b>What is Andrew’s profession?</b></p>
             <b-card class="text-left">
                 <b-row>
-                    <b-col v-for="(profession, i) in professions" v-bind:key="i">
+                    <b-col sm="4" v-for="(profession, i) in professions" v-bind:key="i">
                         <button class="btn btn-ejercicios" @click="onProfession(profession, i)">{{ profession.text }}</button>
                     </b-col>
                 </b-row>

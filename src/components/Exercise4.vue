@@ -14,7 +14,7 @@
         </audio>
       </div>
       <hr>
-      <table class="table">
+      <table class="table table-responsive">
         <thead class="th-tf" ref="head">
           <tr>
             <th scope="col"></th>
