@@ -60,7 +60,7 @@
                 </table>
             </div>
             <div class="text-right">
-                <b-button class="btn btn-evaluar-tf" variant="primary" @click="onEvaluate">Evaluate</b-button>
+                <b-button class="btn btn-evaluar-tf" variant="primary" @click="onEvaluate"><font-awesome-icon icon="check-circle"  />  Check</b-button>
             </div>
         </div>
     </div>

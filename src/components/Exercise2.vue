@@ -17,7 +17,7 @@
       <div id="tableExercise">
         <b-table :items="options" :fields="fields">
           <template v-slot:cell(image)="data">
-            <img :src="require(`@/assets/imgs/exercise2/${data.item.image}.jpg`)" alt=""/>
+            <img class="img-e2" :src="require(`@/assets/imgs/exercise2/${data.item.image}.svg`)" alt=""/>
           </template>
           <template v-slot:cell(place)="data">
             <textarea v-model="data.item.place"></textarea>
@@ -89,10 +89,10 @@ export default {
     download () {
       this.$refs['my-modal'].show()
       html2canvas(document.querySelector('#tableExercise')).then(function (canvas) {
-        img.src = canvas.toDataURL('image/jpeg', 2)
+        img.src = canvas.toDataURL('image/svg', 2)
         img.width = 190
         img.height = 140
-        doc.addImage(img.src, 'JPEG', 10, 20, img.width, img.height)
+        doc.addImage(img.src, 'SVG', 10, 20, img.width, img.height)
       })
     },
     generatePDF () {
@@ -133,5 +133,11 @@ export default {
   iframe{
     width: 100%;
     height: 400px;
+  }
+  .img-e2
+  {
+    width: 200px;
+    height: 150px;
+
   }
 </style>

@@ -2,6 +2,9 @@
     <div>
         <MyHeader :page="'page7'"></MyHeader>
         <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
             <p class="instrucciones">
                 <b class="numero-vineta">1.  </b>Look at the words. Use your dictionary to fi nd out the meanings. What do you know about
     safaris? Listen and complete the conversation using these words.
@@ -61,7 +64,7 @@
                         </tbody>
                     </table> 
                 </b-col>
-                <b-col sm="3"><img id="imgExe16" src="@/assets/imgs/exercise16/animals.jpg" alt=""></b-col>
+                <b-col sm="3"><img id="imgExe16" src="@/assets/imgs/exercise16/animals.svg" alt=""></b-col>
             </b-row>
             <hr>
             <p>
@@ -136,8 +139,9 @@ export default {
         color: #00BC00;
     }
     #imgExe16 {
-    width: 100%;
-    height: 150px;
+        margin-top: 1rem;
+        width: 300px;
+        height: 261px;
   }
 </style>
 

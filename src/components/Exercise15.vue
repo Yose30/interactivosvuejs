@@ -16,7 +16,7 @@
             <b-row class="text-center">
                 <b-col v-for="(option, i) in options" v-bind:key="i">
                     <!-- require(`@/assets/imgs/exercise15/${option.watch}.jpg`) -->
-                    <img :src="require(`@/assets/imgs/exercise15/${option.watch}.jpg`)" :alt="option.watch">
+                    <img class="img-e15" :src="require(`@/assets/imgs/exercise15/${option.watch}.png`)" :alt="option.watch">
                     <br>
                     <input id="inpExc15" type="text" :pattern="option.answer">
                 </b-col>
@@ -110,5 +110,9 @@ export default {
     input:valid {
         color: #00BC00;
     }
+    .img-e15{
+        width: 150px;
+        height: 150px;
+        }
 </style>
 

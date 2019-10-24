@@ -2,6 +2,9 @@
     <div>
         <MyHeader :page="'page10'"></MyHeader>
         <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
             <p class="instrucciones">
                 <b class="numero-vineta">1. </b>Read Jessie’s e-mail. Which is her bed?
             </p>
@@ -20,7 +23,7 @@
                     </p>
                 </b-col>
                 <b-col sm="4">
-                    <img id="imgExe19" src="@/assets/imgs/exercise19/gral.jpg" alt="">
+                    <img id="imgExe19" src="@/assets/imgs/exercise19/gral.svg" alt="">
                 </b-col>
             </b-row>
             <hr>
@@ -35,7 +38,7 @@
             <hr>
             <b-row>
                 <b-col v-for="(option, i) in options" v-bind:key="i">
-                    <img :src="require(`@/assets/imgs/exercise19/${option.word}.jpg`)" alt=""><br>
+                    <img class="img-e19" :src="require(`@/assets/imgs/exercise19/${option.word}.svg`)" alt=""><br>
                     <input type="text" :pattern="option.word">
                 </b-col>
             </b-row>
@@ -103,8 +106,13 @@ export default {
         color: #00BC00;
     }
     #imgExe19 {
-        width: 100%;
-        height: 150px;
+        width: 400px;
+        height: 270px;
+    }
+    .img-e19{
+        margin-top: 1rem;
+        width: 200px;
+        height: 141px;
     }
 </style>
 

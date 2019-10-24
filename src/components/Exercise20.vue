@@ -2,6 +2,9 @@
     <div>
         <MyHeader :page="'page8'"></MyHeader>
         <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
             <p class="instrucciones">
                 <b class="numero-vineta">1. </b>Unscramble the words to form correct statements or questions.
             </p>

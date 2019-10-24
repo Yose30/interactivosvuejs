@@ -11,7 +11,7 @@
             <hr>
             
             <b-row>
-                <b-col sm="12" >
+                <b-col sm="9" >
                     <p class="completar-texto">
                         Andrew is a 
                         <b-form-select id="selExc10" :state="selected[0].state" v-model="selected[0].select" :options="options"></b-form-select> 
@@ -29,11 +29,11 @@
                     </p>
                 </b-col>
                 <b-col>
-                    <img id="imgExe10" src="@/assets/imgs/exercise10/boy.jpg" alt="">
+                    <img id="imgExe10" src="@/assets/imgs/exercise10/boy.svg" alt="">
                 </b-col>
             </b-row>
             <div class="text-right">
-                <button @click="onEvaluate()" class="btn btn-finish"><font-awesome-icon icon="check-circle"  />  Evaluate</button>
+                <button @click="onEvaluate()" class="btn btn-finish"><font-awesome-icon icon="check-circle"  />  Check</button>
             </div>
             <hr>
             <p><b>What is Andrew’s profession?</b></p>
@@ -46,7 +46,7 @@
             </b-card>
             <hr>
             <div class="text-right">
-                <button @click="onEvaluate()" class="btn btn-primary">Evaluate</button>
+                <button @click="onEvaluate()" class="btn btn-evaluar-tf"><font-awesome-icon icon="check-circle"  />  Check</button>
             </div>
         </div>
     </div>
@@ -162,8 +162,8 @@ export default {
         width: 120px;
     }
     #imgExe10 {
-    width: 100%;
-    height: 150px;
+    width: 200px;
+    height: 330px;
   }
 </style>
 

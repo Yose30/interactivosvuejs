@@ -2,6 +2,9 @@
     <div>
         <MyHeader :page="'page4'"></MyHeader>
         <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
             <p class="instrucciones">
                 <b class="numero-vineta">1. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen to the conversation. Circle what they decide to do. Then, number the activities in the order in which they are mentioned.
             </p>
@@ -16,7 +19,7 @@
                     <b-row>
                         <b-col sm="3"><input id="inpExe11" type="text" :pattern="option.number"></b-col>
                         <b-col sm="9">
-                            <button class="btn" :id="`id-${i}`" @click="checkAns(option, i)"><img :src="require(`@/assets/imgs/exercise11/${option.img}.jpg`)" alt=""></button>
+                            <button class="btn" :id="`id-${i}`" @click="checkAns(option, i)"><img class="img-e11" :src="require(`@/assets/imgs/exercise11/${option.img}.jpg`)" alt=""></button>
                         </b-col>
                     </b-row>
                 </b-col>
@@ -136,5 +139,9 @@ export default {
     input:valid {
         color: #00BC00;
     }
+    .img-e11{
+        width: 200px;
+        height: 144px;
+        margin-left: 1rem;    }
 </style>
 

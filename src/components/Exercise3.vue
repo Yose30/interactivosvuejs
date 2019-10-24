@@ -11,39 +11,39 @@
       <div class="parrafo">
         <b-row>
           <b-col sm="9" align="left">
-            <table>
-              <tbody>
+            <table class="tabla-e9">
+              <tbody align="left">
                 <tr>
-                  <td><b>Carlos:</b></td>
-                  <td>Hello Pedro. How <input type="text" pattern="(a|A)re"/> you?</td>
+                  <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                  <td valign="top" class="dialogo-input">Hello Pedro. How <input type="text" pattern="(a|A)re"/> you?</td>
                 </tr>
                 <tr>
-                  <td><b>Pedro:</b></td>
-                  <td>I’m fine thanks. <input type="text" pattern="(t|T)his"/> is my friend Karla.</td>
+                  <td valign="top" class="personaje-input"><b>Pedro:</b></td>
+                  <td valign="top" class="dialogo-input">I’m fine thanks. <input type="text" pattern="(t|T)his"/> is my friend Karla.</td>
                 </tr>
                 <tr>
-                  <td><b>Carlos:</b></td>
-                  <td>Hello Karla. <input type="text" pattern="(a|A)re"/> you in group 202?</td>
+                  <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                  <td valign="top" class="dialogo-input">Hello Karla. <input type="text" pattern="(a|A)re"/> you in group 202?</td>
                 </tr>
                 <tr>
-                  <td><b>Karla:</b></td>
-                  <td>No, <input type="text" pattern="(I|i)'m"/> not. I’m in group 220</td>
+                  <td valign="top" class="personaje-input"><b>Karla:</b></td>
+                  <td valign="top" class="dialogo-input">No, <input type="text" pattern="(I|i)'m"/> not. I’m in group 220</td>
                 </tr>
                 <tr>
-                  <td><b>Carlos:</b></td>
-                  <td>Oops! What’ <input type="text" pattern="s"/> that sound?</td>
+                  <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                  <td valign="top" class="dialogo-input">Oops! What’ <input type="text" pattern="s"/> that sound?</td>
                 </tr>
                 <tr>
-                  <td><b>Pedro:</b></td>
-                  <td><input type="text" pattern="(i|I)t's"/> the school bell.</td>
+                  <td valign="top" class="personaje-input"><b>Pedro:</b></td>
+                  <td valign="top" class="dialogo-input"><input type="text" pattern="(i|I)t's"/> the school bell.</td>
                 </tr>
                 <tr>
-                  <td><b>Karla:</b></td>
-                  <td>Is <input type="text" pattern="(i|I)t"/> time to go to class now?</td>
+                  <td valign="top" class="personaje-input"><b>Karla:</b></td>
+                  <td valign="top" class="dialogo-input">Is <input type="text" pattern="(i|I)t"/> time to go to class now?</td>
                 </tr>
                 <tr>
-                  <td><b>Pedro:</b></td>
-                  <td>Yes, it <input type="text" pattern="(i|I)s"/> Let’s run!</td>
+                  <td valign="top" class="personaje-input"><b>Pedro:</b></td>
+                  <td valign="top" class="dialogo-input">Yes, it <input type="text" pattern="(i|I)s"/> Let’s run!</td>
                 </tr>
               </tbody>
             </table>
