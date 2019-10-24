@@ -2,24 +2,27 @@
     <div>
       <MyHeader :page="'page2'"></MyHeader>
       <div id="divContent" class="container">
+        <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
         <p class="instrucciones">
             <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  /> </span> Look at the picture and identify the objects. What happened? Read the conversation and match the people with their possessions.
         </p>
         <div class="row">
         <div class="col-md-9">
-          <table>
+          <table class="tabla-e9">
             <tbody align="left">
               <tr>
-                <td><b>Ana:</b></td>
-                <td>Ouch!</td>
+                <td valign="top" class="personaje"><b>Ana:</b></td>
+                <td class="dialogo">Ouch!</td>
               </tr>
               <tr>
-                <td><b>Carlos:</b></td>
-                <td>I’m sorry. Are you OK?</td>
+                <td valign="top" class="personaje"><b>Carlos:</b></td>
+                <td class="dialogo">I’m sorry. Are you OK?</td>
               </tr>
               <tr>
-                <td><b>Ana:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input" ><b>Ana:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">Yes, I’m OK, thanks. Look at this mess! Now, let’s find</p>
                     <drop v-if="!answers[0].status" class="drop b" @dragover="assign(0)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b :style="`color: ${answers[0].text}`">{{ answers[0].text }}</b></p>
@@ -27,8 +30,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Carlos:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">This is </p>
                     <drop v-if="!answers[1].status" class="drop b" @dragover="assign(1)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b :style="`color: ${answers[1].text}`">{{ answers[1].text }}</b></p>
@@ -36,8 +39,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Ana:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Ana:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">No! It’s not </p>
                     <drop v-if="!answers[2].status" class="drop b" @dragover="assign(2)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[2].text}`">{{ answers[2].text }}</b></p>
@@ -54,8 +57,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Carlos:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">Look, two notebooks, but which is </p>
                     <drop v-if="!answers[6].status" class="drop b" @dragover="assign(6)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[6].text}`">{{ answers[6].text }}</b></p>
@@ -63,8 +66,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Ana:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Ana:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <drop v-if="!answers[7].status" class="drop b" @dragover="assign(7)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[7].text}`">{{ answers[7].text }}</b></p>
                     <p class="a">notebook is </p>
@@ -85,8 +88,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Carlos:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">Great! Here’s </p>
                     <drop v-if="!answers[13].status" class="drop b" @dragover="assign(13)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[13].text}`">{{ answers[13].text }}</b></p>
@@ -102,8 +105,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Ana:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Ana:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">Oops, I’m in trouble! This USB belongs to </p>
                     <drop v-if="!answers[17].status" class="drop b" @dragover="assign(17)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[17].text}`">{{ answers[17].text }}</b></p>
@@ -114,8 +117,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Carlos:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Carlos:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">I’m sorry about the USB, but look, </p>
                     <drop v-if="!answers[19].status" class="drop b" @dragover="assign(19)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[19].text}`">{{ answers[19].text }}</b></p>
@@ -123,8 +126,8 @@
                 </td>
               </tr>
               <tr>
-                <td><b>Ana:</b></td>
-                <td id="blocktd">
+                <td valign="top" class="personaje-input"><b>Ana:</b></td>
+                <td valign="top" class="dialogo-input" id="blocktd">
                     <p class="a">Oh, no! Here comes </p>
                     <drop v-if="!answers[20].status" class="drop b" @dragover="assign(20)" @dragleave="selection = {}" @drop="handleDrop"></drop>
                     <p v-else class="b"><b  :style="`color: ${answers[20].text}`">{{ answers[20].text }}</b></p>

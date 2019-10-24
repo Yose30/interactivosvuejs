@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-md-4"  v-for="(celebration, i) in celebrations" v-bind:key="i" >
-          <button class="btn" @click="selectImage(celebration, i)"><img id="imgExc5" :src="require(`@/assets/imgs/exercise5/${celebration.image}.jpg`)" :alt="celebration.answer"></button>
+          <button class="btn" @click="selectImage(celebration, i)"><img id="imgExc5" :src="require(`@/assets/imgs/exercise5/${celebration.image}.svg`)" :alt="celebration.answer"></button>
         </div>
       </div>
       <hr>
@@ -25,7 +25,7 @@
       <b-card>
         <b-row>
           <b-col v-for="(image, i) in images" v-bind:key="i" align="center">
-            <img :src="require(`@/assets/imgs/exercise5/${image.answer}.jpg`)" :alt="image.answer">
+            <img class="img-e5-2" :src="require(`@/assets/imgs/exercise5/${image.answer}.svg`)" :alt="image.answer">
             <drop 
               :id="`boxDrop5-${i}`"
               class="drop classDrop5"
@@ -198,4 +198,15 @@ export default {
 </script>
 
 <style scoped>
+#imgExc5{
+  padding: 0px;
+  margin: 0px;
+  width: 300px;
+  height: 199px;
+}
+.img-e5-2{
+  margin-top:1rem;
+  width: 206px;
+  height: 168px;
+}
 </style>

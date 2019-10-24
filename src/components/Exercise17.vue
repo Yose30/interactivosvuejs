@@ -2,6 +2,9 @@
     <div>
         <MyHeader :page="'page7'"></MyHeader>
         <div id="divContent" class="container">
+             <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
             <p class="instrucciones">
                 <b class="numero-vineta">1.  </b>Read and match. Circle the best title for the text.
             </p>
@@ -25,7 +28,7 @@
                                 <b-form-radio name="answers" @change="onState(answer.status)"></b-form-radio>
                             </b-col>
                             <b-col sm="6">{{ answer.text }}</b-col>
-                            <b-col sm="5"><img :src="require(`@/assets/imgs/exercise17/${answer.image}.jpg`)" :alt="answer.image"></b-col>
+                            <b-col sm="5"><img class="img-e17" :src="require(`@/assets/imgs/exercise17/${answer.image}.svg`)" :alt="answer.image"></b-col>
                         </b-row>
                     </b-col>
                 </b-row>
@@ -114,6 +117,10 @@ export default {
 <style scoped>
     #colExc17 {
         display: flex;
+    }
+    .img-e17{
+        width: 175px;
+        height: 135px;
     }
 </style>
 

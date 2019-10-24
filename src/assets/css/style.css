@@ -417,6 +417,7 @@ img {
     height: 170px;
   }
   .btn-finish{
+      margin-top: 1rem;
     font-family: var(--fuenteOpensans);
     background-color: var(--amarilloF);
     width: 200px;

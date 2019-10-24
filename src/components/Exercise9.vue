@@ -16,7 +16,7 @@
           </audio>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-9">
             <table class="tabla-e9">
               <tbody align="left" >
                 <tr>
@@ -60,7 +60,7 @@
           </div>
           <div class="col-md-3">
             <!-- IMAGEN -->
-            <img id="imgExe9" src="@/assets/imgs/exercise9/teacher.jpg" alt="">
+            <img id="imgExe9" src="@/assets/imgs/exercise9/teacher.svg" alt="">
           </div>
         </div>
       </div>
@@ -82,8 +82,9 @@ export default {
   input:valid {
     color: #00BC00;
   }
+ 
   #imgExe9 {
-    width: 100%;
-    height: 150px;
+    width: 250px;
+    height: 300px;
   }
 </style>
