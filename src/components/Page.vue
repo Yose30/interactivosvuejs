@@ -66,10 +66,58 @@ export default {
 </script>
 
 <style scoped>
-  #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix, #pageSeven, #pageEight, #pageNine, #pageTen{
-    width: 100%;
-    height: 900px;
-  }
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px) {
+    /* Styles */
+    }
+  /* Smartphones (landscape) ----------- */
+  @media only screen
+    and (min-width : 321px) {
+    /* Styles */
+    }
+  /* Smartphones (portrait) ----------- */
+  @media only screen
+    and (max-width : 320px) {
+      /* Styles */
+    }
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px) {
+    /* Styles */
+    }
+  /* iPads (landscape) ----------- */
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : landscape) {
+      /* Styles */
+    }
+  /* iPads (portrait) ----------- */
+  @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : portrait) {
+      /* Styles */
+    }
+  /* Desktops and laptops ----------- */
+  @media only screen
+    and (min-width : 1224px) {
+      #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix, #pageSeven, #pageEight, #pageNine, #pageTen{
+        width: 100%;
+        height: 80rem;
+      }
+    }
+  /* Large screens ----------- */
+  @media only screen
+    and (min-width : 1824px) {
+    /* Styles */
+    }
+
+  
+  
   #page1B1, #page1B2, #page1B3, #page2B1, #page2B2, #page2B3, #page3B1, #page3B2,
   #page4B1, #page4B2, #page5B1, #page5B2, #page6B1, #page7B1, #page7B2, #page7B3,
   #page8B1, #page9B1, #page9B2, #page10B1, #page10B2 {
@@ -79,27 +127,68 @@ export default {
     border-radius: 50%;
     height: 35px;
   }
-  #pageOne { background: url('../assets/pages/page1.svg') no-repeat; }
-  #pageTwo { background: url('../assets/pages/page2.svg') no-repeat; }
-  #pageThree { background: url('../assets/pages/page3.svg') no-repeat; }
-  #pageFour { background: url('../assets/pages/page4.svg') no-repeat; }
-  #pageFive { background: url('../assets/pages/page5.svg') no-repeat; }
-  #pageSix { background: url('../assets/pages/page6.svg') no-repeat; }
-  #pageSeven { background: url('../assets/pages/page7.svg') no-repeat; }
-  #pageEight { background: url('../assets/pages/page8.svg') no-repeat; }
-  #pageNine { background: url('../assets/pages/page9.svg') no-repeat; }
-  #pageTen { background: url('../assets/pages/page10.svg') no-repeat; }
+  #pageOne { 
+    background: url('../assets/pages/page1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: 100% */
+  }
+  #pageTwo {
+    background: url('../assets/pages/page2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageThree {
+    background: url('../assets/pages/page3.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageFour {
+    background: url('../assets/pages/page4.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageFive {
+    background: url('../assets/pages/page5.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageSix {
+    background: url('../assets/pages/page6.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageSeven {
+    background: url('../assets/pages/page7.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageEight {
+    background: url('../assets/pages/page8.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageNine {
+    background: url('../assets/pages/page9.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #pageTen {
+    background: url('../assets/pages/page10.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   #page1B1 {
-    margin-left: 6%;
-    margin-top: 9%;
+    margin-left: 30%;
+    margin-top: 5%;
   }
   #page1B2 {
-    margin-left: 6%;
-    margin-top: 20%;
+    margin-left: 30%;
+    margin-top: 9%;
   }
   #page1B3 {
-    margin-left: 6%;
+    margin-left: 30%;
     margin-top: 24%;
   }
 

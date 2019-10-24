@@ -366,7 +366,7 @@ img {
 /** WiteBoard Interactive*/
 .contenedor{
     margin-left: 25%;
-    width:50%;
+    width:60%;
     padding-top:0.5rem;
     padding-bottom:0.5rem;
     background-color: var(--botonMorado);
@@ -398,11 +398,6 @@ img {
   
     background: transparent;
     border:3px solid var(--blanco);
-}
-.grosor-linea{
-    position: relative;
-    width: 5rem;
-    height: 3rem;
 }
 
 /** Botones */
