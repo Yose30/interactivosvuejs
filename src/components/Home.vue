@@ -1,35 +1,40 @@
 <template>
-  <div id="divContent" class="container">
-    <b-row>
-      <b-col sm="4" v-for="(page, i) in pages" v-bind:key="i">
-        <button class="btn" @click="openPage(page)"><img id="pageHome" :src="require(`@/assets/pages/${page.image}.svg`)" alt=""></button>
-      </b-col>
-    </b-row>
-    <!-- <div>
-      <img id="pageOne" :src="require(`@/assets/pages/${namePage}.svg`)" alt="">
-      <button class="btn" id="exeButton">botton botton botton botton botton botton</button>
-    </div> -->
-    <!-- <div class="row" v-if="viewImgs">
-      <div class="col-md-6" id="divCanvas1">
+  <div>
+    <homeHeader :page="'home'"></homeHeader>
+    <div id="divContent" class="container">
+      <b-row>
+        <b-col sm="4" v-for="(page, i) in pages" v-bind:key="i">
+          <button class="btn" @click="openPage(page)"><img id="pageHome" :src="require(`@/assets/pages/${page.image}.svg`)" alt=""></button>
+        </b-col>
+      </b-row>
+      <!-- <div>
+        <img id="pageOne" :src="require(`@/assets/pages/${namePage}.svg`)" alt="">
+        <button class="btn" id="exeButton">botton botton botton botton botton botton</button>
+      </div> -->
+      <!-- <div class="row" v-if="viewImgs">
+        <div class="col-md-6" id="divCanvas1">
+          <canvas id="img1"></canvas>
+          <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
+        </div>
+        <div class="col-md-6" id="divCanvas2">
+          <canvas id="img2"></canvas>
+          <router-link id="e1" to="/lesson461">botton botton botton botton</router-link>
+          <router-link id="e2" to="/lesson462">botton botton botton botton</router-link>
+        </div>
+      </div>
+      <div v-else>
         <canvas id="img1"></canvas>
-        <router-link id="e1" to="/lesson371">botton botton botton botton</router-link>
-      </div>
-      <div class="col-md-6" id="divCanvas2">
-        <canvas id="img2"></canvas>
-        <router-link id="e1" to="/lesson461">botton botton botton botton</router-link>
-        <router-link id="e2" to="/lesson462">botton botton botton botton</router-link>
-      </div>
+      </div> -->
     </div>
-    <div v-else>
-      <canvas id="img1"></canvas>
-    </div> -->
   </div>
 </template>
 
 <script>
+import HomeHeader from './HomeHeader'
 import home from '@/assets/json/home.json'
 export default {
   name: 'Home',
+  components: { 'homeHeader': HomeHeader},
   data () {
     return {
       viewImgs: true,
@@ -117,7 +122,7 @@ export default {
 <style scoped>
   #page1{
     background-size: 100%;
-    background-image: url('../assets/pdf/page1.svg');
+    /* background-image: url('../assets/pdf/page1.svg'); */
   }
   #exeButton {
     background-size: 100%;
@@ -147,7 +152,7 @@ export default {
     background-size: 100%;
   }
   #img2 {
-    background-image: url('../assets/pdf/lesson46_pequena.png');
+    /* background-image: url('../assets/pdf/lesson46_pequena.png'); */
     background-size: 100%;
   }
   #btnImg1 {

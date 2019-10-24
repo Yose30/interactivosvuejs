@@ -1,63 +1,68 @@
 <template>
-    <div id="divContent" class="container">
-        <p class="instrucciones">
-            <b class="numero-vineta">1. </b>Unscramble the words to form correct statements or questions.
-        </p>
-        <div align="left">
-            <ol>  
-                <li v-for="(option, i) in options" v-bind:key="i">
-                    {{ option.words }} <br>
-                    <div v-if="option.id == 1">
-                        <input id="inpExe20" type="text" pattern="What’s">
-                        <input id="inpExe20" type="text" pattern="she">
-                        <input id="inpExe20" type="text" pattern="doing">
-                        <input id="inpExe20" type="text" pattern="?">
-                    </div>
-                    <div v-if="option.id == 2">
-                        <input id="inpExe20" type="text" pattern="Are">
-                        <input id="inpExe20" type="text" pattern="you">
-                        <input id="inpExe20" type="text" pattern="going">
-                        <input id="inpExe20" type="text" pattern="dancing">
-                        <input id="inpExe20" type="text" pattern="tonight">
-                        <input id="inpExe20" type="text" pattern="?">
-                    </div>
-                    <div v-if="option.id == 3">
-                        <input id="inpExe20" type="text" pattern="My">
-                        <input id="inpExe20" type="text" pattern="dad">
-                        <input id="inpExe20" type="text" pattern="is">
-                        <input id="inpExe20" type="text" pattern="fixing">
-                        <input id="inpExe20" type="text" pattern="the">
-                        <input id="inpExe20" type="text" pattern="front">
-                        <input id="inpExe20" type="text" pattern="door">
-                        <input id="inpExe20" type="text" pattern=".">
-                    </div>
-                    <div v-if="option.id == 4">
-                        <input id="inpExe20" type="text" pattern="Alfredo">
-                        <input id="inpExe20" type="text" pattern="is">
-                        <input id="inpExe20" type="text" pattern="getting">
-                        <input id="inpExe20" type="text" pattern="married">
-                        <input id="inpExe20" type="text" pattern="next">
-                        <input id="inpExe20" type="text" pattern="month">
-                        <input id="inpExe20" type="text" pattern="!">
-                    </div>
-                    <div v-if="option.id == 5">
-                        <input id="inpExe20" type="text" pattern="I">
-                        <input id="inpExe20" type="text" pattern="am">
-                        <input id="inpExe20" type="text" pattern="listening">
-                        <input id="inpExe20" type="text" pattern="to">
-                        <input id="inpExe20" type="text" pattern="music">
-                        <input id="inpExe20" type="text" pattern=".">
-                    </div>
-                </li>
-            </ol>
+    <div>
+        <MyHeader :page="'page8'"></MyHeader>
+        <div id="divContent" class="container">
+            <p class="instrucciones">
+                <b class="numero-vineta">1. </b>Unscramble the words to form correct statements or questions.
+            </p>
+            <div align="left">
+                <ol>  
+                    <li v-for="(option, i) in options" v-bind:key="i">
+                        {{ option.words }} <br>
+                        <div v-if="option.id == 1">
+                            <input id="inpExe20" type="text" pattern="What’s">
+                            <input id="inpExe20" type="text" pattern="she">
+                            <input id="inpExe20" type="text" pattern="doing">
+                            <input id="inpExe20" type="text" pattern="?">
+                        </div>
+                        <div v-if="option.id == 2">
+                            <input id="inpExe20" type="text" pattern="Are">
+                            <input id="inpExe20" type="text" pattern="you">
+                            <input id="inpExe20" type="text" pattern="going">
+                            <input id="inpExe20" type="text" pattern="dancing">
+                            <input id="inpExe20" type="text" pattern="tonight">
+                            <input id="inpExe20" type="text" pattern="?">
+                        </div>
+                        <div v-if="option.id == 3">
+                            <input id="inpExe20" type="text" pattern="My">
+                            <input id="inpExe20" type="text" pattern="dad">
+                            <input id="inpExe20" type="text" pattern="is">
+                            <input id="inpExe20" type="text" pattern="fixing">
+                            <input id="inpExe20" type="text" pattern="the">
+                            <input id="inpExe20" type="text" pattern="front">
+                            <input id="inpExe20" type="text" pattern="door">
+                            <input id="inpExe20" type="text" pattern=".">
+                        </div>
+                        <div v-if="option.id == 4">
+                            <input id="inpExe20" type="text" pattern="Alfredo">
+                            <input id="inpExe20" type="text" pattern="is">
+                            <input id="inpExe20" type="text" pattern="getting">
+                            <input id="inpExe20" type="text" pattern="married">
+                            <input id="inpExe20" type="text" pattern="next">
+                            <input id="inpExe20" type="text" pattern="month">
+                            <input id="inpExe20" type="text" pattern="!">
+                        </div>
+                        <div v-if="option.id == 5">
+                            <input id="inpExe20" type="text" pattern="I">
+                            <input id="inpExe20" type="text" pattern="am">
+                            <input id="inpExe20" type="text" pattern="listening">
+                            <input id="inpExe20" type="text" pattern="to">
+                            <input id="inpExe20" type="text" pattern="music">
+                            <input id="inpExe20" type="text" pattern=".">
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise20 from '@/assets/json/exercise20.json'
 export default {
   name: 'Exercise20',
+  components: { 'MyHeader': Header},
   data () {
     return {
         opciones: exercise20,

@@ -1,74 +1,79 @@
 <template>
-    <div id="divContent" class="container">
-        <div class="contenido-titulo">
-            <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
-        </div>
-        <p class="instrucciones">
-            <b class="numero-vineta">1. </b>Listen to the dialogue. Write the greeting and farewell expressions.
-        </p>
-        <div class="multimedia">
-            <audio controls>
-                <source src="../assets/audios/exercise8.mp3">
-            </audio>
-        </div>
-        <b-card>
-            <b-row>
-                <b-col v-for="(option, i) in options" v-bind:key="i">
-                    <drag class="drag" :transfer-data="{ value: option }">
-                        {{ option }}
-                    </drag>
-                </b-col>
-            </b-row>
-        </b-card>
-        <br>
-       
-        <hr>
-        <div class="table-responsive">
-            <table class="table">
-                <thead ref="head">
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Greeting</th>
-                    <th scope="col"></th>
-                    <th scope="col">Farewell</th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="(name, i) in names" v-bind:key="i" align="left">
-                    <td>{{ name.name }}:</td>
-                    <td>
-                        <drop class="drop classDrop8" @dragover="assign(name, i)" @dragleave="selection = {}" @drop="handleDrop1">
-                            <p>{{ name.ansgreeting }}</p>
-                        </drop>
-                    </td>
-                    <td>
-                        <b-button id="btnDel8" :disabled="name.ansgreeting == ''" variant="secondary" @click="deleteGreet(i)"><font-awesome-icon icon="minus"/></b-button>
-                    </td>
-                    <td>
-                        <drop class="drop classDrop8" @dragover="assign(name, i)" @dragleave="selection = {}" @drop="handleDrop2">
-                            <p>{{ name.ansfarewell }}</p>
-                        </drop>
-                    </td>
-                    <td>
-                        <b-button id="btnDel8" :disabled="name.ansfarewell == ''" variant="secondary" @click="deleteFare(i)"><font-awesome-icon icon="minus"/></b-button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-         <div class="text-right">
-            <b-button class="btn btn-evaluar-tf" variant="primary" @click="onEvaluate">Evaluate</b-button>
+    <div>
+        <MyHeader :page="'page2'"></MyHeader>
+        <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+            </div>
+            <p class="instrucciones">
+                <b class="numero-vineta">1. </b>Listen to the dialogue. Write the greeting and farewell expressions.
+            </p>
+            <div class="multimedia">
+                <audio controls>
+                    <source src="../assets/audios/exercise8.mp3">
+                </audio>
+            </div>
+            <b-card>
+                <b-row>
+                    <b-col v-for="(option, i) in options" v-bind:key="i">
+                        <drag class="drag" :transfer-data="{ value: option }">
+                            {{ option }}
+                        </drag>
+                    </b-col>
+                </b-row>
+            </b-card>
+            <br>
+        
+            <hr>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead ref="head">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Greeting</th>
+                        <th scope="col"></th>
+                        <th scope="col">Farewell</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(name, i) in names" v-bind:key="i" align="left">
+                        <td>{{ name.name }}:</td>
+                        <td>
+                            <drop class="drop classDrop8" @dragover="assign(name, i)" @dragleave="selection = {}" @drop="handleDrop1">
+                                <p>{{ name.ansgreeting }}</p>
+                            </drop>
+                        </td>
+                        <td>
+                            <b-button id="btnDel8" :disabled="name.ansgreeting == ''" variant="secondary" @click="deleteGreet(i)"><font-awesome-icon icon="minus"/></b-button>
+                        </td>
+                        <td>
+                            <drop class="drop classDrop8" @dragover="assign(name, i)" @dragleave="selection = {}" @drop="handleDrop2">
+                                <p>{{ name.ansfarewell }}</p>
+                            </drop>
+                        </td>
+                        <td>
+                            <b-button id="btnDel8" :disabled="name.ansfarewell == ''" variant="secondary" @click="deleteFare(i)"><font-awesome-icon icon="minus"/></b-button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-right">
+                <b-button class="btn btn-evaluar-tf" variant="primary" @click="onEvaluate">Evaluate</b-button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise81 from '@/assets/json/exercise8-1.json'
 import exercise82 from '@/assets/json/exercise8-2.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise8',
+  components: { 'MyHeader': Header},
   data () {
     return {
         sentences: exercise81,

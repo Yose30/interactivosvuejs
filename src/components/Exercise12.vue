@@ -1,8 +1,9 @@
 <template>
-    <div id="divContent" class="container">
+    <div>
+      <MyHeader :page="'page2'"></MyHeader>
+      <div id="divContent" class="container">
         <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  /> </span> Look at the picture and identify the objects. What happened? Read the conversation and match the
-people with their possessions.
+            <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  /> </span> Look at the picture and identify the objects. What happened? Read the conversation and match the people with their possessions.
         </p>
         <div class="row">
         <div class="col-md-9">
@@ -143,14 +144,17 @@ people with their possessions.
         </div>
       </div>
     </div>
+    </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise121 from '@/assets/json/exercise12-1.json'
 import exercise122 from '@/assets/json/exercise12-2.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise12',
+  components: { 'MyHeader': Header},
   data () {
     return {
         opciones: exercise121,

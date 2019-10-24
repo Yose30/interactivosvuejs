@@ -1,53 +1,58 @@
 <template>
-    <div id="divContent" class="container">
-        <div class="contenido-titulo">
-            <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-        </div>
-        <p class="instrucciones">
-            <b class="numero-vineta">1.  </b> Read and answer.
-        </p>
-        <div class="text-left preguntas">
-            <form class="form-inline">
-                <p>What do US and Canada citizens can use instead of a passport?</p>
-                <textarea id="inpExe14" class="imput-multimedia"></textarea>
-            </form>
-        </div>
-        <hr>
-        <h4>Visiting Mexico?</h4>
-        <p>
-            US and Canadian tourists can enter Mexico without a passport if they have an offi cial photo ID, such
-            as a driver’s license, plus some proof of their citizenship, such as an original birth certifi cate. But to
-            return to or transit the US by air, a passport or other secure travel document such as a Nexus card is
-            required. To return to or transit the US by land or sea, Americans and Canadians must present either a
-            passport, or other documents proving identity and citizenship (offi cial photo ID and birth certifi cate),
-            or the recently introduced US passport card, or a Nexus or other ‘trusted traveler’ card. Canadians
-            fl ying back from Mexico to Canada are advised to carry a passport.
-            In any case, it’s much better to travel to Mexico with a passport because offi cials of all countries are
-            used to passports and may delay people who have other documents. In Mexico you often need your
-            passport to change money and to check into hotels.
-            All citizens of countries other than the US and Canada need to have a passport that’s valid for at least
-            six months after they arrive in Mexico.
-            Travelers under 18 who are not accompanied by both their parents may need special documentation.
-        </p>
-        <p>Adapted from: <a href="http://www.lonelyplanet.com/mexico/transport/getting-there-away" target="_blank">http://www.lonelyplanet.com/mexico/transport/getting-there-away</a></p>
-        <hr>
-        <div class="preguntas">
-            <form class="form-inline">
-            <ol>
-                <li v-for="(question, i) in questions" v-bind:key="i">
-                    {{ question.question }}
-                    <textarea id="inpExe14" v-model="question.answer" ></textarea>
-                </li>
-            </ol>
-            </form>
+    <div>
+        <MyHeader :page="'page5'"></MyHeader>
+        <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
+            <p class="instrucciones">
+                <b class="numero-vineta">1.  </b> Read and answer.
+            </p>
+            <div class="text-left preguntas">
+                <form class="form-inline">
+                    <p>What do US and Canada citizens can use instead of a passport?</p>
+                    <textarea id="inpExe14" class="imput-multimedia"></textarea>
+                </form>
+            </div>
+            <hr>
+            <h4>Visiting Mexico?</h4>
+            <p>
+                US and Canadian tourists can enter Mexico without a passport if they have an offi cial photo ID, such
+                as a driver’s license, plus some proof of their citizenship, such as an original birth certifi cate. But to
+                return to or transit the US by air, a passport or other secure travel document such as a Nexus card is
+                required. To return to or transit the US by land or sea, Americans and Canadians must present either a
+                passport, or other documents proving identity and citizenship (offi cial photo ID and birth certifi cate),
+                or the recently introduced US passport card, or a Nexus or other ‘trusted traveler’ card. Canadians
+                fl ying back from Mexico to Canada are advised to carry a passport.
+                In any case, it’s much better to travel to Mexico with a passport because offi cials of all countries are
+                used to passports and may delay people who have other documents. In Mexico you often need your
+                passport to change money and to check into hotels.
+                All citizens of countries other than the US and Canada need to have a passport that’s valid for at least
+                six months after they arrive in Mexico.
+                Travelers under 18 who are not accompanied by both their parents may need special documentation.
+            </p>
+            <p>Adapted from: <a href="http://www.lonelyplanet.com/mexico/transport/getting-there-away" target="_blank">http://www.lonelyplanet.com/mexico/transport/getting-there-away</a></p>
+            <hr>
+            <div class="preguntas">
+                <form class="form-inline">
+                <ol>
+                    <li v-for="(question, i) in questions" v-bind:key="i">
+                        {{ question.question }}
+                        <textarea id="inpExe14" v-model="question.answer" ></textarea>
+                    </li>
+                </ol>
+                </form>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise14 from '@/assets/json/exercise14.json'
 export default {
   name: 'Exercise14',
+  components: { 'MyHeader': Header},
   data () {
     return {
         positions: [],

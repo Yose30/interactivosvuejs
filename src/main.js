@@ -26,6 +26,7 @@ import Exercise17 from './components/Exercise17'
 import Exercise18 from './components/Exercise18'
 import Exercise19 from './components/Exercise19'
 import Exercise20 from './components/Exercise20'
+// import Header from './components/Header'
 import Page from './components/Page'
 import Draw from './components/Draw'
 
@@ -82,6 +83,7 @@ const router = new VueRouter({
     { path: '/exercise19', name: 'exercise19', component: Exercise19 },
     { path: '/exercise20', name: 'exercise20', component: Exercise20 },
     { path: '/draw', name: 'draw', component: Draw },
+    // { path: '/header', name: 'header', component: Header },
     { path: '/page/:num', name: 'page', component: Page }
   ]
 })
@@ -102,6 +104,7 @@ new Vue({
     Exercise15, Exercise16,
     Exercise17, Exercise18,
     Exercise19, Exercise20,
+    // 'MyHeader': Header,
     Draw
   },
   template: '<App/>'

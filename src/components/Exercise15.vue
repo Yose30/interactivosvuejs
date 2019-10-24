@@ -1,38 +1,43 @@
 <template>
-    <div id="divContent" class="container">
-        <div class="contenido-titulo">
-            <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-        </div>
-        <p class="instrucciones">
-            <b class="numero-vineta">1.  </b>What time is it? Match each clock with the corresponding way or ways to express time.
-Write the appropriate letter under each clock. Listen and check your answers.
-        </p>
-        <audio controls>
-          <source src="../assets/audios/exercise15.mp3">
-        </audio>
-        <hr>
-        <b-row class="text-center">
-            <b-col v-for="(option, i) in options" v-bind:key="i">
-                <!-- require(`@/assets/imgs/exercise15/${option.watch}.jpg`) -->
-                <img :src="require(`@/assets/imgs/exercise15/${option.watch}.jpg`)" :alt="option.watch">
-                <br>
-                <input id="inpExc15" type="text" :pattern="option.answer">
-            </b-col>
-        </b-row>
-        <hr>
-        <div align="left">
-            <ol type="a">
-                <li v-for="(answer, i) in answers" v-bind:key="i">{{ answer.form1 }} / {{ answer.form2 }}</li>
-            </ol>
+    <div>
+        <MyHeader :page="'page3'"></MyHeader>
+        <div id="divContent" class="container">
+            <div class="contenido-titulo">
+                <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+            </div>
+            <p class="instrucciones">
+                <b class="numero-vineta">1.  </b>What time is it? Match each clock with the corresponding way or ways to express time.
+    Write the appropriate letter under each clock. Listen and check your answers.
+            </p>
+            <audio controls>
+            <source src="../assets/audios/exercise15.mp3">
+            </audio>
+            <hr>
+            <b-row class="text-center">
+                <b-col v-for="(option, i) in options" v-bind:key="i">
+                    <!-- require(`@/assets/imgs/exercise15/${option.watch}.jpg`) -->
+                    <img :src="require(`@/assets/imgs/exercise15/${option.watch}.jpg`)" :alt="option.watch">
+                    <br>
+                    <input id="inpExc15" type="text" :pattern="option.answer">
+                </b-col>
+            </b-row>
+            <hr>
+            <div align="left">
+                <ol type="a">
+                    <li v-for="(answer, i) in answers" v-bind:key="i">{{ answer.form1 }} / {{ answer.form2 }}</li>
+                </ol>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise151 from '@/assets/json/exercise15-1.json'
 import exercise152 from '@/assets/json/exercise15-2.json'
 export default {
   name: 'Exercise14',
+  components: { 'MyHeader': Header},
   data () {
     return {
         opciones: exercise151,

@@ -10,9 +10,6 @@
                     <b-nav-item>
                         <button class="btn home" @click="goHome()"><font-awesome-icon icon="home" />  Home</button>
                     </b-nav-item>
-                    <b-nav-item>
-                        <button class="btn home" @click="goPage()">Back</button>
-                    </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
@@ -25,9 +22,6 @@ export default {
     methods: {
         goHome () {
             this.$router.push({name: 'home'})
-        },
-        goPage () {
-            this.$router.push({name: 'page', params: { num: this.page } })
         }
     }
 }

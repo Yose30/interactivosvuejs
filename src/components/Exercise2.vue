@@ -1,45 +1,49 @@
 <template>
-  <div id="divContent" class="container">
-    <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
-    </div>
-    <div class="row">
-      <div class="col-md-6 text-left">
-        <button class="btn descarga-pdf" @click="download">Download exercise</button>
+  <div>
+    <MyHeader :page="'page6'"></MyHeader>
+    <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
       </div>
+      <div class="row">
+        <div class="col-md-6 text-left">
+          <button class="btn descarga-pdf" @click="download">Download exercise</button>
+        </div>
+      </div>
+      <p class="instrucciones">
+        <b class="numero-vineta">1. </b>Look at the pictures. Write the occupation and where the people work. Then, write what they do in their jobs.
+      </p>
+      <hr>
+      <div id="tableExercise">
+        <b-table :items="options" :fields="fields">
+          <template v-slot:cell(image)="data">
+            <img :src="require(`@/assets/imgs/exercise2/${data.item.image}.jpg`)" alt=""/>
+          </template>
+          <template v-slot:cell(place)="data">
+            <textarea v-model="data.item.place"></textarea>
+          </template>
+          <template v-slot:cell(activities)="data">
+            <textarea v-model="data.item.activities"></textarea>
+          </template>
+        </b-table>
+      </div>
+      <!-- MODALS -->
+      <b-modal ref="my-modal" centered hide-footer title="">
+        <b-row>
+          <b-col>
+            <b-form-input v-model="nameStudent" :state="state" placeholder="Enter your name"></b-form-input>
+          </b-col>
+          <b-col>
+            <b-button variant="primary" @click="generatePDF">Continuar</b-button>
+          </b-col>
+        </b-row>
+      </b-modal>
     </div>
-    <p class="instrucciones">
-      <b class="numero-vineta">1. </b>Look at the pictures. Write the occupation and where the people work. Then, write what they do in their jobs.
-    </p>
-    <hr>
-    <div id="tableExercise">
-      <b-table :items="options" :fields="fields">
-        <template v-slot:cell(image)="data">
-          <img :src="require(`@/assets/imgs/exercise2/${data.item.image}.jpg`)" alt=""/>
-        </template>
-        <template v-slot:cell(place)="data">
-          <textarea v-model="data.item.place"></textarea>
-        </template>
-        <template v-slot:cell(activities)="data">
-          <textarea v-model="data.item.activities"></textarea>
-        </template>
-      </b-table>
-    </div>
-    <!-- MODALS -->
-    <b-modal ref="my-modal" centered hide-footer title="">
-      <b-row>
-        <b-col>
-          <b-form-input v-model="nameStudent" :state="state" placeholder="Enter your name"></b-form-input>
-        </b-col>
-        <b-col>
-          <b-button variant="primary" @click="generatePDF">Continuar</b-button>
-        </b-col>
-      </b-row>
-    </b-modal>
   </div>
 </template>
 
 <script>
+import Header from './Header'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import exercise2 from '@/assets/json/exercise2.json'
@@ -47,6 +51,7 @@ var doc = new jsPDF()
 var img = new Image()
 export default {
   name: 'Exercise46One',
+  components: { 'MyHeader': Header},
   data () {
     return {
       fields: [

@@ -1,35 +1,40 @@
 <template>
-  <div id="divContent" class="container">
-    <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
-    </div>
-    <p class="instrucciones">
-      <b class="numero-vineta">1. </b>Number the sentences as you listen.
-    </p>
-    <div class="multimedia">
-      <audio controls>
-          <source src="../assets/audios/exercise7.mp3">
-      </audio>
-    </div>
-    <div class="contenido-e7">
-      <table class="table">
-        <tbody>
-          <tr v-for="(sentence, i) in sentences" v-bind:key="i">
-            <td class="preguntas-e7" align="left">{{ sentence.sentence }}</td>
-            <td  class="numero-e7"><input id="tdNExc7" type="text" :pattern="sentence.number"></td>
-          </tr>
-        </tbody>
-      </table>  
+  <div>
+    <MyHeader :page="'page1'"></MyHeader>
+    <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
+      </div>
+      <p class="instrucciones">
+        <b class="numero-vineta">1. </b>Number the sentences as you listen.
+      </p>
+      <div class="multimedia">
+        <audio controls>
+            <source src="../assets/audios/exercise7.mp3">
+        </audio>
+      </div>
+      <div class="contenido-e7">
+        <table class="table">
+          <tbody>
+            <tr v-for="(sentence, i) in sentences" v-bind:key="i">
+              <td class="preguntas-e7" align="left">{{ sentence.sentence }}</td>
+              <td  class="numero-e7"><input id="tdNExc7" type="text" :pattern="sentence.number"></td>
+            </tr>
+          </tbody>
+        </table>  
 
+      </div>
+      
     </div>
-    
   </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise7 from '@/assets/json/exercise7.json'
 export default {
   name: 'Exercise7',
+  components: { 'MyHeader': Header},
   data () {
     return {
       options: exercise7,

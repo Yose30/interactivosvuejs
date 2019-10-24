@@ -1,44 +1,47 @@
 <template>
-  <div id="divContent" class="container">
-    <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
-    </div>
-    <p class="instrucciones">
-      <b class="numero-vineta">1. </b>Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.
-    </p>
-    <div class="multimedia">
-      <audio controls>
-        <source src="../assets/audios/exercise1.mp3">
-      </audio>
-    </div>
-    <div class="row">
-      <div class="col-md-9">
-        <div class="row">
-          <div v-for="(option, item) in options" v-bind:key="item" id="elements">
-            <div class="row">
-              <div class="col-sm-12" id="numberElem">
-                <drag v-if="option.status" class="drag" :transfer-data="{ answer: option.option }">
-                  {{ option.number }}
-                </drag>
-                <p v-else id="numberDisa">{{ option.number }}</p>
-              </div>
-              <div>
-                <img v-if="option.status" :src="require(`@/assets/imgs/exercise1/${option.option}.jpg`)" alt=""/>
-                <img v-else :src="require(`@/assets/imgs/exercise1/${option.option}.jpg`)" id="select" alt=""/>
+  <div>
+    <MyHeader :page="'page8'"></MyHeader>
+    <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
+      </div>
+      <p class="instrucciones">
+        <b class="numero-vineta">1. </b>Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.
+      </p>
+      <div class="multimedia">
+        <audio controls>
+          <source src="../assets/audios/exercise1.mp3">
+        </audio>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div v-for="(option, item) in options" v-bind:key="item" id="elements">
+              <div class="row">
+                <div class="col-sm-12" id="numberElem">
+                  <drag v-if="option.status" class="drag" :transfer-data="{ answer: option.option }">
+                    {{ option.number }}
+                  </drag>
+                  <p v-else id="numberDisa">{{ option.number }}</p>
+                </div>
+                <div>
+                  <img v-if="option.status" :src="require(`@/assets/imgs/exercise1/${option.option}.jpg`)" alt=""/>
+                  <img v-else :src="require(`@/assets/imgs/exercise1/${option.option}.jpg`)" id="select" alt=""/>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div v-for="(answer, item) in answers" v-bind:key="item">
-          <div class="row">
-            <div class="col-sm-4">
-              <drop class="drop" @dragover="assign(answer, item)" @dragleave="selection = {}" @drop="handleDrop">
-                <p v-if="answer.status">{{ answer.number }}</p>
-              </drop>
+        <div class="col-md-3">
+          <div v-for="(answer, item) in answers" v-bind:key="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <drop class="drop" @dragover="assign(answer, item)" @dragleave="selection = {}" @drop="handleDrop">
+                  <p v-if="answer.status">{{ answer.number }}</p>
+                </drop>
+              </div>
+              <div class="col-sm-8 text-left">{{ answer.answer }}</div>
             </div>
-            <div class="col-sm-8 text-left">{{ answer.answer }}</div>
           </div>
         </div>
       </div>
@@ -47,10 +50,11 @@
 </template>
 
 <script>
+import Header from './Header'
 import { Drag, Drop } from 'vue-drag-drop'
 import exercise1 from '@/assets/json/exercise1.json'
 export default {
-  components: { Drag, Drop },
+  components: { Drag, Drop, 'MyHeader': Header},
   name: 'Exercise37One',
   data () {
     return {

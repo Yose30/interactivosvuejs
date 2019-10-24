@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyHeader></MyHeader>
+    <!-- <MyHeader></MyHeader> -->
     <router-view></router-view>
     <hr>
     <draw></draw>

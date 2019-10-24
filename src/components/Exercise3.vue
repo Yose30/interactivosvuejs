@@ -1,62 +1,67 @@
 <template>
-  <div id="divContent" class="container">
-    <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
-    </div>
-    <p class="instrucciones">
-      <b class="numero-vineta">2. </b>Complete the conversation with the verb to be or the corresponding pronoun.
-    </p>
-    <div class="parrafo">
-      <b-row>
-        <b-col sm="9" align="left">
-          <table>
-            <tbody>
-              <tr>
-                <td><b>Carlos:</b></td>
-                <td>Hello Pedro. How <input type="text" pattern="(a|A)re"/> you?</td>
-              </tr>
-              <tr>
-                <td><b>Pedro:</b></td>
-                <td>I’m fine thanks. <input type="text" pattern="(t|T)his"/> is my friend Karla.</td>
-              </tr>
-              <tr>
-                <td><b>Carlos:</b></td>
-                <td>Hello Karla. <input type="text" pattern="(a|A)re"/> you in group 202?</td>
-              </tr>
-              <tr>
-                <td><b>Karla:</b></td>
-                <td>No, <input type="text" pattern="(I|i)'m"/> not. I’m in group 220</td>
-              </tr>
-              <tr>
-                <td><b>Carlos:</b></td>
-                <td>Oops! What’ <input type="text" pattern="s"/> that sound?</td>
-              </tr>
-              <tr>
-                <td><b>Pedro:</b></td>
-                <td><input type="text" pattern="(i|I)t's"/> the school bell.</td>
-              </tr>
-              <tr>
-                <td><b>Karla:</b></td>
-                <td>Is <input type="text" pattern="(i|I)t"/> time to go to class now?</td>
-              </tr>
-              <tr>
-                <td><b>Pedro:</b></td>
-                <td>Yes, it <input type="text" pattern="(i|I)s"/> Let’s run!</td>
-              </tr>
-            </tbody>
-          </table>
-        </b-col>
-        <b-col>
-          <img id="imgExe3" src="@/assets/imgs/exercise3/conversation.jpg" alt="">
-        </b-col>
-      </b-row>
+  <div>
+    <MyHeader :page="'page8'"></MyHeader>
+    <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
+      </div>
+      <p class="instrucciones">
+        <b class="numero-vineta">2. </b>Complete the conversation with the verb to be or the corresponding pronoun.
+      </p>
+      <div class="parrafo">
+        <b-row>
+          <b-col sm="9" align="left">
+            <table>
+              <tbody>
+                <tr>
+                  <td><b>Carlos:</b></td>
+                  <td>Hello Pedro. How <input type="text" pattern="(a|A)re"/> you?</td>
+                </tr>
+                <tr>
+                  <td><b>Pedro:</b></td>
+                  <td>I’m fine thanks. <input type="text" pattern="(t|T)his"/> is my friend Karla.</td>
+                </tr>
+                <tr>
+                  <td><b>Carlos:</b></td>
+                  <td>Hello Karla. <input type="text" pattern="(a|A)re"/> you in group 202?</td>
+                </tr>
+                <tr>
+                  <td><b>Karla:</b></td>
+                  <td>No, <input type="text" pattern="(I|i)'m"/> not. I’m in group 220</td>
+                </tr>
+                <tr>
+                  <td><b>Carlos:</b></td>
+                  <td>Oops! What’ <input type="text" pattern="s"/> that sound?</td>
+                </tr>
+                <tr>
+                  <td><b>Pedro:</b></td>
+                  <td><input type="text" pattern="(i|I)t's"/> the school bell.</td>
+                </tr>
+                <tr>
+                  <td><b>Karla:</b></td>
+                  <td>Is <input type="text" pattern="(i|I)t"/> time to go to class now?</td>
+                </tr>
+                <tr>
+                  <td><b>Pedro:</b></td>
+                  <td>Yes, it <input type="text" pattern="(i|I)s"/> Let’s run!</td>
+                </tr>
+              </tbody>
+            </table>
+          </b-col>
+          <b-col>
+            <img id="imgExe3" src="@/assets/imgs/exercise3/conversation.jpg" alt="">
+          </b-col>
+        </b-row>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Header from './Header'
 export default {
-  name: 'Exercise1'
+  name: 'Exercise1',
+  components: { 'MyHeader': Header}
 }
 </script>
 

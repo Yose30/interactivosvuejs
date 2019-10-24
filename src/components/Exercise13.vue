@@ -1,5 +1,7 @@
 <template>
-    <div id="divContent" class="container">
+    <div>
+      <MyHeader :page="'page3'"></MyHeader>
+      <div id="divContent" class="container">
         <div class="contenido-titulo">
             <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
         </div>
@@ -25,14 +27,17 @@
                 <textarea v-model="answer.answer"></textarea>
             </b-col>
         </b-row>
+      </div>
     </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise131 from '@/assets/json/exercise13-1.json'
 import exercise132 from '@/assets/json/exercise13-2.json'
 export default {
   name: 'Exercise13',
+  components: { 'MyHeader': Header},
   data () {
     return {
         sentences: exercise131,

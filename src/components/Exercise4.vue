@@ -1,58 +1,63 @@
 <template>
-  <div id="divContent" class="container">
-    <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">TRUE - FALSE</h1>
-    </div>
-    <p class="instrucciones">
-      <b class="numero-vineta">1. </b>Listen again and circle T or F.
-    </p>
-    <div class="multimedia">
-      <audio controls>
-        <source src="../assets/audios/exercise4.mp3">
-      </audio>
-    </div>
-    <hr>
-    <table class="table">
-      <thead class="th-tf" ref="head">
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">True</th>
-          <th scope="col">False</th>
-        </tr>
-      </thead>
-      <tbody class="tbody-tf">
-        <tr v-for="(sentence, i) in sentences" v-bind:key="i">
-          <td class="reactivos-tf" align="left">{{ sentence.sentence }}</td>
-          <td class="radio-tf" align="center">
-            <b-form-checkbox size="lg"
-              v-model="sentence.selected"
-              :id="`idt-${sentence.id}`"
-              :name="`sent-${sentence.id}`"
-              value="true"
-              :state="sentence.state"
-            ></b-form-checkbox>
-          </td>
-          <td class="radio-tf" align="center">
-            <b-form-checkbox size="lg"
-              v-model="sentence.selected"
-              :id="`idf-${sentence.id}`"
-              :name="`sent-${sentence.id}`"
-              value="false"
-              :state="sentence.state"
-            ></b-form-checkbox>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div align="right">
-      <button class="btn btn-evaluar-tf" @click="onEvaluate"><font-awesome-icon icon="check-circle"  /> Check</button>
+  <div>
+    <MyHeader :page="'page7'"></MyHeader>
+    <div id="divContent" class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">TRUE - FALSE</h1>
+      </div>
+      <p class="instrucciones">
+        <b class="numero-vineta">1. </b>Listen again and circle T or F.
+      </p>
+      <div class="multimedia">
+        <audio controls>
+          <source src="../assets/audios/exercise4.mp3">
+        </audio>
+      </div>
+      <hr>
+      <table class="table">
+        <thead class="th-tf" ref="head">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">True</th>
+            <th scope="col">False</th>
+          </tr>
+        </thead>
+        <tbody class="tbody-tf">
+          <tr v-for="(sentence, i) in sentences" v-bind:key="i">
+            <td class="reactivos-tf" align="left">{{ sentence.sentence }}</td>
+            <td class="radio-tf" align="center">
+              <b-form-checkbox size="lg"
+                v-model="sentence.selected"
+                :id="`idt-${sentence.id}`"
+                :name="`sent-${sentence.id}`"
+                value="true"
+                :state="sentence.state"
+              ></b-form-checkbox>
+            </td>
+            <td class="radio-tf" align="center">
+              <b-form-checkbox size="lg"
+                v-model="sentence.selected"
+                :id="`idf-${sentence.id}`"
+                :name="`sent-${sentence.id}`"
+                value="false"
+                :state="sentence.state"
+              ></b-form-checkbox>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div align="right">
+        <button class="btn btn-evaluar-tf" @click="onEvaluate"><font-awesome-icon icon="check-circle"  /> Check</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise4 from '@/assets/json/exercise4.json'
 export default {
+  components: { 'MyHeader': Header},
   name: 'Exercise4',
   data () {
     return {

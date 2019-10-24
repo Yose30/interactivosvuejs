@@ -1,62 +1,67 @@
 <template>
-  <div class="container">
-     <div class="contenido-titulo">
-      <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
-    </div>
-    <p class="instrucciones">
-      <b class="numero-vineta">1. </b>Listen to the conversation. Circle the celebration they are talking about.
-    </p>
-    <div class="multimedia">
-      <audio controls>
-        <source src="../assets/audios/exercise5.mp3">
-      </audio>
-    </div>
-    <div class="row">
-      <div class="col-md-4"  v-for="(celebration, i) in celebrations" v-bind:key="i" >
-        <button class="btn" @click="selectImage(celebration, i)"><img id="imgExc5" :src="require(`@/assets/imgs/exercise5/${celebration.image}.jpg`)" :alt="celebration.answer"></button>
+  <div>
+    <MyHeader :page="'page4'"></MyHeader>
+    <div class="container">
+      <div class="contenido-titulo">
+        <h1 class="titulo-ejercicios">VERDADERO - FALSO</h1>
       </div>
-    </div>
-    <hr>
-    <p class="instrucciones">
-      <b class="numero-vineta">2. </b>Listen again. Match the pictures to the words.
-    </p>
-    <b-card>
-      <b-row>
-        <b-col v-for="(image, i) in images" v-bind:key="i" align="center">
-          <img :src="require(`@/assets/imgs/exercise5/${image.answer}.jpg`)" :alt="image.answer">
-          <drop 
-            :id="`boxDrop5-${i}`"
-            class="drop classDrop5"
-            @dragover="assign(image, i)"
-            @dragleave="selection = {}"
-            @drop="handleDrop">
-              <p>{{ image.selected }}</p>
-          </drop>
-        </b-col>
-      </b-row>
-    </b-card>
-    <b-card>
-      <b-row>
-          <b-col class="palabrase5" v-for="(sentence, i) in sentences" v-bind:key="i">
-            <drag class="drag" :transfer-data="{ option: sentence.answer }">
-              {{ sentence.answer }}
-            </drag>
+      <p class="instrucciones">
+        <b class="numero-vineta">1. </b>Listen to the conversation. Circle the celebration they are talking about.
+      </p>
+      <div class="multimedia">
+        <audio controls>
+          <source src="../assets/audios/exercise5.mp3">
+        </audio>
+      </div>
+      <div class="row">
+        <div class="col-md-4"  v-for="(celebration, i) in celebrations" v-bind:key="i" >
+          <button class="btn" @click="selectImage(celebration, i)"><img id="imgExc5" :src="require(`@/assets/imgs/exercise5/${celebration.image}.jpg`)" :alt="celebration.answer"></button>
+        </div>
+      </div>
+      <hr>
+      <p class="instrucciones">
+        <b class="numero-vineta">2. </b>Listen again. Match the pictures to the words.
+      </p>
+      <b-card>
+        <b-row>
+          <b-col v-for="(image, i) in images" v-bind:key="i" align="center">
+            <img :src="require(`@/assets/imgs/exercise5/${image.answer}.jpg`)" :alt="image.answer">
+            <drop 
+              :id="`boxDrop5-${i}`"
+              class="drop classDrop5"
+              @dragover="assign(image, i)"
+              @dragleave="selection = {}"
+              @drop="handleDrop">
+                <p>{{ image.selected }}</p>
+            </drop>
           </b-col>
-      </b-row>
-    </b-card>
-    <div align="right">
-      <button class="btn btn-finish" @click="onEvaluate()"><font-awesome-icon icon="check-circle"  />  Check</button>
+        </b-row>
+      </b-card>
+      <b-card>
+        <b-row>
+            <b-col class="palabrase5" v-for="(sentence, i) in sentences" v-bind:key="i">
+              <drag class="drag" :transfer-data="{ option: sentence.answer }">
+                {{ sentence.answer }}
+              </drag>
+            </b-col>
+        </b-row>
+      </b-card>
+      <div align="right">
+        <button class="btn btn-finish" @click="onEvaluate()"><font-awesome-icon icon="check-circle"  />  Check</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise51 from '@/assets/json/exercise5-1.json'
 import exercise52 from '@/assets/json/exercise5-2.json'
 import exercise53 from '@/assets/json/exercise5-3.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise5',
+  components: { 'MyHeader': Header},
   data () {
     return {
         options1: exercise51,

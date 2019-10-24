@@ -1,45 +1,50 @@
 <template>
-    <div id="divContent" class="container">
-        <p class="instrucciones">
-            <b class="numero-vineta">1. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen to the conversation. Circle what they decide to do. Then, number the activities in the order in which they are mentioned.
-        </p>
-        <div class="multimedia">
-            <audio controls>
-                <source src="../assets/audios/exercise11.mp3">
-            </audio>
+    <div>
+        <MyHeader :page="'page4'"></MyHeader>
+        <div id="divContent" class="container">
+            <p class="instrucciones">
+                <b class="numero-vineta">1. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen to the conversation. Circle what they decide to do. Then, number the activities in the order in which they are mentioned.
+            </p>
+            <div class="multimedia">
+                <audio controls>
+                    <source src="../assets/audios/exercise11.mp3">
+                </audio>
+            </div>
+            <hr>
+            <b-row>
+                <b-col v-for="(option, i) in options1" v-bind:key="i">
+                    <b-row>
+                        <b-col sm="3"><input id="inpExe11" type="text" :pattern="option.number"></b-col>
+                        <b-col sm="9">
+                            <button class="btn" :id="`id-${i}`" @click="checkAns(option, i)"><img :src="require(`@/assets/imgs/exercise11/${option.img}.jpg`)" alt=""></button>
+                        </b-col>
+                    </b-row>
+                </b-col>
+            </b-row>
+            <hr>
+            <p class="instrucciones">
+                <b class="numero-vineta">2. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen again and fi ll in the table about Jimmy, Deb and Lola. Check your answers by reading the text in the scripts section.
+            </p>
+            <b-table :items="options2" :fields="fields">
+                <template v-slot:cell(likes)="data">
+                    <textarea v-model="data.item.likes"></textarea>
+                </template>
+                <template v-slot:cell(nolikes)="data">
+                    <textarea v-model="data.item.nolikes"></textarea>
+                </template>
+            </b-table>
         </div>
-        <hr>
-        <b-row>
-            <b-col v-for="(option, i) in options1" v-bind:key="i">
-                <b-row>
-                    <b-col sm="3"><input id="inpExe11" type="text" :pattern="option.number"></b-col>
-                    <b-col sm="9">
-                        <button class="btn" :id="`id-${i}`" @click="checkAns(option, i)"><img :src="require(`@/assets/imgs/exercise11/${option.img}.jpg`)" alt=""></button>
-                    </b-col>
-                </b-row>
-            </b-col>
-        </b-row>
-        <hr>
-        <p class="instrucciones">
-            <b class="numero-vineta">2. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen again and fi ll in the table about Jimmy, Deb and Lola. Check your answers by reading the text in the scripts section.
-        </p>
-        <b-table :items="options2" :fields="fields">
-            <template v-slot:cell(likes)="data">
-                <textarea v-model="data.item.likes"></textarea>
-            </template>
-            <template v-slot:cell(nolikes)="data">
-                <textarea v-model="data.item.nolikes"></textarea>
-            </template>
-        </b-table>
     </div>
 </template>
 
 <script>
+import Header from './Header'
 import exercise111 from '@/assets/json/exercise11-1.json'
 import exercise112 from '@/assets/json/exercise11-2.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise11',
+  components: { 'MyHeader': Header},
   data () {
     return {
         opciones1: exercise111,
