@@ -54,7 +54,7 @@ import Header from './Header'
 import { Drag, Drop } from 'vue-drag-drop'
 import exercise1 from '@/assets/json/exercise1.json'
 export default {
-  components: { Drag, Drop, 'MyHeader': Header},
+  components: {Drag, Drop, 'MyHeader': Header},
   name: 'Exercise37One',
   data () {
     return {
@@ -73,24 +73,26 @@ export default {
   methods: {
     show () {
       var max = Object.keys(this.opciones).length
-      for (var i = 0; i < max; i ++) {
-          var num_alet = this.randomSent(max)
-          this.dates = {
-              number: this.opciones[num_alet].number,
-              option: this.opciones[num_alet].option,
-              status: this.opciones[num_alet].status
-          }
-          this.options.push(this.dates)
+      var numAlet
+      var i
+      for (i = 0; i < max; i++) {
+        numAlet = this.randomSent(max)
+        this.dates = {
+          number: this.opciones[numAlet].number,
+          option: this.opciones[numAlet].option,
+          status: this.opciones[numAlet].status
+        }
+        this.options.push(this.dates)
       }
       this.positions = []
-      for (var i = 0; i < max; i ++) {
-          var num_alet = this.randomSent(max)
-          this.dates = {
-              number: this.opciones[num_alet].number,
-              answer: this.opciones[num_alet].option,
-              status: false
-          }
-          this.answers.push(this.dates)
+      for (i = 0; i < max; i++) {
+        numAlet = this.randomSent(max)
+        this.dates = {
+          number: this.opciones[numAlet].number,
+          answer: this.opciones[numAlet].option,
+          status: false
+        }
+        this.answers.push(this.dates)
       }
       this.positions = []
     },
@@ -124,21 +126,22 @@ export default {
       }
     },
     randomSent (max) {
-        if(this.positions.length != max) {
-            while (repe != false) {
-                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
-                var repe = this.repeated(aleatorio, max)
-            }
-            this.positions.push(aleatorio)
-            return aleatorio
+      if (this.positions.length !== max) {
+        var repe
+        while (repe !== false) {
+          var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+          repe = this.repeated(aleatorio, max)
         }
+        this.positions.push(aleatorio)
+        return aleatorio
+      }
     },
     repeated (num, max) {
       var repet = false
-      for (var i = 0; i < max; i ++) {
-          if(num == this.positions[i]) {
-              repet = true
-          }
+      for (var i = 0; i < max; i++) {
+        if (num === this.positions[i]) {
+          repet = true
+        }
       }
       return repet
     }

@@ -51,7 +51,7 @@ import Header from './Header'
 import exercise19 from '@/assets/json/exercise19.json'
 export default {
   name: 'Exercise19',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
         opciones: exercise19,

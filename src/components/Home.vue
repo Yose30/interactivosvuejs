@@ -1,6 +1,6 @@
 <template>
   <div>
-    <homeHeader :page="'home'"></homeHeader>
+    <homeHeader></homeHeader>
     <div id="divContent" class="container">
       <b-row>
         <b-col sm="4" v-for="(page, i) in pages" v-bind:key="i">
@@ -34,7 +34,7 @@ import HomeHeader from './HomeHeader'
 import home from '@/assets/json/home.json'
 export default {
   name: 'Home',
-  components: { 'homeHeader': HomeHeader},
+  components: {'homeHeader': HomeHeader},
   data () {
     return {
       viewImgs: true,
@@ -44,16 +44,9 @@ export default {
       namePage: ''
     }
   },
-  // mounted: function () {
-  //   this.home()
-  // },
   methods: {
     openPage (page) {
-      this.$router.push({name: 'page', params: { num: page.image } })
-      // this.numPage = page.number
-      // this.namePage = page.image
-      // this.viewHome = false
-      // document.getElementById('canvasImg').style.backgroundImage = require(`@/assets/pages/${page.image}.svg`)
+      this.$router.push({ name: 'page', params: { num: page.image } })
     },
     viewImg1 () {
       // this.viewImgs = false
@@ -77,9 +70,6 @@ export default {
     home () {
       var canvas1 = document.getElementById('img1')
       var c1 = canvas1.getContext('2d')
-      var canvas2 = document.getElementById('img2')
-      var c2 = canvas2.getContext('2d')
-      
       canvas1.width = 300
       canvas1.height = 400
       c1.lineWidth = 3
@@ -92,28 +82,6 @@ export default {
       c1.moveTo(20, 65)
       c1.bezierCurveTo(20, 40, 280, 40, 280, 65)
       c1.stroke()
-
-      // c2.lineWidth = 1
-      // c2.beginPath()
-      // c2.moveTo(20, 30)
-      // c2.bezierCurveTo(20, 40, 280, 40, 280, 30)
-      // c2.strokeStyle = 'red'
-      // c2.stroke()
-      // c2.beginPath()
-      // c2.moveTo(20, 30)
-      // c2.bezierCurveTo(20, 20, 280, 20, 280, 30)
-      // c2.strokeStyle = 'red'
-      // c2.stroke()
-      // c2.beginPath()
-      // c2.moveTo(20, 70)
-      // c2.bezierCurveTo(20, 80, 280, 80, 280, 70)
-      // c2.strokeStyle = 'red'
-      // c2.stroke()
-      // c2.beginPath()
-      // c2.moveTo(20, 70)
-      // c2.bezierCurveTo(20, 60, 280, 60, 280, 70)
-      // c2.strokeStyle = 'red'
-      // c2.stroke()
     }
   }
 }

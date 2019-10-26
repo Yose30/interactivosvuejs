@@ -1,6 +1,6 @@
 <template>
   <div>
-    <homeHeader :page="'home'"></homeHeader>
+    <homeHeader></homeHeader>
       <div id="divContent" class="container">
         <br>
         <div id="pageOne" align="left" v-if="$route.params.num == 'page1'"> 
@@ -51,7 +51,7 @@
 import HomeHeader from './HomeHeader'
 export default {
   name: 'Page',
-  components: { 'homeHeader': HomeHeader},
+  components: {'homeHeader': HomeHeader},
   data () {
     return {
       
@@ -608,6 +608,7 @@ export default {
       #page1B2 {
         margin-left: 12%;
         margin-top: 30%;
+        width: 390px;
         height: 35px;
       }
       #page1B3 {
@@ -625,13 +626,13 @@ export default {
       }
       #page2B2 {
         margin-left: 13%;
-        margin-top: 30%;
-        width: 430px;
-        height: 35px;
+        margin-top: 29%;
+        width: 790px;
+        height: 55px;
       }
       #page2B3 {
         margin-left: 13%;
-        margin-top: 29%;
+        margin-top: 33%;
         width: 730px;
         height: 55px;
       }
@@ -651,12 +652,13 @@ export default {
       /* BUTTONS PAGE 4 */
       #page4B1 {
         margin-left: 12%;
-        margin-top: 14%;
+        margin-top: 15%;
         width: 620px;
+        height: 35px;
       }
       #page4B2 {
         margin-left: 12%;
-        margin-top: 43%;
+        margin-top: 42%;
         width: 770px;
         height: 60px;
       }
@@ -665,6 +667,7 @@ export default {
         margin-left: 12%;
         margin-top: 18%;
         width: 640px;
+        height: 35px;
       }
       /* BUTTONS PAGE 6 */
       #page6B1 {
@@ -677,16 +680,20 @@ export default {
       #page7B1 {
         margin-left: 12%;
         margin-top: 13%;
+        height: 35px;
+        width: 350px;
       }
       #page7B2 {
         margin-left: 12%;
-        margin-top: 14%;
+        margin-top: 15%;
         width: 770px;
         height: 60px;
       }
       #page7B3 {
         margin-left: 12%;
         margin-top: 30%;
+        height: 35px;
+        width: 400px;
       }
       /* BUTTONS PAGE 8 */
       #page8B1 {
@@ -698,13 +705,16 @@ export default {
       /* BUTTONS PAGE 9 */
       #page9B1 {
         margin-left: 14%;
-        margin-top: 18%;
+        margin-top: 19%;
         width: 790px;
+        height: 35px;
       }
       /* BUTTONS PAGE 10 */
       #page10B1 {
         margin-left: 11%;
-        margin-top: 18%;
+        margin-top: 19%;
+        width: 350px;
+        height: 35px;
       }
     }
   /* Large screens ----------- */

@@ -15,9 +15,9 @@
                     <img :src="require(`@/assets/imgs/exercise18/${option.text}.jpg`)" :alt="option.image">
                     <br>
                     {{ option.text }}
-                    <b-row align="left">
-                        <b-col><input id="inpExc18" type="text" :pattern="option.answer1"></b-col>
-                        <b-col><input id="inpExc18" type="text" :pattern="option.answer2"></b-col>
+                    <b-row >
+                        <b-col><input id="inpExc18" type="text" placeholder="#" :pattern="option.answer1"></b-col>
+                        <b-col><input id="inpExc18" type="text" placeholder="C/U" :pattern="option.answer2"></b-col>
                     </b-row>
                 </b-col>
             </b-row>
@@ -43,14 +43,14 @@ import Header from './Header'
 import exercise18 from '@/assets/json/exercise18.json'
 export default {
   name: 'Exercise18',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
-        sentences: [],
-        opciones: exercise18,
-        options: [],
-        positions: [],
-        dates: {}
+      sentences: [],
+      opciones: exercise18,
+      options: [],
+      positions: [],
+      dates: {}
     }
   },
   created: function () {
@@ -58,36 +58,37 @@ export default {
   },
   methods: {
     show () {
-        var max = Object.keys(this.opciones).length
-        for (var i = 0; i < max; i ++) {
-            var num_alet = this.randomSent(max)
-            this.dates = {
-                text: this.opciones[num_alet].text,
-                answer1: this.opciones[num_alet].answer1,
-                answer2: this.opciones[num_alet].answer2
-            }
-            this.options.push(this.dates)
+      var max = Object.keys(this.opciones).length
+      for (var i = 0; i < max; i++) {
+        var numAlet = this.randomSent(max)
+        this.dates = {
+          text: this.opciones[numAlet].text,
+          answer1: this.opciones[numAlet].answer1,
+          answer2: this.opciones[numAlet].answer2
         }
-        this.positions = []        
+        this.options.push(this.dates)
+      }
+      this.positions = []
     },
     randomSent (max) {
-        if(this.positions.length != max) {
-            while (repe != false) {
-                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
-                var repe = this.repeated(aleatorio, max)
-            }
-            this.positions.push(aleatorio)
-            return aleatorio
+      if (this.positions.length !== max) {
+        var repe
+        while (repe !== false) {
+          var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+          repe = this.repeated(aleatorio, max)
         }
+        this.positions.push(aleatorio)
+        return aleatorio
+      }
     },
     repeated (num, max) {
-        var repet = false
-        for (var i = 0; i < max; i ++) {
-            if(num == this.positions[i]) {
-                repet = true
-            }
+      var repet = false
+      for (var i = 0; i < max; i++) {
+        if (num === this.positions[i]) {
+          repet = true
         }
-        return repet
+      }
+      return repet
     }
   }
 }
@@ -104,4 +105,3 @@ export default {
         color: #00BC00;
     }
 </style>
-

@@ -157,7 +157,7 @@ import exercise122 from '@/assets/json/exercise12-2.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise12',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
         opciones: exercise121,

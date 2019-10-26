@@ -6,7 +6,7 @@
             <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
         </div>
         <p class="instrucciones">
-          <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track #  </span></b>Read and listen to what Mr. Green does on weekdays and complete his schedule. Compare with a partner. Read the script to check your answers.
+          <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track #  </span>>Read and listen to what Mr. Green does on weekdays and complete his schedule. Compare with a partner. Read the script to check your answers.
         </p>
         <audio controls>
           <source src="../assets/audios/exercise13.mp3">
@@ -37,18 +37,15 @@ import exercise131 from '@/assets/json/exercise13-1.json'
 import exercise132 from '@/assets/json/exercise13-2.json'
 export default {
   name: 'Exercise13',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
-        sentences: exercise131,
-        answers: exercise132
+      sentences: exercise131,
+      answers: exercise132
     }
   },
   created: function () {
     // this.show()
-  },
-  methods: {
-    
   }
 }
 </script>
@@ -58,4 +55,3 @@ export default {
     height: 150px;
   }
 </style>
-

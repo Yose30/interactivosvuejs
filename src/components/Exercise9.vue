@@ -71,7 +71,7 @@
 import Header from './Header'
 export default {
   name: 'Exercise9',
-  components: { 'MyHeader': Header}
+  components: {'MyHeader': Header}
 }
 </script>
 

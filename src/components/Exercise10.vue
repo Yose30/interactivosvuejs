@@ -59,7 +59,7 @@ import exercise102 from '@/assets/json/exercise10-2.json'
 import exercise103 from '@/assets/json/exercise10-3.json'
 export default {
   name: 'Exercise10',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
         opciones: exercise102,

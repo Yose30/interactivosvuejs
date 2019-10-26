@@ -116,40 +116,40 @@ export default {
         }
     },
     drawOnCanvas (event) {
-        event.preventDefault()
-        if (pintarLinea) {
-            ctx = miCanvas.getContext('2d')
-            // Estilos de linea
-            ctx.lineJoin = ctx.lineCap = 'round'
-            // Marca el nuevo punto
-            let nuevaPosicionX = 0
-            let nuevaPosicionY = 0
-            if (event.changedTouches === undefined) {
-                // Versión ratón
-                nuevaPosicionX = event.layerX
-                nuevaPosicionY = event.layerY
-            } else {
-                // Versión touch, pantalla tactil
-                nuevaPosicionX = event.changedTouches[0].pageX - correccionX
-                nuevaPosicionY = event.changedTouches[0].pageY - correccionY
-                //  - 730 en Y
-            }
-            // Guarda la linea
-            lineas[lineas.length - 1].push({
-                x: nuevaPosicionX,
-                y: nuevaPosicionY,
-                color: this.color,
-                size: this.selected
-                // transparency: 0.1
-            });
-            // Redibuja todas las lineas guardadas
-            ctx.beginPath()
-            lineas.forEach(function (segmento) {
-                ctx.moveTo(segmento[0].x, segmento[0].y)
-                segmento.forEach(function (punto, index) {
-                    ctx.lineWidth = punto.size
-                    ctx.strokeStyle = punto.color
-                    ctx.lineTo(punto.x, punto.y)
+      event.preventDefault()
+      if (pintarLinea) {
+        ctx = miCanvas.getContext('2d')
+        // Estilos de linea
+        ctx.lineJoin = ctx.lineCap = 'round'
+        // Marca el nuevo punto
+        let nuevaPosicionX = 0
+        let nuevaPosicionY = 0
+        if (event.changedTouches === undefined) {
+          // Versión ratón
+          nuevaPosicionX = event.layerX
+          nuevaPosicionY = event.layerY
+        } else {
+          // Versión touch, pantalla tactil
+          nuevaPosicionX = event.changedTouches[0].pageX - correccionX
+          nuevaPosicionY = event.changedTouches[0].pageY - correccionY
+          //  - 730 en Y
+        }
+        // Guarda la linea
+        lineas[lineas.length - 1].push({
+          x: nuevaPosicionX,
+          y: nuevaPosicionY,
+          color: this.color,
+          size: this.selected
+          // transparency: 0.1
+        })
+        // Redibuja todas las lineas guardadas
+        ctx.beginPath()
+        lineas.forEach(function (segmento) {
+          ctx.moveTo(segmento[0].x, segmento[0].y)
+          segmento.forEach(function (punto, index) {
+            ctx.lineWidth = punto.size
+            ctx.strokeStyle = punto.color
+            ctx.lineTo(punto.x, punto.y)
                     
                 });
             });
@@ -157,7 +157,7 @@ export default {
         }
     },
     stopDraw () {
-        pintarLinea = false
+      pintarLinea = false
     }
   }
 }

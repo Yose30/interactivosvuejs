@@ -57,7 +57,7 @@
 import Header from './Header'
 import exercise4 from '@/assets/json/exercise4.json'
 export default {
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   name: 'Exercise4',
   data () {
     return {
@@ -82,35 +82,36 @@ export default {
     },
     show () {
       var max = Object.keys(this.options).length
-      for (var i = 0; i < max; i ++) {
-          var num_alet = this.randomSent(max)
-          this.dates = {
-              id: this.options[num_alet].id,
-              sentence: this.options[num_alet].sentence,
-              value: this.options[num_alet].value,
-              selected: this.options[num_alet].selected,
-              state: this.options[num_alet].state
-          }
-          this.sentences.push(this.dates)
+      for (var i = 0; i < max; i++) {
+        var numAlet = this.randomSent(max)
+        this.dates = {
+          id: this.options[numAlet].id,
+          sentence: this.options[numAlet].sentence,
+          value: this.options[numAlet].value,
+          selected: this.options[numAlet].selected,
+          state: this.options[numAlet].state
+        }
+        this.sentences.push(this.dates)
       }
       this.positions = []
     },
     randomSent (max) {
-        if(this.positions.length != max) {
-            while (repe != false) {
-                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
-                var repe = this.repeated(aleatorio, max)
-            }
-            this.positions.push(aleatorio)
-            return aleatorio
+      if (this.positions.length !== max) {
+        var repe
+        while (repe !== false) {
+          var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+          repe = this.repeated(aleatorio, max)
         }
+        this.positions.push(aleatorio)
+        return aleatorio
+      }
     },
     repeated (num, max) {
       var repet = false
-      for (var i = 0; i < max; i ++) {
-          if(num == this.positions[i]) {
-              repet = true
-          }
+      for (var i = 0; i < max; i++) {
+        if (num === this.positions[i]) {
+          repet = true
+        }
       }
       return repet
     }

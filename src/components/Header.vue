@@ -8,10 +8,13 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item>
-                        <button class="btn home" @click="goHome()"><font-awesome-icon icon="home" />  Home</button>
+                        <button class="btn home" @click="goStart()">Start</button>
                     </b-nav-item>
                     <b-nav-item>
-                        <button class="btn home" @click="goPage()">Back</button>
+                        <button class="btn home" @click="goHome()"><font-awesome-icon icon="home" /> Home</button>
+                    </b-nav-item>
+                    <b-nav-item>
+                        <button class="btn home" @click="goPage()">Page</button>
                     </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
@@ -23,6 +26,9 @@
 export default {
     props: ['page'],
     methods: {
+        goStart () {
+            window.open('http://majesticeducacion.com.mx/demo/start.html', '_self')
+        },
         goHome () {
             this.$router.push({name: 'home'})
         },

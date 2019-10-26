@@ -37,15 +37,15 @@ import exercise151 from '@/assets/json/exercise15-1.json'
 import exercise152 from '@/assets/json/exercise15-2.json'
 export default {
   name: 'Exercise14',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
-        opciones: exercise151,
-        options: [],
-        positions: [],
-        dates: {},
-        respuestas: exercise152,
-        answers: exercise152
+      opciones: exercise151,
+      options: [],
+      positions: [],
+      dates: {},
+      respuestas: exercise152,
+      answers: exercise152
     }
   },
   created: function () {
@@ -53,48 +53,37 @@ export default {
   },
   methods: {
     show () {
-        var max1 = Object.keys(this.opciones).length
-        var max2 = Object.keys(this.respuestas).length
-        // exercise-15-1
-        for (var i = 0; i < max1; i ++) {
-            var num_alet = this.randomSent(max1)
-            this.dates = {
-                watch: this.opciones[num_alet].watch,
-                answer: this.opciones[num_alet].answer
-            }
-            this.options.push(this.dates)
+      var max1 = Object.keys(this.opciones).length
+      // exercise-15-1
+      for (var i = 0; i < max1; i++) {
+        var numAlet = this.randomSent(max1)
+        this.dates = {
+          watch: this.opciones[numAlet].watch,
+          answer: this.opciones[numAlet].answer
         }
-        this.positions = []
-        // exercise-15-2
-        // for (var i = 0; i < max2; i ++) {
-        //     var num_alet = this.randomSent(max2)
-        //     this.dates = {
-        //         form1: this.respuestas[num_alet].form1,
-        //         form2: this.respuestas[num_alet].form2,
-        //         status: this.respuestas[num_alet].status
-        //     }
-        //     this.answers.push(this.dates)
-        // }
-        // this.positions = []
+        this.options.push(this.dates)
+      }
+      this.positions = []
     },
     randomSent (max) {
-        if(this.positions.length != max) {
-            while (repe != false) {
-                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
-                var repe = this.repeated(aleatorio, max)
-            }
-            this.positions.push(aleatorio)
-            return aleatorio
+      if (this.positions.length !== max) {
+        var repe
+        while (repe !== false) {
+          var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+          repe = this.repeated(aleatorio, max)
         }
+        this.positions.push(aleatorio)
+        return aleatorio
+      }
     },
     repeated (num, max) {
-        var repet = false
-        for (var i = 0; i < max; i ++) {
-            if(num == this.positions[i]) {
-                repet = true
-            }
+      var repet = false
+      for (var i = 0; i < max; i++) {
+        if (num === this.positions[i]) {
+          repet = true
         }
-        return repet
+      }
+      return repet
     }
   }
 }
@@ -113,6 +102,5 @@ export default {
     .img-e15{
         width: 150px;
         height: 150px;
-        }
+    }
 </style>
-

@@ -58,7 +58,7 @@ import VueSweetalert2 from 'vue-sweetalert2'
 Vue.use(VueSweetalert2)
 export default {
   name: 'Exercise6',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
         words: exercise6

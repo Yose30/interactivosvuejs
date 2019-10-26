@@ -61,7 +61,7 @@ import exercise53 from '@/assets/json/exercise5-3.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise5',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
         options1: exercise51,

@@ -73,7 +73,7 @@ import exercise82 from '@/assets/json/exercise8-2.json'
 import { Drag, Drop } from 'vue-drag-drop'
 export default {
   name: 'Exercise8',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
         sentences: exercise81,

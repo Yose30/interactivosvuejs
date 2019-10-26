@@ -51,7 +51,7 @@ var doc = new jsPDF()
 var img = new Image()
 export default {
   name: 'Exercise46One',
-  components: { 'MyHeader': Header},
+  components: {'MyHeader': Header},
   data () {
     return {
       fields: [
