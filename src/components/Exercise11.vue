@@ -2,11 +2,11 @@
     <div>
         <MyHeader :page="'page4'"></MyHeader>
         <div id="divContent" class="container">
-            <div class="contenido-titulo">
+            <!-- <div class="contenido-titulo">
                 <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-            </div>
+            </div> -->
             <p class="instrucciones">
-                <b class="numero-vineta">1. </b><span class="numeracion-multimedia"><font-awesome-icon icon="music"/></span> Listen to the conversation. Circle what they decide to do. Then, number the activities in the order in which they are mentioned.
+              <b class="numero-vineta">1. </b>Listen to the conversation. Circle what they decide to do. Then, number the activities in the order in which they are mentioned.
             </p>
             <div class="multimedia">
                 <audio controls>

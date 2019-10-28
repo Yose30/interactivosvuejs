@@ -3,7 +3,7 @@
     <homeHeader></homeHeader>
       <div id="divContent" class="container">
         <br>
-        <div id="pageOne" align="left" v-if="$route.params.num == 'page1'"> 
+        <div id="pageOne" align="left" v-if="$route.params.num == 'page1'">
           <button class="btn" @click="goToRoute('exercise6')" id="page1B1">botton</button> <br>
           <button class="btn" @click="goToRoute('exercise7')" id="page1B2">botton</button> <br>
           <button class="btn" @click="goToRoute('exercise9')" id="page1B3">botton</button>
@@ -37,11 +37,9 @@
         </div>
         <div id="pageNine" align="left" v-if="$route.params.num == 'page9'">
           <button class="btn" @click="goToRoute('exercise18')" id="page9B1">botton</button> <br>
-          <!-- <button class="btn" id="page9B2">botton</button> -->
         </div>
         <div id="pageTen" align="left" v-if="$route.params.num == 'page10'">
           <button class="btn" @click="goToRoute('exercise19')" id="page10B1">botton</button> <br>
-          <!-- <button class="btn" id="page10B2">botton</button> -->
         </div>
       </div>
   </div>
@@ -52,11 +50,6 @@ import HomeHeader from './HomeHeader'
 export default {
   name: 'Page',
   components: {'homeHeader': HomeHeader},
-  data () {
-    return {
-      
-    }
-  },
   methods: {
     goToRoute (exercise) {
       this.$router.push({name: exercise})
@@ -69,9 +62,7 @@ export default {
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen
     and (min-device-width : 320px)
-    and (max-device-width : 780px) {
-      
-    }
+    and (max-device-width : 780px) {}
   /* Smartphones (landscape) ----------- */
   @media only screen
     and (min-width : 320px) {
@@ -722,9 +713,6 @@ export default {
     and (min-width : 1824px) {
     /* Styles */
     }
-
-  
-  
   #page1B1, #page1B2, #page1B3, #page2B1, #page2B2, #page2B3, #page3B1, #page3B2,
   #page4B1, #page4B2, #page5B1, #page5B2, #page6B1, #page7B1, #page7B2, #page7B3,
   #page8B1, #page9B1, #page9B2, #page10B1, #page10B2 {
@@ -733,7 +721,7 @@ export default {
     border: 2px solid red;
     border-radius: 50%;
   }
-  #pageOne { 
+  #pageOne {
     background: url('../assets/pages/page1.svg');
     background-repeat: no-repeat;
     background-position: center;

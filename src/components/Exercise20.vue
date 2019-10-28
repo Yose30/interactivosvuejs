@@ -2,14 +2,14 @@
     <div>
         <MyHeader :page="'page8'"></MyHeader>
         <div id="divContent" class="container">
-            <div class="contenido-titulo">
+            <!-- <div class="contenido-titulo">
                 <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-            </div>
+            </div> -->
             <p class="instrucciones">
                 <b class="numero-vineta">1. </b>Unscramble the words to form correct statements or questions.
             </p>
             <div align="left">
-                <ol>  
+                <ol>
                     <li v-for="(option, i) in options" v-bind:key="i">
                         {{ option.words }} <br>
                         <div v-if="option.id == 1">
@@ -68,10 +68,10 @@ export default {
   components: {'MyHeader': Header},
   data () {
     return {
-        opciones: exercise20,
-        options: [],
-        positions: [],
-        dates: {}
+      opciones: exercise20,
+      options: [],
+      positions: [],
+      dates: {}
     }
   },
   created: function () {
@@ -79,35 +79,36 @@ export default {
   },
   methods: {
     show () {
-        var max = Object.keys(this.opciones).length
-        for (var i = 0; i < max; i ++) {
-            var num_alet = this.randomSent(max)
-            this.dates = {
-                id: this.opciones[num_alet].id,
-                words: this.opciones[num_alet].words
-            }
-            this.options.push(this.dates)
+      var max = Object.keys(this.opciones).length
+      for (var i = 0; i < max; i++) {
+        var numAlet = this.randomSent(max)
+        this.dates = {
+          id: this.opciones[numAlet].id,
+          words: this.opciones[numAlet].words
         }
-        this.positions = []
+        this.options.push(this.dates)
+      }
+      this.positions = []
     },
     randomSent (max) {
-        if(this.positions.length != max) {
-            while (repe != false) {
-                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
-                var repe = this.repeated(aleatorio, max)
-            }
-            this.positions.push(aleatorio)
-            return aleatorio
+      if (this.positions.length !== max) {
+        var repe
+        while (repe !== false) {
+          var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+          repe = this.repeated(aleatorio, max)
         }
+        this.positions.push(aleatorio)
+        return aleatorio
+      }
     },
     repeated (num, max) {
-        var repet = false
-        for (var i = 0; i < max; i ++) {
-            if(num == this.positions[i]) {
-                repet = true
-            }
+      var repet = false
+      for (var i = 0; i < max; i++) {
+        if (num === this.positions[i]) {
+          repet = true
         }
-        return repet
+      }
+      return repet
     }
   }
 }
@@ -124,4 +125,3 @@ export default {
         color: #00BC00;
     }
 </style>
-

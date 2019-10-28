@@ -2,11 +2,11 @@
     <div>
       <MyHeader :page="'page3'"></MyHeader>
       <div id="divContent" class="container">
-        <div class="contenido-titulo">
-            <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-        </div>
+        <!-- <div class="contenido-titulo">
+          <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
+        </div> -->
         <p class="instrucciones">
-          <b class="numero-vineta">1.  </b> <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track #  </span>>Read and listen to what Mr. Green does on weekdays and complete his schedule. Compare with a partner. Read the script to check your answers.
+          <b class="numero-vineta">1. </b>Read and listen to what Mr. Green does on weekdays and complete his schedule. Compare with a partner. Read the script to check your answers.
         </p>
         <audio controls>
           <source src="../assets/audios/exercise13.mp3">
@@ -43,9 +43,6 @@ export default {
       sentences: exercise131,
       answers: exercise132
     }
-  },
-  created: function () {
-    // this.show()
   }
 }
 </script>

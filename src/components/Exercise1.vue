@@ -2,9 +2,9 @@
   <div>
     <MyHeader :page="'page8'"></MyHeader>
     <div id="divContent" class="container">
-      <div class="contenido-titulo">
+      <!-- <div class="contenido-titulo">
         <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
-      </div>
+      </div> -->
       <p class="instrucciones">
         <b class="numero-vineta">1. </b>Match each food word to its corresponding picture as you listen. Are there any similar words to Spanish? Tick ( <span class="color-paloma">✓</span> ) the food you like. Drag the number to the corresponding box.
       </p>
@@ -20,7 +20,7 @@
               <div class="row">
                 <div class="col-sm-12" id="numberElem">
                   <drag v-if="option.status" class="drag" :transfer-data="{ answer: option.option }">
-                    {{ option.number }}
+                    <button class="btn" @click="touchSelect(option, item)">{{ option.number }}</button>
                   </drag>
                   <p v-else id="numberDisa">{{ option.number }}</p>
                 </div>
@@ -37,6 +37,7 @@
             <div class="row">
               <div class="col-sm-4">
                 <drop class="drop" @dragover="assign(answer, item)" @dragleave="selection = {}" @drop="handleDrop">
+                  <button class="btn" v-if="!answer.status" @click="touchAnswer(answer, item)"></button>
                   <p v-if="answer.status">{{ answer.number }}</p>
                 </drop>
               </div>
@@ -64,13 +65,34 @@ export default {
       opciones: exercise1,
       dates: {},
       options: [],
-      answers: []
+      answers: [],
+      dataOpt: {}
     }
   },
   created: function () {
     this.show()
   },
   methods: {
+    touchSelect (option, item) {
+      this.dataOpt.number = option.number
+      this.dataOpt.option = option.option
+      this.dataOpt.status = option.status
+      this.dataOpt.item = item
+    },
+    touchAnswer (answer, item) {
+      if (answer.answer === this.dataOpt.option) {
+        this.options.forEach(option => {
+          if (option.number === this.dataOpt.number) {
+            option.status = false
+            this.count += 1
+          }
+        })
+        this.answers[item].status = true
+        if (this.count === 19) {
+          this.$swal('Well done!', '', 'success')
+        }
+      } else {}
+    },
     show () {
       var max = Object.keys(this.opciones).length
       var numAlet
@@ -109,11 +131,7 @@ export default {
         })
         this.answers[this.selection.i].status = true
         if (this.count === 19) {
-          this.$swal(
-            'Well done!',
-            '',
-            'success'
-          )
+          this.$swal('Well done!', '', 'success')
         }
       } else {}
     },

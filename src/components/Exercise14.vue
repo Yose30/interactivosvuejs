@@ -2,9 +2,9 @@
     <div>
         <MyHeader :page="'page5'"></MyHeader>
         <div id="divContent" class="container">
-            <div class="contenido-titulo">
+            <!-- <div class="contenido-titulo">
                 <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-            </div>
+            </div> -->
             <p class="instrucciones">
                 <b class="numero-vineta">1.  </b> Read and answer.
             </p>

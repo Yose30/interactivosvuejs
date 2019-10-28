@@ -6,13 +6,12 @@
     <draw></draw>
     <MyFooter></MyFooter>
   </div>
-  
 </template>
 
 <script>
 import Draw from './components/Draw'
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -20,7 +19,6 @@ export default {
     Draw,
     'MyHeader': Header,
     'MyFooter': Footer
-
   }
 }
 

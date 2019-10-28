@@ -2,9 +2,9 @@
     <div>
       <MyHeader :page="'page1'"></MyHeader>
       <div id="divContent" class="container">
-        <div class="contenido-titulo">
+        <!-- <div class="contenido-titulo">
           <h1 class="titulo-ejercicios">COMPLETAR TEXTO</h1>
-        </div>
+        </div> -->
         <p class="instrucciones">
             <b class="numero-vineta">1. </b>
             Look at the picture. Listen. Where are they?
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-</template> 
+</template>
 
 <script>
 import Header from './Header'
@@ -82,7 +82,6 @@ export default {
   input:valid {
     color: #00BC00;
   }
- 
   #imgExe9 {
     width: 250px;
     height: 300px;

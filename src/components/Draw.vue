@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <canvas 
-        id="pizarra" 
+    <canvas
+        id="pizarra"
         @mousedown="empezarDibujo"
-        @mousemove="drawOnCanvas" 
+        @mousemove="drawOnCanvas"
         @mouseup="stopDraw"
         @touchstart="empezarDibujo"
         @touchmove="drawOnCanvas"
@@ -32,7 +32,7 @@
                 </b-tooltip>
             </b-col>
             <b-col>
-                <input class="colores" type="color" v-model="color" :disabled="mouse" id="tooltip-target-4" > 
+                <input class="colores" type="color" v-model="color" :disabled="mouse" id="tooltip-target-4">
                 <b-tooltip target="tooltip-target-4" triggers="hover" >
                     <b>Colors</b>
                 </b-tooltip>
@@ -43,7 +43,7 @@
                     Line <b>Width</b>
                 </b-tooltip>
             </b-col>
-        </b-row> 
+        </b-row>
     </div>
   </div>
 </template>
@@ -61,59 +61,56 @@ export default {
   name: 'Draw',
   data () {
     return {
-        pencil: false,
-        mouse: true,
-        color: '#E60026',
-        selected: 5,
-        options: [
-            { value: 5, text: '5' },
-            { value: 10, text: '10' },
-            { value: 15, text: '15' },
-        ],
-        count: 0
+      pencil: false,
+      mouse: true,
+      color: '#E60026',
+      selected: 5,
+      options: [
+        { value: 5, text: '5' },
+        { value: 10, text: '10' },
+        { value: 15, text: '15' }
+      ],
+      count: 0
     }
   },
   methods: {
     backMouse () {
-        contenido = document.getElementById('divContent')
-        miCanvas = document.getElementById('pizarra')
-        this.pencil = false
-        this.mouse = true
-        this.sizeCanvas(0, 0)
-        miCanvas.style.zIndex = 1
-        contenido.style.zIndex = 2
+      contenido = document.getElementById('divContent')
+      miCanvas = document.getElementById('pizarra')
+      this.pencil = false
+      this.mouse = true
+      this.sizeCanvas(0, 0)
+      miCanvas.style.zIndex = 1
+      contenido.style.zIndex = 2
     },
     deleteEnd () {
-        ctx.clearRect(0, 0, miCanvas.width, miCanvas.height)
+      ctx.clearRect(0, 0, miCanvas.width, miCanvas.height)
     },
     beginDraw () {
-        this.count += 1
-        contenido = document.getElementById('divContent')
-        miCanvas = document.getElementById('pizarra')
-        posicion = miCanvas.getBoundingClientRect()
-        correccionX = posicion.x
-        correccionY = posicion.y
-        // if (this.count === 1) {
-        this.sizeCanvas(contenido.clientWidth, contenido.clientHeight)
-        // }
-        contenido.style.zIndex = 1
-        miCanvas.style.zIndex = 2
-
-        this.mouse = false
-        this.pencil = true
+      this.count += 1
+      contenido = document.getElementById('divContent')
+      miCanvas = document.getElementById('pizarra')
+      posicion = miCanvas.getBoundingClientRect()
+      correccionX = posicion.x
+      correccionY = posicion.y
+      this.sizeCanvas(contenido.clientWidth, contenido.clientHeight)
+      contenido.style.zIndex = 1
+      miCanvas.style.zIndex = 2
+      this.mouse = false
+      this.pencil = true
     },
     sizeCanvas (clientWidth, clientHeight) {
-        miCanvas.width = clientWidth
-        miCanvas.height = clientHeight
-        miCanvas.style.width = clientWidth + 'px'
-        miCanvas.style.height = clientHeight + 'px'
+      miCanvas.width = clientWidth
+      miCanvas.height = clientHeight
+      miCanvas.style.width = clientWidth + 'px'
+      miCanvas.style.height = clientHeight + 'px'
     },
     empezarDibujo () {
-        if (this.pencil == true) {
-            pintarLinea = true;
-            lineas = []
-            lineas.push([])
-        }
+      if (this.pencil === true) {
+        pintarLinea = true
+        lineas = []
+        lineas.push([])
+      }
     },
     drawOnCanvas (event) {
       event.preventDefault()
@@ -131,8 +128,9 @@ export default {
         } else {
           // Versión touch, pantalla tactil
           nuevaPosicionX = event.changedTouches[0].pageX - correccionX
-          nuevaPosicionY = event.changedTouches[0].pageY - correccionY
-          //  - 730 en Y
+          nuevaPosicionY = event.changedTouches[0].pageY - correccionY - 730
+          //  - 730 en Y, en ipad
+          // no reconoce en celular
         }
         // Guarda la linea
         lineas[lineas.length - 1].push({
@@ -150,11 +148,10 @@ export default {
             ctx.lineWidth = punto.size
             ctx.strokeStyle = punto.color
             ctx.lineTo(punto.x, punto.y)
-                    
-                });
-            });
-            ctx.stroke()
-        }
+          })
+        })
+        ctx.stroke()
+      }
     },
     stopDraw () {
       pintarLinea = false

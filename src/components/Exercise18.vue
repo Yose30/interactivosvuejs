@@ -3,11 +3,10 @@
         <MyHeader :page="'page9'"></MyHeader>
         <div id="divContent" class="container">
             <p class="instrucciones">
-                <!--  <span class="numeracion-multimedia">  <font-awesome-icon icon="music"  />  Track # </span> -->
-                <b class="numero-vineta">1.  </b>Listen and order the ingredients as they are mentioned. Write C (countable) or U (uncountable).
+              <b class="numero-vineta">1.  </b>Listen and order the ingredients as they are mentioned. Write C (countable) or U (uncountable).
             </p>
             <audio controls>
-            <source src="../assets/audios/exercise18.mp3">
+              <source src="../assets/audios/exercise18.mp3">
             </audio>
             <hr>
             <b-row>

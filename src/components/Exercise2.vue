@@ -2,9 +2,9 @@
   <div>
     <MyHeader :page="'page6'"></MyHeader>
     <div id="divContent" class="container">
-      <div class="contenido-titulo">
+      <!-- <div class="contenido-titulo">
         <h1 class="titulo-ejercicios">Aqui va el titulo</h1>
-      </div>
+      </div> -->
       <div class="row">
         <div class="col-md-6 text-left">
           <button class="btn descarga-pdf" @click="download">Download exercise</button>
@@ -72,14 +72,14 @@ export default {
   methods: {
     show () {
       var max = Object.keys(this.opciones).length
-      for (var i = 0; i < max; i ++) {
-          var num_alet = this.randomSent(max)
-          this.dates = {
-              image: this.opciones[num_alet].image,
-              place: this.opciones[num_alet].place,
-              activities: this.opciones[num_alet].activities
-          }
-          this.options.push(this.dates)
+      for (var i = 0; i < max; i++) {
+        var numAlet = this.randomSent(max)
+        this.dates = {
+          image: this.opciones[numAlet].image,
+          place: this.opciones[numAlet].place,
+          activities: this.opciones[numAlet].activities
+        }
+        this.options.push(this.dates)
       }
       this.positions = []
     },
@@ -107,21 +107,22 @@ export default {
       doc.save('exercise.pdf')
     },
     randomSent (max) {
-        if(this.positions.length != max) {
-            while (repe != false) {
-                var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
-                var repe = this.repeated(aleatorio, max)
-            }
-            this.positions.push(aleatorio)
-            return aleatorio
+      if (this.positions.length !== max) {
+        var repe
+        while (repe !== false) {
+          var aleatorio = Math.floor(Math.random() * (max - 0) + 0)
+          repe = this.repeated(aleatorio, max)
         }
+        this.positions.push(aleatorio)
+        return aleatorio
+      }
     },
     repeated (num, max) {
       var repet = false
-      for (var i = 0; i < max; i ++) {
-          if(num == this.positions[i]) {
-              repet = true
-          }
+      for (var i = 0; i < max; i++) {
+        if (num === this.positions[i]) {
+          repet = true
+        }
       }
       return repet
     }
